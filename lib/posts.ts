@@ -37,7 +37,7 @@ export function slugify(s: string) {
     .replace(/\s+/g, "-");
 }
 
-function render(md: string) {
+export function renderMarkdown(md: string) {
   const headings: Heading[] = [];
   const marked = new Marked({ gfm: true });
   marked.use({
@@ -70,7 +70,7 @@ function load(file: string): Post {
   for (const k of required) {
     if (!data[k]) throw new Error(`content/insights/${file} is missing "${k}" in its frontmatter`);
   }
-  const { html, headings } = render(content);
+  const { html, headings } = renderMarkdown(content);
   const wordCount = content.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
   const asDate = (v: unknown) => (v instanceof Date ? v.toISOString().slice(0, 10) : String(v));
   return {

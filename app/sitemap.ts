@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts, getTags, slugify } from "@/lib/posts";
+import { getPartners } from "@/lib/partners";
 import { absoluteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -22,5 +23,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly" as const,
     priority: 0.5,
   }));
-  return [...pages, ...articles, ...topics];
+  const partners = getPartners().map((p) => ({
+    url: absoluteUrl(`/partners/${p.slug}`),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+  return [...pages, ...articles, ...partners, ...topics];
 }

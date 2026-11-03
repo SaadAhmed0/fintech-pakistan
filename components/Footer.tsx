@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
+import { getPartners } from "@/lib/partners";
 import { LogoIcon } from "./Mark";
 
 export default function Footer() {
@@ -27,6 +28,10 @@ export default function Footer() {
             <li><Link href="/insights/pvara-virtual-asset-licensing">Virtual asset rules</Link></li>
             <li><a href="/insights/feed.xml">RSS feed</a></li>
           </ul>
+        </div>
+        <div>
+          <h4>Partners</h4>
+          <ul>{getPartners().map((p) => <li key={p.slug}><Link href={`/partners/${p.slug}`}>{p.name}</Link></li>)}</ul>
         </div>
         <div>
           <h4>Work with us</h4>

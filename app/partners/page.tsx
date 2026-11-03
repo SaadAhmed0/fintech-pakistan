@@ -3,17 +3,24 @@ import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Partners from "@/components/Partners";
 import { breadcrumbLd, pageMetadata } from "@/lib/seo";
+import { getPartners } from "@/lib/partners";
+import { absoluteUrl } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Partner With Fintech Pakistan: Events, Podcast and Launches",
-  description: "Reach Pakistan's fintech founders, operators, banks and investors through FP Live events, the Money Moves podcast, the FP Community and launch campaigns.",
+  description: "Fintech Pakistan partners include Sorbet, Karsa and Crypto Awaz. Reach Pakistan's fintech founders, operators, banks and investors through events, podcast and community.",
   path: "/partners",
 });
 
 export default function PartnersPage() {
   return (
     <>
-      <JsonLd data={breadcrumbLd([{ name: "Partners", path: "/partners" }])} />
+      <JsonLd data={[breadcrumbLd([{ name: "Partners", path: "/partners" }]), {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "Fintech Pakistan partners",
+        itemListElement: getPartners().map((p, i) => ({ "@type": "ListItem", position: i + 1, name: p.name, url: absoluteUrl(`/partners/${p.slug}`) })),
+      }]} />
       <PageHero id="partners-title" eyebrow="Partners · FP Agency" title={<>Reach the people <span className="soft">who move the market.</span></>}
         lede="Already operating in Pakistan, or planning to enter? We put your company in front of the right audience through the channels this community already trusts.">
         <div className="ctas"><Link className="btn btn-signal" href="/contact?topic=Partnership">Talk to us <span className="arrow">→</span></Link></div>

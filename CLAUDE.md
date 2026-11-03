@@ -8,6 +8,7 @@ Next.js (App Router) site for Fintech Pakistan. Every page is statically generat
 | --- | --- |
 | Site settings (URL, contact email, WhatsApp link, socials, Rails Summit date) | `lib/site.ts` |
 | Articles (Insights) | `content/insights/<slug>.md` |
+| Partners (cards, partner pages, footer links) | `content/partners/<slug>.md`, logos in `public/partners/` |
 | Page copy | `app/<page>/page.tsx` |
 | Design tokens and all styles | `app/globals.css` (`:root` block at the top) |
 | SEO helpers and structured data | `lib/seo.ts` |
@@ -49,6 +50,30 @@ Optional rich blocks inside the Markdown (raw HTML):
 - Timeline: `<ul class="timeline"><li><span class="when">March 2026</span><span>What happened.</span></li></ul>`
 - Status list: `<ul class="status"><li><b>Name</b><span class="pill live-pill">Live</span><p>Detail.</p></li></ul>` (pill classes: `live-pill`, `pilot`, or none)
 - Internal links: `[Read how Raast works](/insights/raast-instant-payments-explained)`. Link related articles to each other; it helps SEO.
+
+## Adding or editing a partner
+
+Create `content/partners/<slug>.md`. The partner then appears on the home page, `/partners`, its own page at `/partners/<slug>`, the footer and the sitemap.
+
+```yaml
+---
+name: Karsa
+type: Partner                 # or "Community partner"
+focus: Multi-currency business banking
+description: "One sentence, 120 to 160 characters. Meta description and hero lede."
+website: https://gokarsa.com
+logo: { src: /partners/karsa.png, width: 480, height: 166 }  # white or colour logo, shown on a dark tile
+showName: false               # true for icon-only logos, so the name shows beside the icon
+order: 2                      # position in partner lists
+sameAs: [https://x.com/Go_Karsa]   # official social profiles
+related: [insight-slug]       # Insights articles to show on the partner page
+sources:
+  - title: "Publisher, Headline (date)"
+    url: "https://..."
+---
+```
+
+Body: `## About <name>`, then what they do and what the partnership covers. Only describe what the partner or a cited source says. Attribute self-descriptions ("describes itself as").
 
 ## SEO that is automatic
 

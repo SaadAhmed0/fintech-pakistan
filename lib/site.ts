@@ -3,6 +3,8 @@
 
 export const site = {
   name: "Fintech Pakistan",
+  // Other ways people write the name. Tells Google these searches mean this site.
+  alternateNames: ["FintechPakistan", "Fintech PK", "FP"],
   shortName: "FP",
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://fintechpakistan.com").replace(/\/$/, ""),
   tagline: "Where Pakistan's fintech connects.",
