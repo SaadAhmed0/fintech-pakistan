@@ -20,7 +20,7 @@ export const site = {
   contactLinkedin: "https://www.linkedin.com/in/naumanmurad/",
   whatsappInvite: "https://chat.whatsapp.com/HK87C1F5LOJ1njo4MHvZPg",
   social: {
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/company/fintechpakistan/",
     x: "",
     youtube: "",
   },
