@@ -63,6 +63,7 @@ export type Company = {
   kyc: string;
   topics: string[];
   label: Label;
+  pick: string;
   lastVerified: string;
   draft: boolean;
   sources: Source[];
@@ -246,6 +247,7 @@ function loadCompany(file: string): Company {
     kyc: data.kyc || "",
     topics: data.topics || [],
     label: data.label || "",
+    pick: data.pick || "",
     lastVerified,
     draft: data.draft,
     sources,
@@ -264,7 +266,7 @@ export function getCompanies(): Company[] {
   companies = mdFiles("companies")
     .map(loadCompany)
     .filter((c) => !production || !c.draft)
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => Number(Boolean(b.pick)) - Number(Boolean(a.pick)) || a.name.localeCompare(b.name));
   return companies;
 }
 

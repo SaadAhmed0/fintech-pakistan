@@ -62,13 +62,14 @@ export default async function CompanyPage({ params }: Props) {
       </section>
 
       <section className="block band paper" aria-label={`About ${c.name}`}>
-        <div className="article-layout">
+        <div className="article-layout company-layout">
           <div className="article">
+            {c.pick && <p className="label-notice"><b>Our pick</b><span>{c.pick}</span></p>}
             {c.label && <LabelNotice label={c.label} subject="This profile" />}
             <div className="article-body" dangerouslySetInnerHTML={{ __html: c.html }} />
             {c.pakistanNote && <p className="notice"><b>Pakistan availability:</b> {c.pakistanNote}</p>}
             {c.faqs.length > 0 && <Faqs faqs={c.faqs} />}
-            <p className="notice">This profile is general information, not financial advice. A listing here is not an endorsement, and fees and availability can change. Check with the company before you sign up.</p>
+            <p className="notice">This profile is general information, not financial advice. {c.pick ? "Our pick is our own opinion." : "A listing here is not an endorsement."} Fees and availability can change, so check with the company before you sign up.</p>
             {c.sources.length > 0 && (
               <aside className="sources" aria-labelledby="sources-title">
                 <span className="label" id="sources-title" style={{ color: "var(--slate)" }}>Sources</span>

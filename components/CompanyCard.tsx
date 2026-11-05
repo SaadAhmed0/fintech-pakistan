@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Availability, Company } from "@/lib/content";
 
-export type CompanyCardData = Pick<Company, "slug" | "path" | "name" | "description" | "pakistanAvailability" | "usdAccount" | "card" | "stablecoins" | "label">;
+export type CompanyCardData = Pick<Company, "slug" | "path" | "name" | "description" | "pakistanAvailability" | "usdAccount" | "card" | "stablecoins" | "label" | "pick">;
 
 export const AVAILABILITY: Record<Availability, string> = {
   yes: "Says it serves Pakistan",
@@ -13,8 +13,8 @@ export const AVAILABILITY: Record<Availability, string> = {
 export default function CompanyCard({ company: c, headingLevel = 3 }: { company: CompanyCardData; headingLevel?: 2 | 3 }) {
   const H = `h${headingLevel}` as "h2" | "h3";
   return (
-    <Link className="card card-light ccard" href={c.path}>
-      <span className="label">{AVAILABILITY[c.pakistanAvailability]}{c.label && ` · ${c.label}`}</span>
+    <Link className={c.pick ? "card card-light ccard ccard-pick" : "card card-light ccard"} href={c.path}>
+      <span className="label">{c.pick ? "Our pick for Pakistan" : AVAILABILITY[c.pakistanAvailability]}{c.label && ` · ${c.label}`}</span>
       <H>{c.name}</H>
       <p>{c.description}</p>
       <span className="ccard-tags">

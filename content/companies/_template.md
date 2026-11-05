@@ -21,6 +21,7 @@ fees: ""                  # quote the source and date
 kyc: ""
 topics: []                # slugs from content/topics
 label: ""                 # Partner or Sponsored for any paid or client relationship
+pick: ""                  # only for our top pick: one or two sentences on why, with any conflict of interest
 lastVerified: ""          # date you last checked the sources, YYYY-MM-DD
 draft: true
 faqs: []

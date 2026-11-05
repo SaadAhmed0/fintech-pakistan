@@ -25,6 +25,7 @@ const SECTIONS: { id: string; title: string; body: string[] }[] = [
     "Some companies we cover are partners of Fintech Pakistan. Their profiles and any related posts carry a Partner label and a disclosure.",
     "Anything paid for carries a Sponsored label and a disclosure.",
     "A listing in the directory is not an endorsement, and a commercial relationship does not change the facts we state about a company.",
+    "Our pick marks the company we currently rate highest for Pakistan. It is our own opinion, and if a pick is a partner, the profile says so next to it.",
   ] },
   { id: "advice", title: "Not financial advice", body: [
     "Our guides and profiles are general information, not financial, legal or tax advice. Rules, fees and availability change, so check with the provider and your own adviser before you act.",

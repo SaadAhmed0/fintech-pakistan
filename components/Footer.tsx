@@ -23,7 +23,7 @@ export default function Footer() {
             <li><Link href="/companies">Companies</Link></li>
             <li><Link href="/guides">Guides</Link></li>
             <li><Link href="/topics">Topics</Link></li>
-            <li><Link href="/search">Search</Link></li>
+            <li><Link href="/search" data-search>Search</Link></li>
           </ul>
         </div>
         <div>

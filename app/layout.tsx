@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Closing from "@/components/Closing";
 import Reveal from "@/components/Reveal";
 import JoinDialog from "@/components/JoinDialog";
+import SearchDialog from "@/components/SearchDialog";
 import JsonLd from "@/components/JsonLd";
 import { MarkDefs } from "@/components/Mark";
 import { organizationLd, websiteLd } from "@/lib/seo";
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <Reveal />
         <JoinDialog />
+        <SearchDialog />
       </body>
     </html>
   );

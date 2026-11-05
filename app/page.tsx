@@ -3,8 +3,7 @@ import HeroGrid from "@/components/HeroGrid";
 import CycleWord from "@/components/CycleWord";
 import PostCard from "@/components/PostCard";
 import { GhostF } from "@/components/Mark";
-import CompanyCard from "@/components/CompanyCard";
-import { getCompanies, getGuides, getNews } from "@/lib/content";
+import { getGuides, getNews } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { site, summitWhen } from "@/lib/site";
 import Partners from "@/components/Partners";
@@ -12,7 +11,7 @@ import PakistanMap from "@/components/PakistanMap";
 import CorridorMap from "@/components/CorridorMap";
 
 export const metadata = pageMetadata({
-  title: "Fintech Pakistan: Stablecoin Neobank News and Directory",
+  title: "Fintech Pakistan: Fintech News and Company Directory",
   description: site.description,
   path: "/",
   absoluteTitle: true,
@@ -23,7 +22,6 @@ const TOPICS = ["COMMUNITY MEETUPS", "BUILDING FINTECH IN PAKISTAN", "FOUNDER ST
 export default function Home() {
   const news = getNews().slice(0, 3);
   const guides = getGuides().slice(0, 3);
-  const companies = getCompanies().filter((c) => c.indexable).slice(0, 6);
   return (
     <>
       <section className="hero home-hero band" aria-labelledby="home-title">
@@ -31,7 +29,7 @@ export default function Home() {
         <div className="wrap hero-inner">
           <div>
             <span className="label eyebrow">News · Companies · Guides</span>
-            <h1 id="home-title">Pakistan&apos;s stablecoin neobanks, <span className="soft">tracked.</span></h1>
+            <h1 id="home-title">Pakistan&apos;s fintech, <span className="soft">tracked.</span></h1>
             <CycleWord />
             <p className="lede">{site.description}</p>
             <div className="ctas">
@@ -59,18 +57,6 @@ export default function Home() {
           </div>
           <div className="grid-3">{news.map((p) => <PostCard key={p.path} post={p} />)}</div>
           <div className="ctas" style={{ marginTop: 32 }}><Link className="btn btn-ink" href="/news">All news <span className="arrow">→</span></Link></div>
-        </div>
-      </section>
-
-      <section className="block band dark" aria-labelledby="home-directory">
-        <div className="wrap">
-          <div className="head">
-            <span className="label">Company directory</span>
-            <h2 id="home-directory">Who actually <span className="soft-accent">serves Pakistan.</span></h2>
-            <p>One profile per company, showing what is confirmed, what is only reported, and when we last checked.</p>
-          </div>
-          <div className="grid-3">{companies.map((c) => <CompanyCard key={c.slug} company={c} />)}</div>
-          <div className="ctas" style={{ marginTop: 32 }}><Link className="btn btn-signal" href="/companies">Browse the directory <span className="arrow">→</span></Link></div>
         </div>
       </section>
 

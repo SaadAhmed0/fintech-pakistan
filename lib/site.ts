@@ -9,7 +9,7 @@ export const site = {
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://fintechpakistan.com").replace(/\/$/, ""),
   tagline: "Where Pakistan's fintech connects.",
   description:
-    "News and a company directory covering stablecoin neobanks and fintechs entering or serving Pakistan, from launches and funding to SBP, PVARA and SECP rules.",
+    "News and a company directory covering fintechs and stablecoin neobanks entering or serving Pakistan, from launches and funding to SBP, PVARA and SECP rules.",
   locale: "en_PK",
   language: "en",
 
@@ -42,17 +42,25 @@ export const site = {
   },
 };
 
-export const nav = [
+type NavLink = { href: string; label: string };
+type NavGroup = { label: string; items: NavLink[] };
+
+export const nav: (NavLink | NavGroup)[] = [
   { href: "/news", label: "News" },
-  { href: "/companies", label: "Companies" },
   { href: "/guides", label: "Guides" },
-  { href: "/community", label: "Community" },
-  { href: "/events", label: "Events" },
-  { href: "/partners", label: "Partners" },
-  { href: "/our-story", label: "Our Story" },
-  { href: "/team", label: "Team" },
-  { href: "/contact", label: "Contact" },
-] as const;
+  { href: "/companies", label: "Companies" },
+  { label: "Community", items: [{ href: "/community", label: "Join the community" }, { href: "/events", label: "Events" }] },
+  {
+    label: "About us",
+    items: [
+      { href: "/about", label: "About" },
+      { href: "/our-story", label: "Our Story" },
+      { href: "/team", label: "Team" },
+      { href: "/partners", label: "Partners" },
+      { href: "/contact", label: "Contact" },
+    ],
+  },
+];
 
 export function absoluteUrl(path = "/") {
   return site.url + (path.startsWith("/") ? path : `/${path}`);

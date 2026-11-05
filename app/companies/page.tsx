@@ -11,8 +11,8 @@ export const metadata = pageMetadata({
 });
 
 export default function Companies() {
-  const companies = getCompanies().map(({ slug, path, name, description, pakistanAvailability, usdAccount, card, stablecoins, label }) =>
-    ({ slug, path, name, description, pakistanAvailability, usdAccount, card, stablecoins, label }));
+  const companies = getCompanies().map(({ slug, path, name, description, pakistanAvailability, usdAccount, card, stablecoins, label, pick }) =>
+    ({ slug, path, name, description, pakistanAvailability, usdAccount, card, stablecoins, label, pick }));
   return (
     <>
       <JsonLd data={breadcrumbLd([{ name: "Companies", path: "/companies" }])} />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import CompanyCard, { AVAILABILITY, type CompanyCardData } from "./CompanyCard";
+import CompanyCard, { type CompanyCardData } from "./CompanyCard";
 
 // Every company is in the server-rendered HTML. Filters only hide cards, so
 // crawlers and readers without JavaScript see the full directory.
@@ -23,7 +23,7 @@ export default function CompanyDirectory({ companies }: { companies: CompanyCard
       <div className="filters" role="group" aria-label="Filter companies">
         {toggle("USD account", usd, setUsd)}
         {toggle("Card", card, setCard)}
-        {toggle(`${AVAILABILITY.yes} or reported`, pakistan, setPakistan)}
+        {toggle("Available in Pakistan", pakistan, setPakistan)}
         <select className="filter" aria-label="Stablecoin" value={coin} onChange={(e) => setCoin(e.target.value)}>
           <option value="">Any stablecoin</option>
           {coins.map((c) => <option key={c} value={c}>{c}</option>)}

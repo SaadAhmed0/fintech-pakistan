@@ -10,12 +10,12 @@ regulators: []
 pvaraStatus: ""
 stablecoins: ["USDT", "USDC"]
 pakistanAvailability: "reported"
-pakistanNote: "SpendNode and ProPakistani report that Pakistani users can pass KYC. KAST says it serves supported regions but publishes no country list, and its pages that we read do not name Pakistan."
-usdAccount: true
+pakistanNote: "SpendNode and ProPakistani report that Pakistani users can pass KYC. Our team understands that KAST does not offer its USD virtual account to Pakistani users, although its site says accounts can be opened from anywhere. Check in the app."
+usdAccount: false
 card: true
 fees: "Standard free (1.5% cashback, $2,000 monthly cap), Premium $1,000 a year, Private $10,000 a year. Standard members pay $40 to ship a physical card."
 kyc: "Reported: CNIC or passport."
-topics: ["stablecoins", "usd-accounts"]
+topics: ["stablecoins"]
 label: ""
 lastVerified: 2026-11-05
 draft: false
@@ -33,4 +33,4 @@ sources:
 
 KAST describes itself as a financial technology company, not a bank, with services provided by licensed partners that it does not fully list. Its terms name KAST Tech, incorporated in Anjouan, Comoros.
 
-It offers a USD account with virtual account numbers and a Visa card on three membership tiers. SpendNode reports that physical cards ship to Pakistani addresses in 21 to 30 business days. Treat that as reported until KAST confirms it.
+It offers a Visa card on three membership tiers. It also markets a USD account with virtual account numbers, but our team understands this is not offered to Pakistani users. SpendNode reports that physical cards ship to Pakistani addresses in 21 to 30 business days. Treat that as reported until KAST confirms it.

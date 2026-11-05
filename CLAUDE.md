@@ -65,7 +65,7 @@ Optional rich blocks inside the Markdown (raw HTML):
 
 ## Adding a company
 
-Copy `content/companies/_template.md`. Never guess: leave unconfirmed fields empty and the page shows "Needs verification". Use `pakistanAvailability: yes` only when the company says so itself, and `reported` when only a third party does. Any paid or client relationship needs `label: Partner` or `label: Sponsored`. A profile stays `noindex` and out of the sitemap until it has an availability value, a `lastVerified` date, two or more sources and 60+ words in the body. The first mention of a company in any post links to its profile automatically, using its name and `aliases`.
+Copy `content/companies/_template.md`. Never guess: leave unconfirmed fields empty and the page shows "Needs verification". Use `pakistanAvailability: yes` only when the company says so itself, and `reported` when only a third party does. Any paid or client relationship needs `label: Partner` or `label: Sponsored`. `pick` marks our top pick: it lists first and must state why, plus any conflict of interest. A profile stays `noindex` and out of the sitemap until it has an availability value, a `lastVerified` date, two or more sources and 60+ words in the body. The first mention of a company in any post links to its profile automatically, using its name and `aliases`.
 
 ## Adding a comparison
 

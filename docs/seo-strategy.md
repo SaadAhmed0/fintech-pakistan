@@ -154,9 +154,9 @@ Local incumbents like SadaPay and NayaPay are excluded by scope, except as conte
 | 2 | Fasset | Stablecoin neobank | Reported | ProPakistani, Fasset blog |
 | 3 | ZAR | Stablecoin wallet | Reported | Cointelegraph (October 2025) |
 | 4 | RedotPay | Stablecoin card | Reported | ProPakistani, SpendNode |
-| 5 | KAST | Stablecoin account and card | Reported | ProPakistani, SpendNode |
+| 5 | KAST | Stablecoin card | Reported | ProPakistani, SpendNode. Our team understands it gives no USD virtual account to Pakistani users |
 | 6 | ElevatePay | USD account | Reported | ProPakistani (2024) |
-| 7 | Sorbet (partner) | Stablecoin payments | Reported | Own pricing page names Pakistan as a payout destination |
+| 7 | Sorbet (partner, our pick) | Stablecoin payments | Says yes | Own pages list Pakistan and PKR payouts to local banks |
 | 8 | OKX Card | Exchange card | Reported | ProPakistani |
 | 9 | Bitget Wallet Card | Wallet card | Reported | ProPakistani |
 | 10 | Oobit | Stablecoin card | Reported | ProPakistani |
