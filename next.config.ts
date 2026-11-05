@@ -8,6 +8,9 @@ const OLD_TOPICS: [string, string][] = [["payments", "/topics/payments"], ["rail
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Lets phones and other devices on the local network load the dev server.
+  // Next.js blocks this by default, and the page then never becomes interactive.
+  allowedDevOrigins: ["192.168.*.*"],
   async redirects() {
     return [
       { source: "/insights/feed.xml", destination: "/rss.xml", permanent: true },
