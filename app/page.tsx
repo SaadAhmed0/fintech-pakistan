@@ -18,7 +18,7 @@ export const metadata = pageMetadata({
   absoluteTitle: true,
 });
 
-const TOPICS = ["STABLECOINS", "USD ACCOUNTS", "NEOBANKS", "PVARA", "SBP", "SECP", "FREELANCERS", "REMITTANCES"];
+const TOPICS = ["COMMUNITY MEETUPS", "BUILDING FINTECH IN PAKISTAN", "FOUNDER STORIES", "PRODUCT LAUNCHES", "JOBS AND OPPORTUNITIES", "FP LIVE", "THE RAILS SUMMIT", "ASK AND HELP"];
 
 export default function Home() {
   const news = getNews().slice(0, 3);
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="marquee" aria-label="Topics we cover">
+      <div className="marquee" aria-label="What happens at Fintech Pakistan">
         <div className="marquee-track">
           <div className="marquee-group">{TOPICS.map((t) => <span key={t}>{t}</span>)}</div>
           <div className="marquee-group" aria-hidden="true">{TOPICS.map((t) => <span key={t}>{t}</span>)}</div>
