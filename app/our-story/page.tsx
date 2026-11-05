@@ -13,7 +13,7 @@ export default function OurStory() {
   return (
     <>
       <JsonLd data={breadcrumbLd([{ name: "Our Story", path: "/our-story" }])} />
-      <PageHero id="story-title" eyebrow="Our story" title={<>Pakistan had no launch partner. <span className="soft">So we became one.</span></>} />
+      <PageHero id="story-title" title="Pakistan had no launch partner, so we became one" />
 
       <section className="block band paper" aria-label="Our story">
         <div className="article">
@@ -24,10 +24,10 @@ export default function OurStory() {
             <p>Pakistan had none of that. Crypto and fintech were taking off here, yet there wasn&apos;t a single place built to help a neobank launch in this market.</p>
             <p className="pull">If nobody was doing this for Pakistan, <em>why not us?</em></p>
             <p>So we decided to become that place. Fintech Pakistan is a home for the people building money here, and a launch partner for the companies coming to join them.</p>
-            <p>We&apos;re just getting started, and the room is open.</p>
+            <p>We&apos;re just getting started.</p>
           </div>
           <div className="ctas" style={{ marginTop: 36 }}>
-            <Link className="btn btn-ink" href="/team">Meet the team <span className="arrow">→</span></Link>
+            <Link className="btn btn-ink" href="/team">Meet the team</Link>
             <Link className="btn btn-ghost" href="/community" data-join>Join the community</Link>
           </div>
         </div>

@@ -14,9 +14,9 @@ export default function Guides() {
   return (
     <>
       <JsonLd data={breadcrumbLd([{ name: "Guides", path: "/guides" }])} />
-      <PageHero id="guides-title" eyebrow="Guides" title={<>How it works, <span className="soft">in plain English.</span></>}
+      <PageHero id="guides-title" title="Guides"
         lede="Explainers on stablecoins, USD accounts, payments and regulation in Pakistan. General information, not financial advice." />
-      <PostList posts={getGuides()} feature={false} />
+      <PostList posts={getGuides()} />
     </>
   );
 }

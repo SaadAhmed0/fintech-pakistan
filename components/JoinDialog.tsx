@@ -34,7 +34,7 @@ export default function JoinDialog() {
       <div className="join-dialog-body">
         <button className="join-close" type="button" aria-label="Close" onClick={close}><span aria-hidden="true">×</span></button>
         <span className="label">FP Community · Free</span>
-        <h2 id="join-title">Inside Pakistan&apos;s fintech room.</h2>
+        <h2 id="join-title">What happens in the community</h2>
         <p className="join-intro">A free WhatsApp community where founders, operators, regulators and banks talk fintech, share jobs and help each other out.</p>
         <ul className="join-list">
           {INSIDE.map((i) => (

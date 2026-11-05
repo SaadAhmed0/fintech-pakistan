@@ -39,7 +39,7 @@ export default function EditorialPolicy() {
   return (
     <>
       <JsonLd data={breadcrumbLd([{ name: "Editorial Policy", path: "/editorial-policy" }])} />
-      <PageHero id="policy-title" eyebrow="Editorial policy" title={<>How we decide <span className="soft">what we publish.</span></>}
+      <PageHero id="policy-title" title="Editorial policy"
         lede="Fintech Pakistan covers money, so accuracy comes first. These are the standards behind our news, guides and company directory." />
       <section className="block band paper" aria-label="Policy">
         <div className="article">

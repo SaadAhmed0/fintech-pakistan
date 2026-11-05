@@ -1,16 +1,15 @@
 import Link from "next/link";
 import { formatDate, type Post } from "@/lib/content";
 
-export default function PostCard({ post, featured = false, headingLevel = 3 }: { post: Post; featured?: boolean; headingLevel?: 2 | 3 }) {
+export default function PostCard({ post, headingLevel = 3 }: { post: Post; headingLevel?: 2 | 3 }) {
   const H = `h${headingLevel}` as "h2" | "h3";
   return (
-    <Link className={featured ? "card card-dark post featured" : "card card-light post"} href={post.path}>
-      {featured && <span className="big-block" aria-hidden="true"></span>}
+    <Link className="card post" href={post.path}>
       <span className="label">{post.tags[0]}{post.label && ` · ${post.label}`}</span>
       <H>{post.title}</H>
       <p>{post.description}</p>
       <span className="meta">
-        <time dateTime={post.date}>{formatDate(post.date).toUpperCase()}</time> · {post.readingTime} MIN READ
+        <time dateTime={post.date}>{formatDate(post.updated || post.date)}</time>{post.readingTime >= 3 && ` · ${post.readingTime} min read`}
       </span>
     </Link>
   );

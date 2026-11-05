@@ -3,11 +3,8 @@ import Link from "next/link";
 import Faqs from "./Faqs";
 import JsonLd from "./JsonLd";
 import LabelNotice from "./LabelNotice";
-import PostCard from "./PostCard";
-import ReadingProgress from "./ReadingProgress";
 import Share from "./Share";
-import Toc from "./Toc";
-import { formatDate, getCompany, getTopic, slugify, type Post } from "@/lib/content";
+import { formatDate, getAuthor, getCompany, getTopic, slugify, type Post } from "@/lib/content";
 import { articleLd, breadcrumbLd, faqLd } from "@/lib/seo";
 import { absoluteUrl } from "@/lib/site";
 
@@ -17,103 +14,97 @@ const SECTION = { news: "News", guides: "Guides" };
 export default function PostLayout({ post: p, related }: { post: Post; related: Post[] }) {
   const section = SECTION[p.kind];
   const companies = p.companies.map(getCompany).filter((c) => c !== undefined);
+  const author = getAuthor(p.authorSlug);
 
   return (
-    <article id="article">
+    <article className="art band">
       <JsonLd data={[
         articleLd(p),
         breadcrumbLd([{ name: section, path: `/${p.kind}` }, { name: p.title, path: p.path }]),
         ...(p.faqs.length ? [faqLd(p.faqs)] : []),
       ]} />
-      <ReadingProgress target="article" />
 
-      <section className="hero page-hero article-hero band" aria-labelledby="article-title">
-        <div className="wrap hero-inner">
-          <div>
-            <nav aria-label="Breadcrumb">
-              <ol className="crumbs">
-                <li><Link href="/">Home</Link></li>
-                <li><Link href={`/${p.kind}`}>{section}</Link></li>
-              </ol>
-            </nav>
-            <h1 id="article-title">{p.title}</h1>
-            <p className="lede">{p.description}</p>
-            <div className="article-meta">
-              <span>BY <Link href={`/authors/${p.authorSlug}`}>{p.author.toUpperCase()}</Link></span>
-              <time dateTime={p.published}>{formatDate(p.date).toUpperCase()}</time>
-              {p.updated && <span>UPDATED <time dateTime={p.updated}>{formatDate(p.updated).toUpperCase()}</time></span>}
-              <span>{p.readingTime} MIN READ</span>
-            </div>
+      <header className="art-head">
+        <nav aria-label="Breadcrumb">
+          <ol className="crumbs">
+            <li><Link href="/">Home</Link></li>
+            <li><Link href={`/${p.kind}`}>{section}</Link></li>
+          </ol>
+        </nav>
+        <h1>{p.title}</h1>
+        <p className="lede">{p.description}</p>
+        <p className="art-byline">
+          By <Link href={`/authors/${p.authorSlug}`}>{p.author}</Link>
+          {" · "}<time dateTime={p.published}>{formatDate(p.date)}</time>
+          {p.updated && <> · Updated <time dateTime={p.updated}>{formatDate(p.updated)}</time></>}
+          {p.readingTime >= 3 && ` · ${p.readingTime} min read`}
+        </p>
+      </header>
+
+      <div className="art-body">
+        {p.label && <LabelNotice label={p.label} />}
+        {p.coverImage && (
+          <div className="post-cover">
+            <Image src={p.coverImage} alt={p.coverAlt ?? ""} fill priority sizes="(max-width: 720px) 100vw, 680px" />
           </div>
-        </div>
-      </section>
+        )}
+        {p.keyPoints.length > 0 && (
+          <aside className="keypoints" aria-labelledby="keypoints-title">
+            <h2 id="keypoints-title">In short</h2>
+            <ul>{p.keyPoints.map((k) => <li key={k}>{k}</li>)}</ul>
+          </aside>
+        )}
+        <div className="article-body" dangerouslySetInnerHTML={{ __html: p.html }} />
 
-      <section className="block band paper" aria-label="Article">
-        <div className="article-layout">
-          <div className="article">
-            {p.label && <LabelNotice label={p.label} />}
-            {p.coverImage && (
-              <div className="post-cover">
-                <Image src={p.coverImage} alt={p.coverAlt ?? ""} fill priority sizes="(max-width: 780px) 100vw, 720px" />
-              </div>
-            )}
-            {p.headings.length > 1 && (
-              <details className="toc-mobile">
-                <summary>On this page</summary>
-                <ol>{p.headings.map((h) => <li key={h.id}><a href={`#${h.id}`}>{h.text}</a></li>)}</ol>
-              </details>
-            )}
-            <div className="article-body" dangerouslySetInnerHTML={{ __html: p.html }} />
+        {p.faqs.length > 0 && <Faqs faqs={p.faqs} />}
 
-            {p.faqs.length > 0 && <Faqs faqs={p.faqs} />}
+        {p.kind === "guides" && (
+          <p className="notice">This guide is general information, not financial, legal or tax advice. Rules, fees and availability change, so check with the provider and your own adviser before you act.</p>
+        )}
 
-            {p.kind === "guides" && (
-              <p className="notice">This guide is general information, not financial, legal or tax advice. Rules, fees and availability change, so check with the provider and your own adviser before you act.</p>
-            )}
+        {p.sources.length > 0 && (
+          <aside className="sources" aria-labelledby="sources-title">
+            <span className="label" id="sources-title">Sources</span>
+            <ol>{p.sources.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noopener">{s.title}</a></li>)}</ol>
+          </aside>
+        )}
 
-            {p.sources.length > 0 && (
-              <aside className="sources" aria-labelledby="sources-title">
-                <span className="label" id="sources-title" style={{ color: "var(--slate)" }}>Sources</span>
-                <ol>{p.sources.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noopener">{s.title}</a></li>)}</ol>
-              </aside>
-            )}
+        {author && <p className="author-box"><Link href={`/authors/${author.slug}`}>{author.name}</Link>: {author.bio}</p>}
 
-            <div className="article-foot">
-              {companies.length > 0 && (
-                <>
-                  <span className="label">Companies in this story</span>
-                  <div className="filters post-tags">
-                    {companies.map((c) => <Link key={c.slug} className="filter" href={c.path}>{c.name}</Link>)}
-                  </div>
-                </>
-              )}
-              <span className="label">Topics</span>
+        <div className="article-foot">
+          {companies.length > 0 && (
+            <>
+              <span className="label">Companies in this story</span>
               <div className="filters post-tags">
-                {p.tags.map((t) => {
-                  const topic = getTopic(slugify(t));
-                  return topic
-                    ? <Link key={t} className="filter" href={`/topics/${topic.slug}`}>{topic.name}</Link>
-                    : <span key={t} className="chip">{t}</span>;
-                })}
+                {companies.map((c) => <Link key={c.slug} className="filter" href={c.path}>{c.name}</Link>)}
               </div>
-              <span className="label">Share this</span>
-              <Share url={absoluteUrl(p.path)} title={p.title} />
-            </div>
+            </>
+          )}
+          <span className="label">Topics</span>
+          <div className="filters post-tags">
+            {p.tags.map((t) => {
+              const topic = getTopic(slugify(t));
+              return topic
+                ? <Link key={t} className="filter" href={`/topics/${topic.slug}`}>{topic.name}</Link>
+                : <span key={t} className="chip">{t}</span>;
+            })}
           </div>
-          <Toc headings={p.headings} />
+          <span className="label">Share</span>
+          <Share url={absoluteUrl(p.path)} title={p.title} />
         </div>
-      </section>
+      </div>
 
       {related.length > 0 && (
-        <section className="block band white" aria-labelledby="related-title">
-          <div className="wrap">
-            <div className="head">
-              <span className="label">Keep reading</span>
-              <h2 id="related-title">Related <span className="soft-accent">reads.</span></h2>
-            </div>
-            <div className="grid-3">{related.map((r) => <PostCard key={r.path} post={r} />)}</div>
+        <aside className="read-next" aria-labelledby="read-next-title">
+          <div className="read-next-inner">
+            <h2 id="read-next-title">Read next</h2>
+            <ol>
+              {related.map((r) => (
+                <li key={r.path}><Link href={r.path}><b>{r.title}</b><span>{r.description}</span></Link></li>
+              ))}
+            </ol>
           </div>
-        </section>
+        </aside>
       )}
     </article>
   );

@@ -13,15 +13,25 @@ Next.js (App Router) news and company directory covering stablecoin neobanks and
 | Comparisons | `content/compare/<a>-vs-<b>.md`, published at `/compare/<a>-vs-<b>` |
 | Topics | `content/topics/<slug>.md`, published at `/topics/<slug>` |
 | Authors | `content/authors/<slug>.md`, published at `/authors/<slug>` |
-| Cover images | `public/covers/` |
+| Cover images, when a post has a real one | `public/covers/` |
 | All content loading | `lib/content.ts` |
 | News and guide layout | `components/PostLayout.tsx` |
 | Partners (cards, partner pages, footer links) | `content/partners/<slug>.md`, logos in `public/partners/` |
 | Page copy | `app/<page>/page.tsx` |
-| Home hero map (geometry from Natural Earth) | `lib/pakistan-map.ts`, drawn by `components/PakistanMap.tsx` |
+| Map on the company directory (geometry from Natural Earth) | `lib/pakistan-map.ts`, drawn by `components/PakistanMap.tsx` |
 | Design tokens and all styles | `app/globals.css` (`:root` block at the top) |
 | SEO helpers and structured data | `lib/seo.ts` |
 | Social share image design | `lib/og.tsx` |
+
+## Design rules (apply to every edit)
+
+This is a publication, not a product page.
+
+- Headlines lead. Use images only when they show something real, never as decoration.
+- Serif for reading, sans for navigation, one green accent. Lime appears only in the logo.
+- No animation, gradients, shadows on content, or two-tone headlines. Lines, not boxes.
+- Headlines say plainly what the section or story is. No slogans.
+- Show reading time only from three minutes up.
 
 ## Content rules (apply to every edit)
 
@@ -49,6 +59,8 @@ coverImage: ""           # optional, such as /covers/my-post.webp in public/ (16
 coverAlt: ""             # required when coverImage is set
 draft: false             # true hides it from the production build
 label: ""                # Partner or Sponsored on any paid or client content
+lead: false              # true puts this at the top of the homepage. Keep it on one post
+keyPoints: []            # optional, 3 or 4 short points shown as "In short"
 faqs: []                 # optional: - q: "Question" then a: "Answer". Adds FAQ schema
 sources:
   - title: "Publisher, Headline (date)"

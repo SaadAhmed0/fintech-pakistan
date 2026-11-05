@@ -13,7 +13,7 @@ export const AVAILABILITY: Record<Availability, string> = {
 export default function CompanyCard({ company: c, headingLevel = 3 }: { company: CompanyCardData; headingLevel?: 2 | 3 }) {
   const H = `h${headingLevel}` as "h2" | "h3";
   return (
-    <Link className={c.pick ? "card card-light ccard ccard-pick" : "card card-light ccard"} href={c.path}>
+    <Link className={c.pick ? "card ccard ccard-pick" : "card ccard"} href={c.path}>
       <span className="label">{c.pick ? "Our pick for Pakistan" : AVAILABILITY[c.pakistanAvailability]}{c.label && ` · ${c.label}`}</span>
       <H>{c.name}</H>
       <p>{c.description}</p>

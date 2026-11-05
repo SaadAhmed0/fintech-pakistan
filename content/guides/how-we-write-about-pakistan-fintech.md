@@ -5,8 +5,8 @@ date: 2026-11-05
 updated: ""
 author: FP Admin
 tags: [From us, How we work]
-coverImage: "/covers/how-we-write-about-pakistan-fintech.webp"
-coverAlt: "Pixel-block map of the payment corridors linking Pakistan with Riyadh, Dubai and Singapore"
+coverImage: ""
+coverAlt: ""
 draft: false
 label: ""
 faqs: []

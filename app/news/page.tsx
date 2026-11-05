@@ -14,7 +14,7 @@ export default function News() {
   return (
     <>
       <JsonLd data={breadcrumbLd([{ name: "News", path: "/news" }])} />
-      <PageHero id="news-title" eyebrow="News" title={<>What&apos;s moving <span className="soft">Pakistan&apos;s money.</span></>}
+      <PageHero id="news-title" title="News"
         lede="Launches, funding and regulation for stablecoin neobanks and fintechs entering or serving Pakistan. Every number links back to where it came from." />
       <PostList posts={getNews()} />
     </>

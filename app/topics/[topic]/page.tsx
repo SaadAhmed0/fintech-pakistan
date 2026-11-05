@@ -32,7 +32,7 @@ export default async function TopicPage({ params }: Props) {
   return (
     <>
       <JsonLd data={breadcrumbLd([{ name: "Topics", path: "/topics" }, { name: t.name, path: `/topics/${t.slug}` }])} />
-      <PageHero id="topic-title" eyebrow="Topic" title={<>{t.name} <span className="soft">in Pakistan.</span></>} lede={t.description} />
+      <PageHero id="topic-title" title={`${t.name} in Pakistan`} lede={t.description} />
       <section className="block band paper" aria-label="Overview">
         <div className="article"><div className="article-body" dangerouslySetInnerHTML={{ __html: t.html }} /></div>
       </section>

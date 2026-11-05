@@ -13,7 +13,7 @@ export default function Partners({ headingLevel = 3 }: { headingLevel?: 2 | 3 })
             <span className="label">{p.type}</span>
             <H>{p.name}</H>
             <span className="pcard-focus">{p.focus}</span>
-            <span className="go">VIEW PARTNER →</span>
+            <span className="go">View partner</span>
           </span>
         </Link>
       ))}

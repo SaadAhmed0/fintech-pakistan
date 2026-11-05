@@ -1,14 +1,7 @@
 import Link from "next/link";
-import HeroGrid from "@/components/HeroGrid";
-import CycleWord from "@/components/CycleWord";
-import PostCard from "@/components/PostCard";
-import { GhostF } from "@/components/Mark";
-import { getGuides, getNews } from "@/lib/content";
+import { formatDate, getAllPosts, getTopics, type Post } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
 import { site, summitWhen } from "@/lib/site";
-import Partners from "@/components/Partners";
-import PakistanMap from "@/components/PakistanMap";
-import CorridorMap from "@/components/CorridorMap";
 
 export const metadata = pageMetadata({
   title: "Fintech Pakistan: Fintech News and Company Directory",
@@ -17,152 +10,92 @@ export const metadata = pageMetadata({
   absoluteTitle: true,
 });
 
-const TOPICS = ["COMMUNITY MEETUPS", "BUILDING FINTECH IN PAKISTAN", "FOUNDER STORIES", "PRODUCT LAUNCHES", "JOBS AND OPPORTUNITIES", "FP LIVE", "THE RAILS SUMMIT", "ASK AND HELP"];
+const NUMBERS = [
+  { value: "92%", text: "of retail payments were digital, January to March 2026", href: "/news/pakistan-digital-payments-92-percent" },
+  { value: "2.76B", text: "Raast payments in FY26, on provisional figures", href: "/guides/raast-instant-payments-explained" },
+  { value: "$41.6B", text: "in workers' remittances in FY26, a record", href: "/news/pakistan-remittances-fy26-record" },
+  { value: "11", text: "licence categories under PVARA's regime", href: "/guides/pvara-virtual-asset-licensing" },
+];
+
+const byline = (p: Post) => `${p.author} · ${formatDate(p.updated || p.date)}${p.readingTime >= 3 ? ` · ${p.readingTime} min read` : ""}`;
 
 export default function Home() {
-  const news = getNews().slice(0, 3);
-  const guides = getGuides().slice(0, 3);
+  // Posts about ourselves stay out of the front page. It leads with reporting.
+  const stories = getAllPosts().filter((p) => !p.tags.includes("From us") || p.label);
+  const lead = stories.find((p) => p.lead) ?? stories[0];
+  const rest = stories.filter((p) => p !== lead);
+  const features = rest.filter((p) => p.readingTime >= 3).slice(0, 2);
+  const latest = rest.filter((p) => !features.includes(p)).slice(0, 5);
+  const summit = summitWhen();
+
   return (
-    <>
-      <section className="hero home-hero band" aria-labelledby="home-title">
-        <HeroGrid />
-        <div className="wrap hero-inner">
+    <div className="band paper">
+      <div className="wrap">
+        <div className="front-title">
+          <h1>Pakistan&apos;s fintech, tracked.</h1>
+          <p>News, guides and a company directory, with every number sourced.</p>
+        </div>
+
+        <div className="front">
           <div>
-            <span className="label eyebrow">News · Companies · Guides</span>
-            <h1 id="home-title">Pakistan&apos;s fintech, <span className="soft">tracked.</span></h1>
-            <CycleWord />
-            <p className="lede">{site.description}</p>
-            <div className="ctas">
-              <Link className="btn btn-signal" href="/news">Read the latest news <span className="arrow">→</span></Link>
-              <Link className="btn btn-ghost" href="/companies">Browse companies</Link>
-            </div>
+            <article>
+              <Link className="lead-story" href={lead.path}>
+                <span className="label">{lead.tags[0]}</span>
+                <h2>{lead.title}</h2>
+                <p className="dek">{lead.description}</p>
+                <p className="meta">{byline(lead)}</p>
+              </Link>
+            </article>
+            {features.length > 0 && (
+              <div className="features">
+                {features.map((p) => (
+                  <article key={p.path}>
+                    <Link className="feature" href={p.path}>
+                      <span className="label">{p.tags[0]}</span>
+                      <h3>{p.title}</h3>
+                      <p>{p.description}</p>
+                      <span className="meta">{byline(p)}</span>
+                    </Link>
+                  </article>
+                ))}
+              </div>
+            )}
           </div>
-          <PakistanMap />
-        </div>
-      </section>
 
-      <div className="marquee" aria-label="What happens at Fintech Pakistan">
-        <div className="marquee-track">
-          <div className="marquee-group">{TOPICS.map((t) => <span key={t}>{t}</span>)}</div>
-          <div className="marquee-group" aria-hidden="true">{TOPICS.map((t) => <span key={t}>{t}</span>)}</div>
+          <aside className="rail" aria-label="Latest">
+            <h2>Latest</h2>
+            <ol>
+              {latest.map((p) => (
+                <li key={p.path}><Link href={p.path}><b>{p.title}</b><time dateTime={p.date}>{p.tags[0]}{p.label && ` · ${p.label}`} · {formatDate(p.updated || p.date)}</time></Link></li>
+              ))}
+            </ol>
+            <div className="rail-note">
+              <b>Join the community</b>
+              <p>A free WhatsApp group for people working in fintech in Pakistan.</p>
+              <Link className="btn btn-ink" href="/community" data-join>How to join</Link>
+            </div>
+          </aside>
         </div>
+
+        <section className="section-line" aria-labelledby="home-numbers">
+          <h2 id="home-numbers">The numbers</h2>
+          <div className="numbers">
+            {NUMBERS.map((n) => <Link key={n.value} className="stat" href={n.href}><b>{n.value}</b><span>{n.text}</span></Link>)}
+          </div>
+        </section>
+
+        <section className="section-line" aria-labelledby="home-topics">
+          <h2 id="home-topics">Browse by topic</h2>
+          <div className="filters">
+            {getTopics().map((t) => <Link key={t.slug} className="filter" href={`/topics/${t.slug}`}>{t.name}</Link>)}
+          </div>
+        </section>
+
+        <section className="section-line" aria-labelledby="home-events">
+          <h2 id="home-events"><Link href="/events">Events</Link></h2>
+          <p className="dek-line">{site.summit.name}, {summit.charAt(0) + summit.slice(1).toLowerCase()}. Our flagship event on the infrastructure under Pakistan&apos;s money.</p>
+        </section>
       </div>
-
-      <section className="block band paper" aria-labelledby="home-latest">
-        <div className="wrap">
-          <div className="head">
-            <span className="label">News</span>
-            <h2 id="home-latest">Latest from <span className="soft-accent">Pakistan&apos;s fintech.</span></h2>
-            <p>Launches, funding and regulation, with every claim sourced.</p>
-          </div>
-          <div className="grid-3">{news.map((p) => <PostCard key={p.path} post={p} />)}</div>
-          <div className="ctas" style={{ marginTop: 32 }}><Link className="btn btn-ink" href="/news">All news <span className="arrow">→</span></Link></div>
-        </div>
-      </section>
-
-      <section className="block band paper" aria-labelledby="home-guides">
-        <div className="wrap">
-          <div className="head">
-            <span className="label">Guides</span>
-            <h2 id="home-guides">How it works, <span className="soft-accent">in plain English.</span></h2>
-          </div>
-          <div className="grid-3">{guides.map((p) => <PostCard key={p.path} post={p} />)}</div>
-          <div className="ctas" style={{ marginTop: 32 }}><Link className="btn btn-ink" href="/guides">All guides <span className="arrow">→</span></Link></div>
-        </div>
-      </section>
-
-      <section className="block band white on-light" aria-labelledby="home-numbers">
-        <div className="wrap">
-          <div className="head">
-            <span className="label">By the numbers</span>
-            <h2 id="home-numbers">Pakistan&apos;s money, <span className="soft-accent">right now.</span></h2>
-            <p>The latest public figures on how Pakistan pays, sends and regulates money. Each one opens the article it comes from.</p>
-          </div>
-          <div className="grid-4">
-            <Link className="stat" href="/news/pakistan-digital-payments-92-percent">
-              <span className="num"><span className="count" data-to="92" data-dec="0">92</span><em>%</em></span>
-              <p>of retail payments were digital, January to March 2026</p>
-              <span className="src">STATE BANK OF PAKISTAN →</span>
-            </Link>
-            <Link className="stat" href="/guides/raast-instant-payments-explained">
-              <span className="num"><span className="count" data-to="742.1" data-dec="1">742.1</span><em>M</em></span>
-              <p>Raast instant payments in a single quarter, January to March 2026</p>
-              <span className="src">STATE BANK OF PAKISTAN →</span>
-            </Link>
-            <Link className="stat" href="/news/pakistan-remittances-fy26-record">
-              <span className="num"><em>$</em><span className="count" data-to="41.6" data-dec="1">41.6</span><em>B</em></span>
-              <p>in workers&apos; remittances in FY26, a record year</p>
-              <span className="src">STATE BANK OF PAKISTAN →</span>
-            </Link>
-            <Link className="stat" href="/guides/pvara-virtual-asset-licensing">
-              <span className="num"><span className="count" data-to="10" data-dec="0">10</span></span>
-              <p>licence categories under Pakistan&apos;s new virtual asset regime</p>
-              <span className="src">PVARA · AUG 2026 →</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="block band paper on-light" aria-labelledby="home-community">
-        <div className="wrap split top">
-          <div className="prose">
-            <span className="label" style={{ color: "var(--slate)" }}>FP Community</span>
-            <h2 id="home-community" style={{ marginTop: 20 }}>Pakistan&apos;s fintech <span className="soft-accent">finally has a room.</span></h2>
-            <p>Four focused channels, so you get the conversations you care about without the noise.</p>
-            <div className="chips" style={{ marginTop: 28 }}>
-              <span className="chip">General</span><span className="chip">News &amp; Regulation</span><span className="chip">Ask &amp; Help</span><span className="chip">Jobs &amp; Opportunities</span>
-            </div>
-          </div>
-          <div className="join-card">
-            <h3>The room is open. <span className="soft">Pull up a chair.</span></h3>
-            <p>Free for anyone working in or around fintech in Pakistan.</p>
-            <ul className="ticks">
-              <li>News, founder stories and regulation in one place</li>
-              <li>Monthly meetups with people building the same things</li>
-              <li>First to hear about FP Live events</li>
-            </ul>
-            <Link className="btn btn-signal" href="/community" data-join>How to join <span className="arrow">→</span></Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="block band dark" aria-labelledby="home-corridors">
-        <div className="wrap corridors">
-          <div className="prose">
-            <span className="label" style={{ color: "var(--mist-2)" }}>PK · MENA · SEA</span>
-            <h2 id="home-corridors" style={{ marginTop: 20 }}>Money crosses borders. <span className="soft soft-accent">So do we.</span></h2>
-            <p>Pakistan&apos;s financial story runs through the Gulf and Southeast Asia. In May 2026, Saudi Arabia and the UAE together sent $2.04 billion of a record $4.25 billion in monthly remittances.</p>
-            <div className="ctas" style={{ marginTop: 32 }}><Link className="btn btn-signal" href="/news/pakistan-remittances-fy26-record">Read the remittance story <span className="arrow">→</span></Link></div>
-          </div>
-          <CorridorMap />
-        </div>
-      </section>
-
-      <section className="block band white" aria-labelledby="home-stage">
-        <div className="wrap">
-          <div className="head">
-            <span className="label">On stage</span>
-            <h2 id="home-stage">Read up, <span className="soft-accent">then show up.</span></h2>
-          </div>
-          <Link className="event compact" href="/events">
-            <GhostF fill="#13201A" />
-            <div className="top"><span className="live">LIVE</span><span className="when">{summitWhen()}</span></div>
-            <h3>The Rails <span className="soft">Summit.</span></h3>
-            <p>Our flagship event on the infrastructure under Pakistan&apos;s money.</p>
-          </Link>
-        </div>
-      </section>
-
-      <section className="block band white" aria-labelledby="home-partners">
-        <div className="wrap">
-          <div className="head">
-            <span className="label">Partners</span>
-            <h2 id="home-partners">In good <span className="soft-accent">company.</span></h2>
-            <p>We work with companies that want to build Pakistan&apos;s fintech ecosystem, not just sell into it.</p>
-          </div>
-          <Partners />
-        </div>
-      </section>
-    </>
+    </div>
   );
 }

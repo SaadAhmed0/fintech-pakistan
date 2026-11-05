@@ -108,7 +108,7 @@ export default async function PartnerPage({ params }: Props) {
                 )}
               </dl>
             </div>
-            <Link className="btn btn-ink" href="/contact?topic=Partnership">Become a partner <span className="arrow">→</span></Link>
+            <Link className="btn btn-ink" href="/contact?topic=Partnership">Become a partner</Link>
           </div>
         </div>
       </section>
@@ -117,8 +117,7 @@ export default async function PartnerPage({ params }: Props) {
         <section className="block band white" aria-labelledby="related-title">
           <div className="wrap">
             <div className="head">
-              <span className="label">Related reading</span>
-              <h2 id="related-title">From our <span className="soft-accent">newsroom.</span></h2>
+              <h2 id="related-title">From our newsroom</h2>
             </div>
             <div className="grid-3">{related.map((r) => <PostCard key={r.slug} post={r} />)}</div>
           </div>
@@ -128,8 +127,7 @@ export default async function PartnerPage({ params }: Props) {
       <section className="block band paper" aria-labelledby="more-partners">
         <div className="wrap">
           <div className="head">
-            <span className="label">Our partners</span>
-            <h2 id="more-partners">In good <span className="soft-accent">company.</span></h2>
+            <h2 id="more-partners">Other partners</h2>
           </div>
           <PartnersGrid />
         </div>

@@ -31,6 +31,8 @@ export type Post = {
   coverAlt?: string;
   draft: boolean;
   label: Label;
+  lead: boolean;
+  keyPoints: string[];
   sources: Source[];
   faqs: Faq[];
   companies: string[];
@@ -311,6 +313,8 @@ function loadPost(kind: PostKind, file: string): Post {
     coverAlt,
     draft: data.draft,
     label: data.label || "",
+    lead: Boolean(data.lead),
+    keyPoints: data.keyPoints || [],
     sources: data.sources || [],
     faqs: data.faqs || [],
     companies: mentioned,

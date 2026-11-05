@@ -1,9 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import { Instrument_Sans, Newsreader } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Closing from "@/components/Closing";
-import Reveal from "@/components/Reveal";
 import JoinDialog from "@/components/JoinDialog";
 import SearchDialog from "@/components/SearchDialog";
 import JsonLd from "@/components/JsonLd";
@@ -12,9 +11,8 @@ import { organizationLd, websiteLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", display: "optional" });
+const serif = Newsreader({ subsets: ["latin"], variable: "--font-serif", display: "optional" });
 const body = Instrument_Sans({ subsets: ["latin"], variable: "--font-body", display: "optional" });
-const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -35,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0B1510",
+  themeColor: "#FBFAF6",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -43,7 +41,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-PK" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en-PK" className={`${serif.variable} ${body.variable}`}>
       <body>
         <a className="skip" href="#main">Skip to content</a>
         <MarkDefs />
@@ -54,7 +52,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Closing />
         </main>
         <Footer />
-        <Reveal />
         <JoinDialog />
         <SearchDialog />
       </body>

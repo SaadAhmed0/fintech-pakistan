@@ -14,22 +14,21 @@ export default function Contact() {
   return (
     <>
       <JsonLd data={breadcrumbLd([{ name: "Contact", path: "/contact" }])} />
-      <PageHero id="contact-title" eyebrow="Contact" title={<>Talk <span className="soft">to us.</span></>}
+      <PageHero id="contact-title" title="Contact"
         lede="For partnerships, press, speaking or anything else, the quickest way to reach us is on LinkedIn.">
         <div className="ctas">
-          <a className="btn btn-signal" href={site.contactLinkedin} target="_blank" rel="noopener">Connect on LinkedIn <span className="arrow">→</span></a>
+          <a className="btn btn-signal" href={site.contactLinkedin} target="_blank" rel="noopener">Connect on LinkedIn</a>
         </div>
       </PageHero>
 
       <section className="block band white" aria-labelledby="contact-other">
         <div className="wrap">
           <div className="head">
-            <span className="label">Other ways in</span>
             <h2 id="contact-other">Already know <span className="soft-accent">what you need?</span></h2>
           </div>
           <div className="grid-2">
-            <Link className="card card-dark" href="/community"><span className="label">Community</span><h3>Join on WhatsApp</h3><p>Questions about the industry are best asked in Ask &amp; Help.</p><span className="go">JOIN FREE →</span></Link>
-            <Link className="card card-dark" href="/partners"><span className="label">Partners</span><h3>See how we work</h3><p>Formats, audiences and how a partnership runs from first call to launch.</p><span className="go">PARTNERS →</span></Link>
+            <Link className="card" href="/community"><span className="label">Community</span><h3>Join on WhatsApp</h3><p>Questions about the industry are best asked in Ask &amp; Help.</p><span className="go">Join free</span></Link>
+            <Link className="card" href="/partners"><span className="label">Partners</span><h3>See how we work</h3><p>Formats, audiences and how a partnership runs from first call to launch.</p><span className="go">Partners</span></Link>
           </div>
         </div>
       </section>

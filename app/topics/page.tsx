@@ -14,11 +14,11 @@ export default function Topics() {
   return (
     <>
       <JsonLd data={breadcrumbLd([{ name: "Topics", path: "/topics" }])} />
-      <PageHero id="topics-title" eyebrow="Topics" title={<>Everything we cover, <span className="soft">by topic.</span></>} />
+      <PageHero id="topics-title" title="Topics" />
       <section className="block band paper" aria-label="Topics">
         <div className="wrap grid-3">
           {getTopics().map((t) => (
-            <Link key={t.slug} className="card card-light" href={`/topics/${t.slug}`}><h2>{t.name}</h2><p>{t.description}</p></Link>
+            <Link key={t.slug} className="card" href={`/topics/${t.slug}`}><h2>{t.name}</h2><p>{t.description}</p></Link>
           ))}
         </div>
       </section>

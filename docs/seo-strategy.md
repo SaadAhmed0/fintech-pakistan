@@ -215,5 +215,5 @@ Local incumbents like SadaPay and NayaPay are excluded by scope, except as conte
 - **No public register found:** PVARA's FAQ says it publishes a public register of licensees, but we could not find its URL. Until we do, `pvaraStatus` stays empty on every profile.
 - **Karsa:** on 5 November 2026 gokarsa.com showed only a "Karsa | Export your wallet" page. Confirm its status before stating anything about its current product.
 - **Authorship:** Google News and YMYL content both favour named people. FP Admin works for launch, and real bylines should follow.
-- **Thin existing posts:** all eight posts are under 300 words.
+- **Thin existing posts:** five of the eight posts are still under 300 words.
 - **Conflict of interest:** partner companies appear in the directory with a Partner label. Keep this consistent as client work grows.

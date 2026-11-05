@@ -15,7 +15,7 @@ export default function Search() {
   return (
     <>
       <JsonLd data={breadcrumbLd([{ name: "Search", path: "/search" }])} />
-      <PageHero id="search-title" eyebrow="Search" title={<>Find a company, <span className="soft">guide or story.</span></>} />
+      <PageHero id="search-title" title="Search" />
       <section className="block band paper" aria-label="Search">
         <div className="wrap"><Suspense><SearchClient /></Suspense></div>
       </section>

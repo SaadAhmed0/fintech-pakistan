@@ -101,7 +101,6 @@ export default async function CompanyPage({ params }: Props) {
         <section className="block band white" aria-labelledby="company-news">
           <div className="wrap">
             <div className="head">
-              <span className="label">Latest</span>
               <h2 id="company-news">News about <span className="soft-accent">{c.name}.</span></h2>
             </div>
             <div className="grid-3">{news.map((p) => <PostCard key={p.path} post={p} />)}</div>
