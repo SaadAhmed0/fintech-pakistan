@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { formatDate, type Post } from "@/lib/posts";
+import { formatDate, type Post } from "@/lib/content";
 
 export default function PostCard({ post, featured = false, headingLevel = 3 }: { post: Post; featured?: boolean; headingLevel?: 2 | 3 }) {
   const H = `h${headingLevel}` as "h2" | "h3";
   return (
-    <Link className={featured ? "card card-dark post featured" : "card card-light post"} href={`/insights/${post.slug}`}>
+    <Link className={featured ? "card card-dark post featured" : "card card-light post"} href={post.path}>
       {featured && <span className="big-block" aria-hidden="true"></span>}
-      <span className="label">{post.tag}</span>
+      <span className="label">{post.tags[0]}{post.label && ` · ${post.label}`}</span>
       <H>{post.title}</H>
       <p>{post.description}</p>
       <span className="meta">

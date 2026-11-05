@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Heading } from "@/lib/posts";
+import type { Heading } from "@/lib/content";
 
 export default function Toc({ headings }: { headings: Heading[] }) {
   const [active, setActive] = useState(headings[0]?.id);

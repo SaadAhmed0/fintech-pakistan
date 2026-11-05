@@ -3,11 +3,11 @@ import PageHero from "@/components/PageHero";
 import JsonLd from "@/components/JsonLd";
 import Partners from "@/components/Partners";
 import { breadcrumbLd, pageMetadata } from "@/lib/seo";
-import { getPartners } from "@/lib/partners";
+import { getPartners } from "@/lib/content";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata = pageMetadata({
-  title: "Partner With Fintech Pakistan: Events, Community and Launches",
+  title: "Partner With Fintech Pakistan: Events and Community",
   description: "Fintech Pakistan partners include Sorbet, Karsa and Crypto Awaz. Reach Pakistan's fintech founders, operators, banks and investors through events and community.",
   path: "/partners",
 });

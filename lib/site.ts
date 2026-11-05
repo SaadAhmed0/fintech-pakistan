@@ -9,26 +9,27 @@ export const site = {
   url: (process.env.NEXT_PUBLIC_SITE_URL || "https://fintechpakistan.com").replace(/\/$/, ""),
   tagline: "Where Pakistan's fintech connects.",
   description:
-    "The community, stage and voice of fintech in Pakistan, and the markets it connects to. For the founders, operators and regulators shaping how money moves here.",
+    "News and a company directory covering stablecoin neobanks and fintechs entering or serving Pakistan, from launches and funding to SBP, PVARA and SECP rules.",
   locale: "en_PK",
   language: "en",
 
   // Leave empty until ready. Empty values hide the related buttons instead of
   // showing a broken link.
   contactEmail: "",
+  // The contact page sends people here until there is a contact form.
+  contactLinkedin: "https://www.linkedin.com/in/naumanmurad/",
   whatsappInvite: "https://chat.whatsapp.com/HK87C1F5LOJ1njo4MHvZPg",
   social: {
     linkedin: "",
     x: "",
     youtube: "",
-    spotify: "",
   },
 
   // Shown on /team and in the Organization schema. Empty bio or linkedin values
   // are hidden on the page.
   team: [
-    { name: "Nauman Ali Murad", role: "Co-founder", bio: "", linkedin: "" },
-    { name: "Saad Ahmed Siddiqui", role: "Co-founder", bio: "", linkedin: "" },
+    { name: "Nauman Ali Murad", role: "Co-founder", bio: "", linkedin: "https://www.linkedin.com/in/naumanmurad/" },
+    { name: "Saad Ahmed Siddiqui", role: "Co-founder", bio: "", linkedin: "https://www.linkedin.com/in/saad-ahmed-siddiqui-9ab86819b/" },
   ],
 
   summit: {
@@ -42,11 +43,12 @@ export const site = {
 };
 
 export const nav = [
+  { href: "/news", label: "News" },
+  { href: "/companies", label: "Companies" },
+  { href: "/guides", label: "Guides" },
   { href: "/community", label: "Community" },
   { href: "/events", label: "Events" },
-  { href: "/insights", label: "Insights" },
   { href: "/partners", label: "Partners" },
-  { href: "/about", label: "About" },
   { href: "/our-story", label: "Our Story" },
   { href: "/team", label: "Team" },
   { href: "/contact", label: "Contact" },

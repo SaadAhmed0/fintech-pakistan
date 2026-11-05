@@ -59,11 +59,11 @@ export function GhostF({ fill = "#13291E" }: { fill?: string }) {
 export function Equation() {
   return (
     <div className="equation" aria-hidden="true">
-      <svg viewBox="0 0 100 100"><use href="#Fsolid" fill="#0B1510" /></svg>
+      <svg viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="#0B1510" /><use href="#Fsolid" fill="#F3F4EE" /></svg>
       <span className="op">+</span>
-      <svg viewBox="0 0 100 100"><rect className="eq-piece" x="34" y="34" width="32" height="32" rx="4" fill="#0B6B43" /></svg>
+      <svg viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="#0B1510" /><rect className="eq-piece" x="44" y="44" width="12" height="12" rx="1.5" fill="#C6F24E" /></svg>
       <span className="op">=</span>
-      <svg viewBox="0 0 100 100"><use href="#Fsolid" fill="#0B1510" /><rect className="eq-block" x="65" y="30" width="12" height="12" rx="1.5" fill="#0B6B43" /></svg>
+      <svg viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="#0B6B43" /><use href="#Fsolid" fill="#F3F4EE" /><rect className="eq-block" x="65" y="30" width="12" height="12" rx="1.5" fill="#C6F24E" /></svg>
     </div>
   );
 }

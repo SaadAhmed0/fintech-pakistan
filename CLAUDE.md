@@ -1,13 +1,21 @@
 # Fintech Pakistan website
 
-Next.js (App Router) site for Fintech Pakistan. Every page is statically generated.
+Next.js (App Router) news and company directory covering stablecoin neobanks and fintechs entering or serving Pakistan. Every page is statically generated. Local incumbents like SadaPay and NayaPay are covered only as context. SEO plan: `docs/seo-strategy.md`.
 
 ## Where things live
 
 | What | Where |
 | --- | --- |
 | Site settings (URL, contact email, WhatsApp link, socials, team, Rails Summit date) | `lib/site.ts` |
-| Articles (Insights) | `content/insights/<slug>.md` |
+| News | `content/news/<slug>.md`, published at `/news/<slug>` |
+| Guides | `content/guides/<slug>.md`, published at `/guides/<slug>` |
+| Company directory | `content/companies/<slug>.md`, published at `/companies/<slug>` |
+| Comparisons | `content/compare/<a>-vs-<b>.md`, published at `/compare/<a>-vs-<b>` |
+| Topics | `content/topics/<slug>.md`, published at `/topics/<slug>` |
+| Authors | `content/authors/<slug>.md`, published at `/authors/<slug>` |
+| Cover images | `public/covers/` |
+| All content loading | `lib/content.ts` |
+| News and guide layout | `components/PostLayout.tsx` |
 | Partners (cards, partner pages, footer links) | `content/partners/<slug>.md`, logos in `public/partners/` |
 | Page copy | `app/<page>/page.tsx` |
 | Home hero map (geometry from Natural Earth) | `lib/pakistan-map.ts`, drawn by `components/PakistanMap.tsx` |
@@ -25,20 +33,23 @@ Next.js (App Router) site for Fintech Pakistan. Every page is statically generat
 
 ## Adding an article
 
-Use the `write-insight` skill (`.claude/skills/write-insight/SKILL.md`). In short: create `content/insights/<keyword-rich-slug>.md` with the frontmatter below, use `##` for section headings (they build the table of contents), then run `npm run build` to check it.
+Use the `write-insight` skill (`.claude/skills/write-insight/SKILL.md`). In short: copy `content/news/_template.md` or `content/guides/_template.md` to `<keyword-rich-slug>.md` in the same folder, fill in the frontmatter, use `##` for section headings (they build the table of contents), then run `npm run build` to check it. The post appears in the sitemap, `/rss.xml`, the news sitemap (news only, for two days) and matching topic pages with no extra work.
+
+The build fails if a required field is missing, the description is outside 150 to 160 characters, the filename isn't a clean slug, the author has no file in `content/authors/`, or a cover image has no alt text. `draft: true` keeps a post out of production builds (it still shows under `npm run dev`).
 
 ```yaml
 ---
-title: "Headline shown on the page"
-seoTitle: "Optional, under 60 characters, for Google results"
-description: "One or two sentences, 120 to 160 characters. Used as the dek and meta description."
-tag: Payments            # existing tags: Payments, Rails, Banking, Corridors, Regulation, From us
-date: 2026-10-22         # publish date, YYYY-MM-DD
-updated: 2026-11-01      # optional, set when facts change
-author: Fintech Pakistan # optional
-featured: false          # true puts it in the big card on /insights
+title: "Headline shown on the page"   # stay within 60 characters where you can
+description: "150 to 160 characters. Used as the meta description, social text and intro."
+date: 2026-10-22         # news: include the time, such as 2026-10-22T14:30:00+05:00
+updated: ""              # YYYY-MM-DD when facts change
+author: FP Admin         # must match a file in content/authors/
+tags: [Stablecoins]      # first tag is the main one. Tags matching content/topics link to that topic
+coverImage: ""           # optional, such as /covers/my-post.webp in public/ (1600 x 900)
+coverAlt: ""             # required when coverImage is set
 draft: false             # true hides it from the production build
-keywords: [primary keyword, secondary keyword]
+label: ""                # Partner or Sponsored on any paid or client content
+faqs: []                 # optional: - q: "Question" then a: "Answer". Adds FAQ schema
 sources:
   - title: "Publisher, Headline (date)"
     url: "https://..."
@@ -50,7 +61,15 @@ Optional rich blocks inside the Markdown (raw HTML):
 - Pull quote: `<p class="pull">Plain part. <em>Highlighted part.</em></p>`
 - Timeline: `<ul class="timeline"><li><span class="when">March 2026</span><span>What happened.</span></li></ul>`
 - Status list: `<ul class="status"><li><b>Name</b><span class="pill live-pill">Live</span><p>Detail.</p></li></ul>` (pill classes: `live-pill`, `pilot`, or none)
-- Internal links: `[Read how Raast works](/insights/raast-instant-payments-explained)`. Link related articles to each other; it helps SEO.
+- Internal links: `[Read how Raast works](/guides/raast-instant-payments-explained)`. Link related articles to each other; it helps SEO.
+
+## Adding a company
+
+Copy `content/companies/_template.md`. Never guess: leave unconfirmed fields empty and the page shows "Needs verification". Use `pakistanAvailability: yes` only when the company says so itself, and `reported` when only a third party does. Any paid or client relationship needs `label: Partner` or `label: Sponsored`. A profile stays `noindex` and out of the sitemap until it has an availability value, a `lastVerified` date, two or more sources and 60+ words in the body. The first mention of a company in any post links to its profile automatically, using its name and `aliases`.
+
+## Adding a comparison
+
+A comparison page only exists if `content/compare/<a>-vs-<b>.md` exists (copy the template). Both companies need files, and the body needs 250+ words of real analysis. Never generate comparison pages from pairs of companies.
 
 ## Adding or editing a partner
 
@@ -78,7 +97,7 @@ Body: `## About <name>`, then what they do and what the partnership covers. Only
 
 ## SEO that is automatic
 
-Canonical URLs, Open Graph and Twitter tags, a branded share image per article, `sitemap.xml`, `robots.txt`, RSS at `/insights/feed.xml`, and JSON-LD (Organization, WebSite, Blog, Article, BreadcrumbList, FAQPage, and Event once `site.summit.date` is set). New articles and topics appear in all of these with no extra work.
+Canonical URLs, Open Graph and Twitter tags, a branded share image per post and company, `sitemap.xml`, `news-sitemap.xml`, `robots.txt`, RSS at `/rss.xml`, and JSON-LD (Organization, WebSite with SearchAction, NewsArticle, Article, BreadcrumbList, FAQPage, ProfilePage, and Event once `site.summit.date` is set). New posts, companies and topics appear in all of these with no extra work.
 
 ## Commands
 

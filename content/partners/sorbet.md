@@ -1,7 +1,7 @@
 ---
 name: Sorbet
 type: Partner
-focus: Cross-border payments
+focus: Multi-currency business banking
 description: "Sorbet is a Riyadh-based cross-border payments company for freelancers and small businesses, with USD and EUR accounts and payouts in PKR, SAR and AED."
 website: https://mysorbet.io
 logo: { src: /partners/sorbet.png, width: 480, height: 84 }
@@ -28,4 +28,4 @@ Sorbet builds cross-border payments for freelancers and small businesses. It is 
 
 ## Why it matters for Pakistan
 
-Pakistan received a record $41.6 billion in workers' remittances in FY26, and Saudi Arabia was the largest source over the year. In May 2026 alone, Saudi Arabia and the UAE together sent $2.04 billion of a record $4.25 billion. [Read the remittance story](/insights/pakistan-remittances-fy26-record).
+Pakistan received a record $41.6 billion in workers' remittances in FY26, and Saudi Arabia was the largest source over the year. In May 2026 alone, Saudi Arabia and the UAE together sent $2.04 billion of a record $4.25 billion. [Read the remittance story](/news/pakistan-remittances-fy26-record).

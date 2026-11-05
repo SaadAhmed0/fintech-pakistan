@@ -33,4 +33,4 @@ The collaboration can span fintech PR and communications, market-entry support, 
 
 <p class="pull">The shared goal: help fintechs entering Pakistan <em>build visibility and credibility.</em></p>
 
-[Read the partnership announcement](/insights/fintech-pakistan-crypto-awaz-partnership).
+[Read the partnership announcement](/news/fintech-pakistan-crypto-awaz-partnership).

@@ -19,12 +19,13 @@ const ROUTES: [string, string, number, boolean][] = [
 
 const city = (code: string) => CITIES.find((c) => c.code === code)!;
 
-function arc(from: string, to: string, bow: number) {
-  const a = city(from), b = city(to);
+export function curve(a: { x: number; y: number }, b: { x: number; y: number }, bow: number) {
   const mx = (a.x + b.x) / 2 - (b.y - a.y) * bow;
   const my = (a.y + b.y) / 2 + (b.x - a.x) * bow;
   return `M${a.x} ${a.y}Q${mx.toFixed(1)} ${my.toFixed(1)} ${b.x} ${b.y}`;
 }
+
+const arc = (from: string, to: string, bow: number) => curve(city(from), city(to), bow);
 
 const LABEL_LEFT = new Set(["KHI", "UET", "PEW"]);
 
@@ -89,9 +90,9 @@ export default function PakistanMap() {
       </svg>
 
       <div className="pk-chips">
-        <Link className="pk-chip" href="/insights/pakistan-digital-payments-92-percent"><b>92%</b><span>of retail payments digital, Q1 2026</span></Link>
-        <Link className="pk-chip" href="/insights/raast-instant-payments-explained"><b>742.1M</b><span>Raast payments in Q1 2026</span></Link>
-        <Link className="pk-chip" href="/insights/pakistan-remittances-fy26-record"><b>$41.6B</b><span>in remittances, FY26 record</span></Link>
+        <Link className="pk-chip" href="/news/pakistan-digital-payments-92-percent"><b>92%</b><span>of retail payments digital, Q1 2026</span></Link>
+        <Link className="pk-chip" href="/guides/raast-instant-payments-explained"><b>742.1M</b><span>Raast payments in Q1 2026</span></Link>
+        <Link className="pk-chip" href="/news/pakistan-remittances-fy26-record"><b>$41.6B</b><span>in remittances, FY26 record</span></Link>
       </div>
     </div>
   );

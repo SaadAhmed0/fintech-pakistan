@@ -1,4 +1,4 @@
-import { getPartner, getPartners } from "@/lib/partners";
+import { getPartner, getPartners } from "@/lib/content";
 import { ogImage, ogSize } from "@/lib/og";
 
 export const size = ogSize;

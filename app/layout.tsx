@@ -4,15 +4,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Closing from "@/components/Closing";
 import Reveal from "@/components/Reveal";
+import JoinDialog from "@/components/JoinDialog";
 import JsonLd from "@/components/JsonLd";
 import { MarkDefs } from "@/components/Mark";
 import { organizationLd, websiteLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const display = Bricolage_Grotesque({ subsets: ["latin"], weight: ["400", "600", "800"], variable: "--font-display", display: "swap" });
-const body = Instrument_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["500"], variable: "--font-mono", display: "swap" });
+const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display", display: "optional" });
+const body = Instrument_Sans({ subsets: ["latin"], variable: "--font-body", display: "optional" });
+const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   publisher: site.name,
   alternates: {
     canonical: site.url,
-    types: { "application/rss+xml": [{ url: "/insights/feed.xml", title: `${site.name} Insights` }] },
+    types: { "application/rss+xml": [{ url: "/rss.xml", title: site.name }] },
   },
   openGraph: { type: "website", siteName: site.name, locale: site.locale, url: site.url },
   twitter: { card: "summary_large_image" },
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <Reveal />
+        <JoinDialog />
       </body>
     </html>
   );

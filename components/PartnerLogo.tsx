@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Partner } from "@/lib/partners";
+import type { Partner } from "@/lib/content";
 
 // Partner logos sit on a dark tile so white wordmarks stay legible.
 export default function PartnerLogo({ partner, size = "card", priority = false }: { partner: Partner; size?: "card" | "hero"; priority?: boolean }) {

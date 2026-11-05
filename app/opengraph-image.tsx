@@ -6,5 +6,5 @@ export const size = ogSize;
 export const contentType = "image/png";
 
 export default function Image() {
-  return ogImage({ eyebrow: "Community · Events · Insights", title: site.tagline, footer: site.url.replace(/^https?:\/\//, "").toUpperCase() });
+  return ogImage({ eyebrow: "News · Companies · Guides", title: site.tagline, footer: site.url.replace(/^https?:\/\//, "").toUpperCase() });
 }

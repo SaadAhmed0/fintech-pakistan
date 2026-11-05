@@ -31,7 +31,10 @@ export default function Header() {
           </ul>
         </nav>
         <div className="nav-right">
-          <Link className="btn btn-signal btn-small" href="/community">Join free</Link>
+          <Link className="nav-search" href="/search" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
+          </Link>
+          <Link className="btn btn-signal btn-small" href="/community" data-join>Join free</Link>
           <button className="menu-toggle" type="button" aria-expanded={open} aria-controls="menu" onClick={() => setOpen(!open)}>
             {open ? "CLOSE" : "MENU"}
           </button>

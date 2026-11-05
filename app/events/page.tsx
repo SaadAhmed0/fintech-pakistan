@@ -6,7 +6,7 @@ import { breadcrumbLd, pageMetadata } from "@/lib/seo";
 import { absoluteUrl, site, summitWhen } from "@/lib/site";
 
 export const metadata = pageMetadata({
-  title: "FP Live: Fintech Events, Meetups and the Rails Summit in Pakistan",
+  title: "FP Live: Fintech Events and Meetups in Pakistan",
   description: "Monthly fintech meetups, closed-door roundtables and the Rails Summit in Lahore, the flagship stage for the people behind Pakistan's financial rails.",
   path: "/events",
 });
