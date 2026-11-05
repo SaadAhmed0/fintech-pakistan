@@ -1,18 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import { Instrument_Sans, Newsreader } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import DataStrip from "@/components/DataStrip";
 import Closing from "@/components/Closing";
-import Reveal from "@/components/Reveal";
+import JoinDialog from "@/components/JoinDialog";
+import SearchDialog from "@/components/SearchDialog";
 import JsonLd from "@/components/JsonLd";
 import { MarkDefs } from "@/components/Mark";
 import { organizationLd, websiteLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const display = Bricolage_Grotesque({ subsets: ["latin"], weight: ["400", "800"], variable: "--font-display", display: "swap" });
-const body = Instrument_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["500"], variable: "--font-mono", display: "swap" });
+const serif = Newsreader({ subsets: ["latin"], variable: "--font-serif", display: "optional" });
+const body = Instrument_Sans({ subsets: ["latin"], variable: "--font-body", display: "optional" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   publisher: site.name,
   alternates: {
     canonical: site.url,
-    types: { "application/rss+xml": [{ url: "/insights/feed.xml", title: `${site.name} Insights` }] },
+    types: { "application/rss+xml": [{ url: "/rss.xml", title: site.name }] },
   },
   openGraph: { type: "website", siteName: site.name, locale: site.locale, url: site.url },
   twitter: { card: "summary_large_image" },
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0B1510",
+  themeColor: "#0C3B2A",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -41,18 +42,20 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-PK" className={`${display.variable} ${body.variable} ${mono.variable}`}>
+    <html lang="en-PK" className={`${serif.variable} ${body.variable}`}>
       <body>
         <a className="skip" href="#main">Skip to content</a>
         <MarkDefs />
         <JsonLd data={[organizationLd(), websiteLd()]} />
+        <DataStrip />
         <Header />
         <main id="main">
           {children}
           <Closing />
         </main>
         <Footer />
-        <Reveal />
+        <JoinDialog />
+        <SearchDialog />
       </body>
     </html>
   );

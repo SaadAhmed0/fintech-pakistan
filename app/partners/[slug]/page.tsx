@@ -5,9 +5,8 @@ import JsonLd from "@/components/JsonLd";
 import PartnerLogo from "@/components/PartnerLogo";
 import PartnersGrid from "@/components/Partners";
 import PostCard from "@/components/PostCard";
-import { getPartner, getPartners, hostOf } from "@/lib/partners";
-import { getPost } from "@/lib/posts";
-import { breadcrumbLd } from "@/lib/seo";
+import { getPartner, getPartners, getPostBySlug, hostOf } from "@/lib/content";
+import { breadcrumbLd, pageAlternates, shareImage, titleTag } from "@/lib/seo";
 import { absoluteUrl, site } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -22,14 +21,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const p = getPartner(slug);
   if (!p) return {};
-  const title = `${p.name}: ${p.focus} | Fintech Pakistan ${p.type}`;
+  const title = `${p.name}: ${p.focus}`;
   const url = absoluteUrl(`/partners/${p.slug}`);
+  const images = shareImage(`/partners/${p.slug}/opengraph-image`, title);
   return {
-    title: { absolute: title },
+    title: titleTag(title),
     description: p.description,
-    alternates: { canonical: url },
-    openGraph: { type: "website", url, title, description: p.description, siteName: site.name, locale: site.locale },
-    twitter: { card: "summary_large_image", title, description: p.description },
+    alternates: pageAlternates(url),
+    openGraph: { type: "website", url, title, description: p.description, siteName: site.name, locale: site.locale, images },
+    twitter: { card: "summary_large_image", title, description: p.description, images },
   };
 }
 
@@ -41,7 +41,7 @@ export default async function PartnerPage({ params }: Props) {
   const p = getPartner(slug);
   if (!p) notFound();
   const url = absoluteUrl(`/partners/${p.slug}`);
-  const related = p.related.map(getPost).filter((x) => x !== undefined);
+  const related = p.related.map(getPostBySlug).filter((x) => x !== undefined);
 
   const ld = {
     "@context": "https://schema.org",
@@ -108,7 +108,7 @@ export default async function PartnerPage({ params }: Props) {
                 )}
               </dl>
             </div>
-            <Link className="btn btn-ink" href="/contact?topic=Partnership">Become a partner <span className="arrow">→</span></Link>
+            <Link className="btn btn-ink" href="/contact?topic=Partnership">Become a partner</Link>
           </div>
         </div>
       </section>
@@ -117,8 +117,7 @@ export default async function PartnerPage({ params }: Props) {
         <section className="block band white" aria-labelledby="related-title">
           <div className="wrap">
             <div className="head">
-              <span className="label">Related reading</span>
-              <h2 id="related-title">From <span className="soft-accent">Insights.</span></h2>
+              <h2 id="related-title">From our newsroom</h2>
             </div>
             <div className="grid-3">{related.map((r) => <PostCard key={r.slug} post={r} />)}</div>
           </div>
@@ -128,8 +127,7 @@ export default async function PartnerPage({ params }: Props) {
       <section className="block band paper" aria-labelledby="more-partners">
         <div className="wrap">
           <div className="head">
-            <span className="label">Our partners</span>
-            <h2 id="more-partners">In good <span className="soft-accent">company.</span></h2>
+            <h2 id="more-partners">Other partners</h2>
           </div>
           <PartnersGrid />
         </div>

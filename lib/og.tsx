@@ -27,7 +27,7 @@ export function ogImage({ eyebrow, title, footer }: { eyebrow: string; title: st
           <span style={{ fontSize: title.length > 70 ? 60 : 72, fontWeight: 800, lineHeight: 1.02, letterSpacing: -2.5 }}>{title}</span>
         </div>
         <div style={{ display: "flex", justifyContent: "space-between", borderTop: "2px solid #24332B", paddingTop: 24, fontSize: 22, letterSpacing: 2, color: "#9FB0A6" }}>
-          <span>{footer}</span><span>COMMUNITY · PODCAST · EVENTS · INSIGHTS</span>
+          <span>{footer}</span><span>NEWS · COMPANIES · GUIDES</span>
         </div>
       </div>
     ),

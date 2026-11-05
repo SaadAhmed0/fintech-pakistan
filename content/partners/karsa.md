@@ -1,7 +1,7 @@
 ---
 name: Karsa
 type: Partner
-focus: Multi-currency business banking
+focus: Neobank
 description: "Karsa is a Y Combinator-backed fintech offering multi-currency business banking: accounts to receive, hold and send USD, EUR, GBP, AED and stablecoins."
 website: https://gokarsa.com
 logo: { src: /partners/karsa.png, width: 480, height: 166 }
