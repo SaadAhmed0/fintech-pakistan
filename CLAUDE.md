@@ -20,6 +20,8 @@ Next.js (App Router) news and company directory covering stablecoin neobanks and
 | Page copy | `app/<page>/page.tsx` |
 | Map on the company directory (geometry from Natural Earth) | `lib/pakistan-map.ts`, drawn by `components/PakistanMap.tsx` |
 | Design tokens and all styles | `app/globals.css` (`:root` block at the top) |
+| Charts and their sources | `lib/charts.ts`, drawn by `components/Figure.tsx` |
+| Figures in the top bar | `components/DataStrip.tsx` |
 | SEO helpers and structured data | `lib/seo.ts` |
 | Social share image design | `lib/og.tsx` |
 
@@ -27,9 +29,10 @@ Next.js (App Router) news and company directory covering stablecoin neobanks and
 
 This is a publication, not a product page.
 
-- Headlines lead. Use images only when they show something real, never as decoration.
-- Serif for reading, sans for navigation, one green accent. Lime appears only in the logo.
-- No animation, gradients, shadows on content, or two-tone headlines. Lines, not boxes.
+- Headlines and real data lead. Use images only when they show something real, never as decoration.
+- Charts come from `lib/charts.ts`, always with a source. Place them with `<div data-chart="key"></div>` in a post.
+- Serif for reading, sans for navigation, forest green fronts, lime only on forest.
+- No animation, gradients or two-tone headlines. Lines, not boxes.
 - Headlines say plainly what the section or story is. No slogans.
 - Show reading time only from three minutes up.
 
@@ -60,6 +63,7 @@ coverAlt: ""             # required when coverImage is set
 draft: false             # true hides it from the production build
 label: ""                # Partner or Sponsored on any paid or client content
 lead: false              # true puts this at the top of the homepage. Keep it on one post
+chart: ""                # optional, a key from lib/charts.ts, shown beside this story on the homepage
 keyPoints: []            # optional, 3 or 4 short points shown as "In short"
 faqs: []                 # optional: - q: "Question" then a: "Answer". Adds FAQ schema
 sources:

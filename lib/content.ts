@@ -32,6 +32,7 @@ export type Post = {
   draft: boolean;
   label: Label;
   lead: boolean;
+  chart: string;
   keyPoints: string[];
   sources: Source[];
   faqs: Faq[];
@@ -314,6 +315,7 @@ function loadPost(kind: PostKind, file: string): Post {
     draft: data.draft,
     label: data.label || "",
     lead: Boolean(data.lead),
+    chart: data.chart || "",
     keyPoints: data.keyPoints || [],
     sources: data.sources || [],
     faqs: data.faqs || [],

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Instrument_Sans, Newsreader } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import DataStrip from "@/components/DataStrip";
 import Closing from "@/components/Closing";
 import JoinDialog from "@/components/JoinDialog";
 import SearchDialog from "@/components/SearchDialog";
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FBFAF6",
+  themeColor: "#0C3B2A",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip" href="#main">Skip to content</a>
         <MarkDefs />
         <JsonLd data={[organizationLd(), websiteLd()]} />
+        <DataStrip />
         <Header />
         <main id="main">
           {children}

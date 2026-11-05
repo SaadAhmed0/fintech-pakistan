@@ -8,6 +8,7 @@ tags: [Payments]
 coverImage: ""
 coverAlt: ""
 draft: false
+chart: raast-merchant
 label: ""
 keyPoints:
   - "Raast is Pakistan's instant payment system, owned by the State Bank."
@@ -76,6 +77,8 @@ For context, Pakistan's total retail payments that quarter came to 3.7 billion t
 The most interesting line in that table is the second one.
 
 Merchant payments went from 4.9 million in FY25 to 182.5 million in FY26. By value, they rose from Rs 14.9 billion to Rs 994.4 billion, according to Pakera. Comparing the final quarter of each year, they rose from 2.2 million to 86.0 million.
+
+<div data-chart="raast-merchant"></div>
 
 <p class="pull">Merchant payments on Raast: <em>2.2 million a quarter to 86 million in a year.</em></p>
 

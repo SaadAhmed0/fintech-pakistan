@@ -8,6 +8,7 @@ tags: [Regulation, Stablecoins]
 coverImage: ""
 coverAlt: ""
 draft: false
+chart: pvara-capital
 label: ""
 keyPoints:
   - "PVARA lists 11 licence categories, including two for stablecoin-style tokens."
@@ -64,19 +65,7 @@ Anyone carrying on a virtual asset service in or from Pakistan must be a company
 
 PVARA's FAQ and licensing page both list 11 categories, each with a minimum paid-up capital requirement.
 
-| Category | Minimum capital (PKR) |
-| --- | --- |
-| Advisory services | 15 million |
-| Broker-dealer services | 75 million |
-| Custody services | 200 million |
-| Asset management and investment | 200 million |
-| Transfer and settlement | 200 million |
-| Fiat-referenced token issuance | 300 million |
-| Asset-referenced token issuance | 300 million |
-| Exchange services | 500 million |
-| Lending and borrowing | 500 million |
-| Derivatives services | 500 million |
-| Mining-related services | 500 million |
+<div data-chart="pvara-capital"></div>
 
 Some early coverage counted ten categories. We use PVARA's own list, which separates fiat-referenced and asset-referenced tokens.
 

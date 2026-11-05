@@ -13,6 +13,7 @@ coverAlt: ""              # required when coverImage is set
 draft: true               # true keeps the post out of every production build
 label: ""                 # Sponsored or Partner on any paid or client content, otherwise leave empty
 lead: false               # true puts this at the top of the homepage. Keep it on one post
+chart: ""                 # optional, a key from lib/charts.ts, shown beside this story on the homepage
 keyPoints: []             # optional, 3 or 4 short points shown as "In short"
 faqs: []                  # optional: - q: "Question" then a: "Answer". Adds FAQ schema
 sources: []               # every number needs one: - title: "Publisher, Headline (date)" then url: "https://..."

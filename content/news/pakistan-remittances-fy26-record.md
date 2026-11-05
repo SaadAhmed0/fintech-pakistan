@@ -9,6 +9,7 @@ coverImage: ""
 coverAlt: ""
 draft: false
 lead: true
+chart: remittance-sources
 label: ""
 keyPoints:
   - "Pakistan received a record $41.6 billion in workers' remittances in FY26, up 8.6%."
@@ -47,17 +48,15 @@ The new fiscal year has started more strongly. Remittances reached $10.9 billion
 
 Three months is too short to call a trend. But it does put the first quarter of FY27 on a faster pace than the whole of FY26.
 
+<div data-chart="remittance-growth"></div>
+
 ## Where the money comes from
 
 The Gulf dominates. Saudi Arabia remained the largest source in FY26, and in September it sent more than any other country, with the UAE second. Together they sent about $1.65 billion of that month's $3.6 billion, close to half.
 
-| Source, September 2026 | Amount | Change on a year earlier |
-| --- | --- | --- |
-| Saudi Arabia | $899.1 million | Up 19.7% |
-| United Arab Emirates | $748.5 million | Up 10.0% |
-| United Kingdom | $515.2 million | Up 13.3% |
-| European Union | $447.7 million | Not reported |
-| United States | $305.9 million | Up 13.7% |
+<div data-chart="remittance-sources"></div>
+
+Against a year earlier, Saudi Arabia was up 19.7%, the UAE 10.0%, the UK 13.3% and the US 13.7%.
 
 The European Union figure is the one to watch. It fell 9.7% from August, while Saudi Arabia, the largest source, rose 3%. One month proves little, but it shows how differently these corridors can move.
 
