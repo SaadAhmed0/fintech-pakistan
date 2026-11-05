@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-const SEL = ".head, .card, .partner, .stat, .steps li, .rules li, .faq, .event, .cover.small, .join-card, .corridor-wrap, .prose, .equation, .topic, .form-card, .contact-box, .article-body > *, .sources";
+const SEL = ".head, .card, .partner, .stat, .steps li, .rules li, .faq, .event, .join-card, .corridor-wrap, .prose, .equation, .topic, .form-card, .contact-box, .article-body > *, .sources";
 
 function countUp(el: HTMLElement) {
   if (el.dataset.done) return;

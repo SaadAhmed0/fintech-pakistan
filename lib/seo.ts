@@ -30,6 +30,7 @@ export const organizationLd = () => ({
   logo: absoluteUrl("/icon.svg"),
   description: site.description,
   areaServed: "PK",
+  founder: site.team.map((m) => ({ "@type": "Person", name: m.name, jobTitle: m.role, ...(m.linkedin ? { sameAs: m.linkedin } : {}) })),
   ...(sameAs().length ? { sameAs: sameAs() } : {}),
   ...(site.contactEmail ? { email: site.contactEmail } : {}),
 });

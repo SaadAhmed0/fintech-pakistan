@@ -20,7 +20,7 @@ export default function Partners({ headingLevel = 3 }: { headingLevel?: 2 | 3 })
       <Link className="partner partner-open" href="/contact?topic=Partnership">
         <span className="plus" aria-hidden="true"></span>
         <span className="mark">Your company</span>
-        <span className="meta"><span className="label">Open</span><span>Event, podcast and community partnerships</span></span>
+        <span className="meta"><span className="label">Open</span><span>Event and community partnerships</span></span>
       </Link>
     </div>
   );

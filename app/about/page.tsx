@@ -6,7 +6,7 @@ import { breadcrumbLd, pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "About Fintech Pakistan",
-  description: "Fintech Pakistan is the community, stage and voice of fintech in Pakistan: a free community, a weekly podcast, sourced insights and FP Live events.",
+  description: "Fintech Pakistan is the community, stage and voice of fintech in Pakistan: a free community, sourced insights and FP Live events.",
   path: "/about",
 });
 
@@ -24,6 +24,10 @@ export default function About() {
             <h2 id="about-story">Fintech, completed by Pakistan.</h2>
             <p>Our mark is a pixel F with one missing piece. Add the block and it becomes a P. That piece is what we do: connect the people building financial services here with each other, with the market, and with the corridors money already moves through.</p>
             <p>We work alongside Pakistan&apos;s industry associations, regulators and banks. Our job is the room where everyone meets.</p>
+            <div className="ctas" style={{ marginTop: 28 }}>
+              <Link className="btn btn-ink" href="/our-story">Our story <span className="arrow">→</span></Link>
+              <Link className="btn btn-ghost" href="/team">Meet the team</Link>
+            </div>
           </div>
         </div>
       </section>
@@ -50,7 +54,7 @@ export default function About() {
           </div>
           <div className="grid-4">
             <Link className="card card-light" href="/community"><span className="label">FP Community</span><h3>Connect</h3><p>A free WhatsApp community with focused channels and monthly meetups.</p><span className="go">COMMUNITY →</span></Link>
-            <Link className="card card-light" href="/podcast"><span className="label">FP Podcast</span><h3>Listen</h3><p>Money Moves, a weekly show with the people building Pakistan&apos;s rails.</p><span className="go">PODCAST →</span></Link>
+            <Link className="card card-light" href="/insights"><span className="label">FP Insights</span><h3>Read</h3><p>Short, sourced articles on what is moving Pakistan&apos;s money.</p><span className="go">INSIGHTS →</span></Link>
             <Link className="card card-light" href="/events"><span className="label">FP Live</span><h3>Meet</h3><p>Meetups, roundtables and the Rails Summit.</p><span className="go">EVENTS →</span></Link>
             <Link className="card card-light" href="/partners"><span className="label">FP Agency</span><h3>Reach</h3><p>Launches, stories and stages for fintechs that want the right audience.</p><span className="go">PARTNERS →</span></Link>
           </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WhatsAppButton from "./WhatsAppButton";
 
 export default function Closing() {
   return (
@@ -10,7 +11,7 @@ export default function Closing() {
           <p>Free to join for anyone building money in Pakistan.</p>
         </div>
         <div className="ctas">
-          <Link className="btn btn-signal" href="/community">Join the community <span className="arrow">→</span></Link>
+          <WhatsAppButton label="Join the community" />
           <Link className="btn btn-ghost" href="/contact">Talk to us</Link>
         </div>
       </div>

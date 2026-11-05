@@ -6,10 +6,11 @@ Next.js (App Router) site for Fintech Pakistan. Every page is statically generat
 
 | What | Where |
 | --- | --- |
-| Site settings (URL, contact email, WhatsApp link, socials, Rails Summit date) | `lib/site.ts` |
+| Site settings (URL, contact email, WhatsApp link, socials, team, Rails Summit date) | `lib/site.ts` |
 | Articles (Insights) | `content/insights/<slug>.md` |
 | Partners (cards, partner pages, footer links) | `content/partners/<slug>.md`, logos in `public/partners/` |
 | Page copy | `app/<page>/page.tsx` |
+| Home hero map (geometry from Natural Earth) | `lib/pakistan-map.ts`, drawn by `components/PakistanMap.tsx` |
 | Design tokens and all styles | `app/globals.css` (`:root` block at the top) |
 | SEO helpers and structured data | `lib/seo.ts` |
 | Social share image design | `lib/og.tsx` |

@@ -16,14 +16,20 @@ export const site = {
   // Leave empty until ready. Empty values hide the related buttons instead of
   // showing a broken link.
   contactEmail: "",
-  whatsappInvite: "",
+  whatsappInvite: "https://chat.whatsapp.com/HK87C1F5LOJ1njo4MHvZPg",
   social: {
     linkedin: "",
     x: "",
     youtube: "",
     spotify: "",
-    applePodcasts: "",
   },
+
+  // Shown on /team and in the Organization schema. Empty bio or linkedin values
+  // are hidden on the page.
+  team: [
+    { name: "Nauman Ali Murad", role: "Co-founder", bio: "", linkedin: "" },
+    { name: "Saad Ahmed Siddiqui", role: "Co-founder", bio: "", linkedin: "" },
+  ],
 
   summit: {
     name: "The Rails Summit",
@@ -37,11 +43,12 @@ export const site = {
 
 export const nav = [
   { href: "/community", label: "Community" },
-  { href: "/podcast", label: "Podcast" },
   { href: "/events", label: "Events" },
   { href: "/insights", label: "Insights" },
   { href: "/partners", label: "Partners" },
   { href: "/about", label: "About" },
+  { href: "/our-story", label: "Our Story" },
+  { href: "/team", label: "Team" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

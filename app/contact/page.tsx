@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 
 export const metadata = pageMetadata({
   title: "Contact Fintech Pakistan",
-  description: "Get in touch about partnerships, podcast guests, speaking at FP Live, press requests or the Fintech Pakistan community.",
+  description: "Get in touch about partnerships, speaking at FP Live, press requests or the Fintech Pakistan community.",
   path: "/contact",
 });
 
@@ -16,7 +16,7 @@ export default function Contact() {
     <>
       <JsonLd data={breadcrumbLd([{ name: "Contact", path: "/contact" }])} />
       <PageHero id="contact-title" eyebrow="Contact" title={<>Talk <span className="soft">to us.</span></>}
-        lede="Partnerships, podcast guests, speaking, press, or a question about the community. Pick a topic, add a few details, and we'll draft the email for you to send." />
+        lede="Partnerships, speaking, press, or a question about the community. Pick a topic, add a few details, and we'll draft the email for you to send." />
 
       <section className="block band paper on-light" aria-labelledby="contact-form-title">
         <ContactForm />

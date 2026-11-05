@@ -2,39 +2,41 @@ import Link from "next/link";
 import HeroGrid from "@/components/HeroGrid";
 import CycleWord from "@/components/CycleWord";
 import PostCard from "@/components/PostCard";
-import { Equation, GhostF, HeroMark } from "@/components/Mark";
+import { Equation, GhostF } from "@/components/Mark";
 import { getAllPosts } from "@/lib/posts";
 import { pageMetadata } from "@/lib/seo";
 import { site, summitWhen } from "@/lib/site";
 import Partners from "@/components/Partners";
+import PakistanMap from "@/components/PakistanMap";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata = pageMetadata({
-  title: "Fintech Pakistan: Community, Podcast, Events and Insights",
+  title: "Fintech Pakistan: Community, Events and Insights",
   description: site.description,
   path: "/",
   absoluteTitle: true,
 });
 
-const TOPICS = ["RAAST", "DIGITAL BANKS", "REMITTANCES", "VIRTUAL ASSETS", "MERCHANT PAYMENTS", "REGULATION", "PK · MENA · SEA", "FP LIVE", "MONEY MOVES"];
+const TOPICS = ["RAAST", "DIGITAL BANKS", "REMITTANCES", "VIRTUAL ASSETS", "MERCHANT PAYMENTS", "REGULATION", "PK · MENA · SEA", "FP LIVE"];
 
 export default function Home() {
   const posts = getAllPosts().slice(0, 3);
   return (
     <>
-      <section className="hero band" aria-labelledby="home-title">
+      <section className="hero home-hero band" aria-labelledby="home-title">
         <HeroGrid />
         <div className="wrap hero-inner">
           <div>
-            <span className="label eyebrow">Community · Podcast · Events · Insights</span>
+            <span className="label eyebrow">Community · Events · Insights</span>
             <h1 id="home-title">Where Pakistan&apos;s fintech <span className="soft">connects.</span></h1>
             <CycleWord />
             <p className="lede">The community, stage and voice of fintech in Pakistan, and the markets it connects to. For the founders, operators and regulators shaping how money moves here.</p>
             <div className="ctas">
-              <Link className="btn btn-signal" href="/community">Join the community <span className="arrow">→</span></Link>
+              <WhatsAppButton label="Join the community" />
               <Link className="btn btn-ghost" href="/partners">Partner with us</Link>
             </div>
           </div>
-          <HeroMark variant="full" />
+          <PakistanMap />
         </div>
       </section>
 
@@ -51,7 +53,7 @@ export default function Home() {
           <div className="prose">
             <h2 id="home-story">One block turns an F into a P.</h2>
             <p>Fintech, completed by Pakistan. Pakistan&apos;s fintech scene has the builders. What it has been missing is a shared room where they meet, learn from each other and get seen.</p>
-            <p>That room is what we&apos;re building: a free community, a weekly podcast, sourced insights and events that bring it all together.</p>
+            <p>That room is what we&apos;re building: a free community, sourced insights and events that bring it all together.</p>
           </div>
         </div>
       </section>
@@ -61,7 +63,7 @@ export default function Home() {
           <div className="head">
             <span className="label">One brand, four ways in</span>
             <h2 id="home-ways">From group chat <span className="soft">to main stage.</span></h2>
-            <p>A conversation in the community can become a podcast episode, a panel on stage, or a launch. It all runs under one name.</p>
+            <p>A conversation in the community can become a sourced article, a panel on stage, or a launch. It all runs under one name.</p>
           </div>
           <div className="grid-4">
             <Link className="card card-dark" href="/community">
@@ -69,10 +71,10 @@ export default function Home() {
               <p>A free WhatsApp community with focused channels for news, questions and jobs, plus monthly meetups.</p>
               <span className="go">JOIN →</span>
             </Link>
-            <Link className="card card-dark" href="/podcast">
-              <span className="tag"><i style={{ background: "#F3F4EE" }}></i><b>FP</b> Podcast</span>
-              <p>Money Moves. Weekly conversations with the people building Pakistan&apos;s financial rails.</p>
-              <span className="go">LISTEN →</span>
+            <Link className="card card-dark" href="/insights">
+              <span className="tag"><i style={{ background: "#F3F4EE" }}></i><b>FP</b> Insights</span>
+              <p>Short, sourced articles on what is moving Pakistan&apos;s money.</p>
+              <span className="go">READ →</span>
             </Link>
             <Link className="card card-dark" href="/events">
               <span className="tag"><i style={{ background: "#8FB82A" }}></i><b>FP</b> Live</span>
@@ -138,7 +140,7 @@ export default function Home() {
               <li>Monthly meetups with people building the same things</li>
               <li>First to hear about FP Live events</li>
             </ul>
-            <Link className="btn btn-signal" href="/community">How to join <span className="arrow">→</span></Link>
+            <WhatsAppButton />
           </div>
         </div>
       </section>
@@ -184,27 +186,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="block band white" aria-labelledby="home-onair">
+      <section className="block band white" aria-labelledby="home-stage">
         <div className="wrap">
           <div className="head">
-            <span className="label">On air and on stage</span>
-            <h2 id="home-onair">Listen in, <span className="soft-accent">then show up.</span></h2>
+            <span className="label">On stage</span>
+            <h2 id="home-stage">Read up, <span className="soft-accent">then show up.</span></h2>
           </div>
-          <div className="grid-2">
-            <Link className="cover small" href="/podcast">
-              <GhostF />
-              <span className="label">The podcast</span>
-              <span className="title">Money<br />Moves.</span>
-              <span className="eq" aria-hidden="true">{Array.from({ length: 8 }, (_, i) => <i key={i} style={{ ["--i" as string]: i }} />)}</span>
-              <span className="meta"><span>WEEKLY</span><span>PK · MENA · SEA</span></span>
-            </Link>
-            <Link className="event compact" href="/events">
-              <GhostF fill="#13201A" />
-              <div className="top"><span className="live">LIVE</span><span className="when">{summitWhen()}</span></div>
-              <h3>The Rails <span className="soft">Summit.</span></h3>
-              <p>Our flagship event on the infrastructure under Pakistan&apos;s money.</p>
-            </Link>
-          </div>
+          <Link className="event compact" href="/events">
+            <GhostF fill="#13201A" />
+            <div className="top"><span className="live">LIVE</span><span className="when">{summitWhen()}</span></div>
+            <h3>The Rails <span className="soft">Summit.</span></h3>
+            <p>Our flagship event on the infrastructure under Pakistan&apos;s money.</p>
+          </Link>
         </div>
       </section>
 

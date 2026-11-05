@@ -4,8 +4,7 @@ import { useEffect, useRef, useState, type FormEvent } from "react";
 import { site } from "@/lib/site";
 
 const TOPICS = [
-  { value: "Partnership", title: "Partnership", desc: "Events, podcast, community or a launch" },
-  { value: "Podcast guest", title: "Podcast guest", desc: "Suggest yourself or someone you know" },
+  { value: "Partnership", title: "Partnership", desc: "Events, community or a launch" },
   { value: "Speaking at FP Live", title: "Speaking", desc: "Talks and panels at FP Live and the Rails Summit" },
   { value: "Press", title: "Press", desc: "Interviews, quotes and media requests" },
   { value: "Community question", title: "Community", desc: "Joining, channels or house rules" },

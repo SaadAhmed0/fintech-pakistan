@@ -14,7 +14,7 @@ Through this strategic partnership, the two platforms aim to connect internation
 
 ## Who Crypto Awaz is
 
-Crypto Awaz describes itself as the biggest crypto community in Pakistan, with members across Discord, X, Instagram and LinkedIn. Fintech Pakistan brings the wider fintech side: founders, operators, banks and regulators, through [our community](/community), [the Money Moves podcast](/podcast) and [FP Live events](/events).
+Crypto Awaz describes itself as the biggest crypto community in Pakistan, with members across Discord, X, Instagram and LinkedIn. Fintech Pakistan brings the wider fintech side: founders, operators, banks and regulators, through [our community](/community) and [FP Live events](/events).
 
 ## What the partnership covers
 

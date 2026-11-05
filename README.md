@@ -1,6 +1,6 @@
 # Fintech Pakistan
 
-The website for Fintech Pakistan: community, podcast, events and sourced insights on fintech in Pakistan. Built with Next.js (App Router), fully static.
+The website for Fintech Pakistan: community, events and sourced insights on fintech in Pakistan. Built with Next.js (App Router), fully static.
 
 ## Run it
 
@@ -16,8 +16,8 @@ npm start       # serve the production build
 Fill these in `lib/site.ts` (empty values are hidden on the site, never shown as placeholders):
 
 - `contactEmail`
-- `whatsappInvite`
 - `social` links
+- `team` bios and LinkedIn links
 - `summit.date` and `summit.venue`
 
 Set `NEXT_PUBLIC_SITE_URL` in your host (see `.env.example`) if the domain is not `https://fintechpakistan.com`.

@@ -3,7 +3,7 @@ title: "Why Fintech Pakistan exists"
 description: "Pakistan's fintech scene has the builders. It was missing a room."
 tag: From us
 date: 2026-10-22
-keywords: [Fintech Pakistan, fintech community Pakistan, Money Moves podcast, FP Live]
+keywords: [Fintech Pakistan, fintech community Pakistan, FP Live]
 sources: []
 ---
 
@@ -14,7 +14,6 @@ That block is the job we've taken on. The people building financial services in 
 ## What we're building
 
 - **FP Community.** A free WhatsApp community with four channels: General, News & Regulation, Ask & Help, and Jobs & Opportunities. [How to join](/community).
-- **Money Moves.** A weekly podcast with the people building how Pakistan pays, saves and sends. [About the show](/podcast).
 - **FP Live.** Monthly meetups, closed-door roundtables and the Rails Summit in Lahore. [See events](/events).
 - **FP Agency.** Launches, stories and stages for fintechs that want to reach this audience. [Partner with us](/partners).
 - **Insights.** Short articles where every number links to its source.

@@ -5,7 +5,7 @@ import { LogoIcon } from "./Mark";
 
 export default function Footer() {
   const social = Object.entries(site.social).filter(([, u]) => u);
-  const labels: Record<string, string> = { linkedin: "LinkedIn", x: "X", youtube: "YouTube", spotify: "Spotify", applePodcasts: "Apple Podcasts" };
+  const labels: Record<string, string> = { linkedin: "LinkedIn", x: "X", youtube: "YouTube", spotify: "Spotify" };
   return (
     <footer className="dark band">
       <div className="wrap">
@@ -18,7 +18,7 @@ export default function Footer() {
         </div>
         <div>
           <h4>Explore</h4>
-          <ul><li><Link href="/community">Community</Link></li><li><Link href="/podcast">Podcast</Link></li><li><Link href="/events">Events</Link></li></ul>
+          <ul><li><Link href="/community">Community</Link></li><li><Link href="/events">Events</Link></li><li><Link href="/our-story">Our Story</Link></li><li><Link href="/team">Team</Link></li></ul>
         </div>
         <div>
           <h4>Read</h4>
@@ -40,7 +40,7 @@ export default function Footer() {
             {social.map(([k, u]) => <li key={k}><a href={u} rel="me noopener" target="_blank">{labels[k]}</a></li>)}
           </ul>
         </div>
-        <div className="base"><span>{site.url.replace(/^https?:\/\//, "").toUpperCase()}</span><span>COMMUNITY · PODCAST · EVENTS · INSIGHTS</span></div>
+        <div className="base"><span>{site.url.replace(/^https?:\/\//, "").toUpperCase()}</span><span>COMMUNITY · EVENTS · INSIGHTS</span></div>
       </div>
     </footer>
   );

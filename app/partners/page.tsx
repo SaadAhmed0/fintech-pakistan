@@ -7,8 +7,8 @@ import { getPartners } from "@/lib/partners";
 import { absoluteUrl } from "@/lib/site";
 
 export const metadata = pageMetadata({
-  title: "Partner With Fintech Pakistan: Events, Podcast and Launches",
-  description: "Fintech Pakistan partners include Sorbet, Karsa and Crypto Awaz. Reach Pakistan's fintech founders, operators, banks and investors through events, podcast and community.",
+  title: "Partner With Fintech Pakistan: Events, Community and Launches",
+  description: "Fintech Pakistan partners include Sorbet, Karsa and Crypto Awaz. Reach Pakistan's fintech founders, operators, banks and investors through events and community.",
   path: "/partners",
 });
 
@@ -62,9 +62,8 @@ export default function PartnersPage() {
             <h2 id="partners-formats">Pick the stage <span className="soft-accent">that fits.</span></h2>
             <p>Every partnership is built around a goal, not a package. These are the formats we work with.</p>
           </div>
-          <div className="grid-4">
+          <div className="grid-3">
             <Link className="card card-light" href="/events"><span className="label">FP Live</span><h3>Events</h3><p>Host a meetup, sponsor a roundtable or partner on the Rails Summit.</p><span className="go">SEE EVENTS →</span></Link>
-            <Link className="card card-light" href="/podcast"><span className="label">FP Podcast</span><h3>Podcast</h3><p>Sponsor Money Moves, or a run of episodes on a topic you care about.</p><span className="go">SEE PODCAST →</span></Link>
             <Link className="card card-light" href="/community"><span className="label">FP Community</span><h3>Community</h3><p>Support the community and get in front of the people in it.</p><span className="go">SEE COMMUNITY →</span></Link>
             <Link className="card card-light" href="/contact?topic=Partnership"><span className="label">FP Agency</span><h3>Launch &amp; PR</h3><p>Go-to-market, founder stories and announcements told in a voice the ecosystem reads.</p><span className="go">TALK TO US →</span></Link>
           </div>
@@ -79,7 +78,7 @@ export default function PartnersPage() {
           </div>
           <ol className="steps">
             <li><h3>Tell us your goal</h3><p>Who you want to reach and what you want them to do.</p></li>
-            <li><h3>We suggest a format</h3><p>An event, a podcast run, a community launch, or a mix.</p></li>
+            <li><h3>We suggest a format</h3><p>An event, a community launch, or a mix.</p></li>
             <li><h3>We launch it together</h3><p>We run it with you and share what came out of it.</p></li>
           </ol>
         </div>
