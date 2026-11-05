@@ -730,3 +730,7 @@ select.filter { font-size: 16px; }
 .search-quick .label { color: var(--slate); font-size: 12px; }
 .search-quick .filters { margin: 0; }
 
+/* Footer social link */
+.foot-social { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.foot-social a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border: 1px solid var(--line-dark); border-radius: 999px; color: var(--paper); font-size: 15px; font-weight: 500; text-decoration: none; transition: border-color .2s ease; }
+.foot-social a:hover { border-color: var(--signal); }
