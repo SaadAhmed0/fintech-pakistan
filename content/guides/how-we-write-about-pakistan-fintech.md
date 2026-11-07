@@ -1,14 +1,15 @@
 ---
-title: "How we write about Pakistan's fintech market"
-description: "Every number on this site links to where it came from. Here is how Fintech Pakistan picks sources, checks figures and keeps its articles short and useful."
-date: 2026-11-05
-updated: ""
-author: FP Admin
-tags: [From us, How we work]
-coverImage: ""
-coverAlt: ""
+title: How we write about Pakistan's fintech market
+description: Every number on this site links to where it came from. Here is how Fintech Pakistan picks sources, checks figures and keeps its articles short and useful.
+date: '2026-11-05'
+author: fp-admin
+otherTopics: []
+fromUs: true
+coverAlt: ''
 draft: false
-label: ""
+label: none
+lead: false
+keyPoints: []
 faqs: []
 sources: []
 ---
@@ -25,7 +26,9 @@ If we can't trace a figure to a source, we leave it out and say so.
 
 Most of what you need from an article fits in a few minutes. The most important fact goes in the first two sentences, and section headings are written the way people search, like [how Raast works](/guides/raast-instant-payments-explained).
 
-<p class="pull">If a number has no source, <em>it doesn't run.</em></p>
+{% pull %}
+If a number has no source, _it doesn't run._
+{% /pull %}
 
 ## Updated when the facts change
 

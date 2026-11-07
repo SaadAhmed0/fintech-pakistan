@@ -105,7 +105,7 @@ Priority weighs search demand, competition and lead value. Demand and competitio
 
 1. **Confirm:** find the primary source (regulator, company announcement or filing). If you only have a report, say "reported".
 2. **Write the first version in under an hour:** four to six short paragraphs. What happened, who it affects in Pakistan, what is confirmed, what is not yet known.
-3. **Fill in the template:** `content/news/_template.md`, with the publish time in `date` (Pakistan time, such as `2026-11-05T14:30:00+05:00`).
+3. **Fill in the template:** create the post in the admin at /admin, or copy `content/_templates/news.md`, with the publish time in `date` (Pakistan time, such as `2026-11-05T14:30`).
 4. **Check the company:** make sure it has a file in `content/companies/`. If not, add a stub with `draft: false`. It stays out of Google until verified, and mentions still link to it.
 5. **Deploy:** the news sitemap regenerates on every deploy. It only lists the last two days of news, so publish before you promote.
 6. **Share:** the WhatsApp community and social accounts, once they exist.

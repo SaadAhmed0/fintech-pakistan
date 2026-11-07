@@ -1,14 +1,15 @@
 ---
-title: "Why Fintech Pakistan exists"
-description: "Pakistan's fintech scene has the builders. It was missing a room. Here is why Fintech Pakistan exists, what we are building and how it fits alongside others."
-date: 2026-10-22
-updated: ""
-author: FP Admin
-tags: [From us]
-coverImage: ""
-coverAlt: ""
+title: Why Fintech Pakistan exists
+description: Pakistan's fintech scene has the builders. It was missing a room. Here is why Fintech Pakistan exists, what we are building and how it fits alongside others.
+date: '2026-10-22'
+author: fp-admin
+otherTopics: []
+fromUs: true
+coverAlt: ''
 draft: false
-label: ""
+label: none
+lead: false
+keyPoints: []
 faqs: []
 sources: []
 ---
@@ -28,4 +29,6 @@ That block is the job we've taken on. The people building financial services in 
 
 Pakistan already has industry associations doing policy and advocacy work. We don't replace them. We're the room where everyone meets, and we'd like them in it.
 
-<p class="pull">The room is open. <em>Pull up a chair.</em></p>
+{% pull %}
+The room is open. _Pull up a chair._
+{% /pull %}

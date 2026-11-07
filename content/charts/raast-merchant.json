@@ -1,0 +1,23 @@
+{
+  "title": "Shops are starting to use Raast",
+  "subtitle": "Person-to-merchant payments on Raast, million per quarter",
+  "type": "columns",
+  "rows": [
+    {
+      "label": "Q2 FY26",
+      "value": 36.3,
+      "display": "36.3M"
+    },
+    {
+      "label": "Q3 FY26",
+      "value": 55.9,
+      "display": "55.9M"
+    },
+    {
+      "label": "Q4 FY26",
+      "value": 86,
+      "display": "86.0M"
+    }
+  ],
+  "source": "State Bank of Pakistan data via The Nation and Pakera. Q4 is provisional"
+}

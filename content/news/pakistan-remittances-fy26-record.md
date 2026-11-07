@@ -1,35 +1,36 @@
 ---
-title: "$41.6 billion home: Pakistan's remittance record"
-description: "Workers' remittances hit a record $41.6 billion in FY26, and the new fiscal year began stronger. Here is where the money comes from, and who wants to move it."
-date: 2026-10-22
-updated: 2026-11-05
-author: FP Admin
-tags: [Remittances]
-coverImage: ""
-coverAlt: ""
+title: '$41.6 billion home: Pakistan''s remittance record'
+description: Workers' remittances hit a record $41.6 billion in FY26, and the new fiscal year began stronger. Here is where the money comes from, and who wants to move it.
+date: 2026-10-22T09:00
+updated: '2026-11-05'
+author: fp-admin
+mainTopic: remittances
+otherTopics: []
+fromUs: false
+coverAlt: ''
 draft: false
+label: none
 lead: true
 chart: remittance-sources
-label: ""
 keyPoints:
-  - "Pakistan received a record $41.6 billion in workers' remittances in FY26, up 8.6%."
-  - "That beat the country's $30.1 billion in export earnings by more than $11 billion."
-  - "Saudi Arabia and the UAE sent close to half of September's $3.6 billion."
-  - "FY27 started faster: $10.9 billion in three months, up 14.74%."
+  - Pakistan received a record $41.6 billion in workers' remittances in FY26, up 8.6%.
+  - That beat the country's $30.1 billion in export earnings by more than $11 billion.
+  - Saudi Arabia and the UAE sent close to half of September's $3.6 billion.
+  - 'FY27 started faster: $10.9 billion in three months, up 14.74%.'
 faqs: []
 sources:
-  - title: "Profit, Pakistan receives record $41.6 billion workers' remittances in FY26 (9 July 2026)"
-    url: "https://profit.pakistantoday.com.pk/2026/07/09/pakistan-receives-record-dollar416-billion-workers-remittances-in-fy26"
-  - title: "Arab News, Saudi Arabia remains Pakistan's top remittance source as FY26 inflows rise to record $41.6 billion (9 July 2026)"
-    url: "https://www.arabnews.com/node/2650204/pakistan"
-  - title: "Outlook Business, Pakistan receives record $41.6 billion in remittances, surpassing total exports (10 July 2026)"
-    url: "https://www.outlookbusiness.com/news/pak-receives-record-416-billion-in-remittances-surpassing-total-exports"
-  - title: "ProPakistani, Workers' remittances hit all-time monthly high of $4.25 billion (10 June 2026)"
-    url: "https://propakistani.pk/2026/06/10/workers-remittances-hit-all-time-monthly-high-of-4-25-billion/"
-  - title: "Business Recorder, Pakistan registers $3.6bn in remittances for September 2026 (9 October 2026)"
-    url: "https://www.brecorder.com/news/40443463/pakistan-registers-36bn-in-remittances-for-september-2026"
-  - title: "Investify, Freelancers earn record USD197m in September"
-    url: "https://www.investify.pk/news/100000159013/freelancers-earn-record-usd197m-in-september"
+  - title: Profit, Pakistan receives record $41.6 billion workers' remittances in FY26 (9 July 2026)
+    url: https://profit.pakistantoday.com.pk/2026/07/09/pakistan-receives-record-dollar416-billion-workers-remittances-in-fy26
+  - title: Arab News, Saudi Arabia remains Pakistan's top remittance source as FY26 inflows rise to record $41.6 billion (9 July 2026)
+    url: https://www.arabnews.com/node/2650204/pakistan
+  - title: Outlook Business, Pakistan receives record $41.6 billion in remittances, surpassing total exports (10 July 2026)
+    url: https://www.outlookbusiness.com/news/pak-receives-record-416-billion-in-remittances-surpassing-total-exports
+  - title: ProPakistani, Workers' remittances hit all-time monthly high of $4.25 billion (10 June 2026)
+    url: https://propakistani.pk/2026/06/10/workers-remittances-hit-all-time-monthly-high-of-4-25-billion/
+  - title: Business Recorder, Pakistan registers $3.6bn in remittances for September 2026 (9 October 2026)
+    url: https://www.brecorder.com/news/40443463/pakistan-registers-36bn-in-remittances-for-september-2026
+  - title: Investify, Freelancers earn record USD197m in September
+    url: https://www.investify.pk/news/100000159013/freelancers-earn-record-usd197m-in-september
 ---
 
 Overseas Pakistanis sent home $41.6 billion in the twelve months to June 2026. That is the most the country has ever received in a fiscal year, up 8.6% from $38.3 billion in FY25, according to State Bank of Pakistan data.
@@ -48,13 +49,13 @@ The new fiscal year has started more strongly. Remittances reached $10.9 billion
 
 Three months is too short to call a trend. But it does put the first quarter of FY27 on a faster pace than the whole of FY26.
 
-<div data-chart="remittance-growth"></div>
+{% chart name="remittance-growth" /%}
 
 ## Where the money comes from
 
 The Gulf dominates. Saudi Arabia remained the largest source in FY26, and in September it sent more than any other country, with the UAE second. Together they sent about $1.65 billion of that month's $3.6 billion, close to half.
 
-<div data-chart="remittance-sources"></div>
+{% chart name="remittance-sources" /%}
 
 Against a year earlier, Saudi Arabia was up 19.7%, the UAE 10.0%, the UK 13.3% and the US 13.7%.
 

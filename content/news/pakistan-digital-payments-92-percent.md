@@ -1,20 +1,22 @@
 ---
-title: "92% digital: what SBP's latest data says about payments"
-description: "Nine in ten retail payments in Pakistan now run through digital channels. By value, the story is very different. Here is what the State Bank's data shows."
-date: 2026-10-22
-updated: ""
-author: FP Admin
-tags: [Payments]
-coverImage: ""
-coverAlt: ""
+title: '92% digital: what SBP''s latest data says about payments'
+description: Nine in ten retail payments in Pakistan now run through digital channels. By value, the story is very different. Here is what the State Bank's data shows.
+date: 2026-10-22T09:00
+author: fp-admin
+mainTopic: payments
+otherTopics: []
+fromUs: false
+coverAlt: ''
 draft: false
-label: ""
+label: none
+lead: false
+keyPoints: []
 faqs: []
 sources:
-  - title: "State Bank of Pakistan, Quarterly Payment Systems Review Q3 FY26 (press release, 25 June 2026)"
-    url: "https://www.sbp.org.pk/press/2026/Pr-25-Jun-2026.pdf"
-  - title: "Profit, SBP releases annual payment systems review for FY25 (3 November 2025)"
-    url: "https://profit.pakistantoday.com.pk/2025/11/03/sbp-releases-annual-payment-systems-review-for-fy25/"
+  - title: State Bank of Pakistan, Quarterly Payment Systems Review Q3 FY26 (press release, 25 June 2026)
+    url: https://www.sbp.org.pk/press/2026/Pr-25-Jun-2026.pdf
+  - title: Profit, SBP releases annual payment systems review for FY25 (3 November 2025)
+    url: https://profit.pakistantoday.com.pk/2025/11/03/sbp-releases-annual-payment-systems-review-for-fy25/
 ---
 
 In June 2026 the State Bank of Pakistan published its payment systems review for January to March 2026. Its headline figure is that digital channels carried 92% of retail payments in the quarter: 3.4 billion of 3.7 billion transactions.
@@ -27,7 +29,9 @@ By number of payments, Pakistan is now overwhelmingly digital. By value it is no
 
 Most of the rest went through bank branches. Pakistan's 20,232 branches processed 128 million transactions worth PKR 99.5 trillion: a small share of payments by count, and the largest share by value.
 
-<p class="pull">92% of payments by count. <em>About 40% by value.</em></p>
+{% pull %}
+92% of payments by count. _About 40% by value._
+{% /pull %}
 
 ## Phones did most of the work
 

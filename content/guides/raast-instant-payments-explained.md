@@ -1,38 +1,40 @@
 ---
-title: "Raast, explained: the rail under Pakistan's instant payments"
-description: "Raast more than doubled in FY26 to 2.76 billion payments, and merchant payments grew faster still. Here is how Pakistan's instant payment system works."
-date: 2026-10-22
-updated: 2026-11-05
-author: FP Admin
-tags: [Payments]
-coverImage: ""
-coverAlt: ""
+title: 'Raast, explained: the rail under Pakistan''s instant payments'
+description: Raast more than doubled in FY26 to 2.76 billion payments, and merchant payments grew faster still. Here is how Pakistan's instant payment system works.
+date: '2026-10-22'
+updated: '2026-11-05'
+author: fp-admin
+mainTopic: payments
+otherTopics: []
+fromUs: false
+coverAlt: ''
 draft: false
+label: none
+lead: false
 chart: raast-merchant
-label: ""
 keyPoints:
-  - "Raast is Pakistan's instant payment system, owned by the State Bank."
-  - "It handled about 2.76 billion payments worth Rs 80 trillion in FY26, on provisional figures."
-  - "Merchant payments grew from 4.9 million to 182.5 million in a year."
-  - "It only works inside Pakistan, so it doesn't compete directly with cross-border apps."
+  - Raast is Pakistan's instant payment system, owned by the State Bank.
+  - It handled about 2.76 billion payments worth Rs 80 trillion in FY26, on provisional figures.
+  - Merchant payments grew from 4.9 million to 182.5 million in a year.
+  - It only works inside Pakistan, so it doesn't compete directly with cross-border apps.
 faqs:
-  - q: "Is Raast free?"
-    a: "Raast's person-to-person service is widely described as free. We could not find a published fee schedule, so check with your bank or wallet."
-  - q: "Does Raast work outside Pakistan?"
-    a: "No. Raast is a domestic system, so it can move money inside Pakistan but it can't send money abroad."
-  - q: "What is a Raast ID?"
-    a: "A Raast ID links your mobile number to your bank account, so someone can pay you using your phone number instead of a long account number."
+  - q: Is Raast free?
+    a: Raast's person-to-person service is widely described as free. We could not find a published fee schedule, so check with your bank or wallet.
+  - q: Does Raast work outside Pakistan?
+    a: No. Raast is a domestic system, so it can move money inside Pakistan but it can't send money abroad.
+  - q: What is a Raast ID?
+    a: A Raast ID links your mobile number to your bank account, so someone can pay you using your phone number instead of a long account number.
 sources:
-  - title: "Pakera, Raast handled 2.76 billion payments in FY26, SBP shows (12 October 2026)"
-    url: "https://pakera.pk/raast-2-76-billion-payments-fy26-sbp-payment-systems-review/"
-  - title: "The Nation, SBP releases Quarterly Report on Payment Systems for Jan-March quarter (26 June 2026)"
-    url: "https://www.nation.com.pk/26-Jun-2026/sbp-releases-quarterly-report-payment-systems-jan-march-quarter"
-  - title: "State Bank of Pakistan, Quarterly Payment Systems Review Q3 FY26 (press release, 25 June 2026)"
-    url: "https://www.sbp.org.pk/assets/documents/press-release/Pr-25-Jun-2026.pdf"
-  - title: "Profit, SBP releases annual payment systems review for FY25 (3 November 2025)"
-    url: "https://profit.pakistantoday.com.pk/2025/11/03/sbp-releases-annual-payment-systems-review-for-fy25/"
-  - title: "Wikipedia, Raast"
-    url: "https://en.wikipedia.org/wiki/Raast"
+  - title: Pakera, Raast handled 2.76 billion payments in FY26, SBP shows (12 October 2026)
+    url: https://pakera.pk/raast-2-76-billion-payments-fy26-sbp-payment-systems-review/
+  - title: The Nation, SBP releases Quarterly Report on Payment Systems for Jan-March quarter (26 June 2026)
+    url: https://www.nation.com.pk/26-Jun-2026/sbp-releases-quarterly-report-payment-systems-jan-march-quarter
+  - title: State Bank of Pakistan, Quarterly Payment Systems Review Q3 FY26 (press release, 25 June 2026)
+    url: https://www.sbp.org.pk/assets/documents/press-release/Pr-25-Jun-2026.pdf
+  - title: Profit, SBP releases annual payment systems review for FY25 (3 November 2025)
+    url: https://profit.pakistantoday.com.pk/2025/11/03/sbp-releases-annual-payment-systems-review-for-fy25/
+  - title: Wikipedia, Raast
+    url: https://en.wikipedia.org/wiki/Raast
 ---
 
 If you have sent money in Pakistan by typing in a phone number, Raast may well have moved it. You may never have used the name, but the system now carries billions of payments a year, and it has changed what a new fintech can build here.
@@ -47,13 +49,23 @@ The key idea is the Raast ID. It links a mobile number to a bank account, so you
 
 ## How it rolled out
 
-<ul class="timeline">
-<li><span class="when">2018</span><span>Development begins.</span></li>
-<li><span class="when">January 2021</span><span>Raast launches with bulk payments, such as dividend payouts.</span></li>
-<li><span class="when">February 2022</span><span>Person-to-person payments go live.</span></li>
-<li><span class="when">September 2025</span><span>The State Bank starts funding merchant QR payments.</span></li>
-<li><span class="when">FY26</span><span>Annual volume more than doubles to about 2.76 billion payments.</span></li>
-</ul>
+{% timeline %}
+{% timeline-item when="2018" %}
+Development begins.
+{% /timeline-item %}
+{% timeline-item when="January 2021" %}
+Raast launches with bulk payments, such as dividend payouts.
+{% /timeline-item %}
+{% timeline-item when="February 2022" %}
+Person-to-person payments go live.
+{% /timeline-item %}
+{% timeline-item when="September 2025" %}
+The State Bank starts funding merchant QR payments.
+{% /timeline-item %}
+{% timeline-item when="FY26" %}
+Annual volume more than doubles to about 2.76 billion payments.
+{% /timeline-item %}
+{% /timeline %}
 
 ## How big it is now
 
@@ -78,9 +90,11 @@ The most interesting line in that table is the second one.
 
 Merchant payments went from 4.9 million in FY25 to 182.5 million in FY26. By value, they rose from Rs 14.9 billion to Rs 994.4 billion, according to Pakera. Comparing the final quarter of each year, they rose from 2.2 million to 86.0 million.
 
-<div data-chart="raast-merchant"></div>
+{% chart name="raast-merchant" /%}
 
-<p class="pull">Merchant payments on Raast: <em>2.2 million a quarter to 86 million in a year.</em></p>
+{% pull %}
+Merchant payments on Raast: _2.2 million a quarter to 86 million in a year._
+{% /pull %}
 
 Two things sit behind that. More shops can accept these payments, with QR-enabled merchants registered with banks rising from about 1.09 million to 3.84 million in a year.
 

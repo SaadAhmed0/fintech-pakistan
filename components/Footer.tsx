@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { getPartners } from "@/lib/content";
-import { LogoIcon } from "./Mark";
+import { navigation } from "@/lib/cms";
+import Logo from "./Logo";
 
+// Columns come from Menu and footer in the admin.
 export default function Footer() {
+  const nav = navigation();
   const social = Object.entries(site.social).filter(([, u]) => u);
   const labels: Record<string, string> = { linkedin: "Follow us on LinkedIn", x: "X", youtube: "YouTube" };
   return (
@@ -11,8 +14,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="brand">
           <Link className="lockup" href="/" aria-label="Fintech Pakistan home">
-            <LogoIcon />
-            <span className="word"><b>fintech</b><span>pakistan</span></span>
+            <Logo on="dark" />
           </Link>
           <p>{site.description}</p>
           {social.length > 0 && (
@@ -28,32 +30,17 @@ export default function Footer() {
             </div>
           )}
         </div>
-        <div>
-          <h2>Read</h2>
-          <ul>
-            <li><Link href="/news">News</Link></li>
-            <li><Link href="/companies">Companies</Link></li>
-            <li><Link href="/guides">Guides</Link></li>
-            <li><Link href="/topics">Topics</Link></li>
-            <li><Link href="/search" data-search>Search</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h2>Community</h2>
-          <ul><li><Link href="/community">Community</Link></li><li><Link href="/events">Events</Link></li></ul>
-        </div>
-        <div>
-          <h2>Partners</h2>
-          <ul>{getPartners().map((p) => <li key={p.slug}><Link href={`/partners/${p.slug}`}>{p.name}</Link></li>)}</ul>
-        </div>
-        <div>
-          <h2>About</h2>
-          <ul>
-            <li><Link href="/about">About</Link></li><li><Link href="/our-story">Our Story</Link></li><li><Link href="/team">Team</Link></li>
-            <li><Link href="/editorial-policy">Editorial policy</Link></li><li><Link href="/partners">Partners</Link></li><li><Link href="/contact">Contact</Link></li>
-          </ul>
-        </div>
-        <div className="base"><span>{site.url.replace(/^https?:\/\//, "").toUpperCase()}</span><span>NEWS · COMPANIES · GUIDES</span></div>
+        {nav.footerColumns.map((col) => (
+          <div key={col.heading}>
+            <h2>{col.heading}</h2>
+            <ul>
+              {col.kind === "partners"
+                ? getPartners().map((p) => <li key={p.slug}><Link href={`/partners/${p.slug}`}>{p.name}</Link></li>)
+                : col.links.map((l) => <li key={l.href + l.label}><Link href={l.href} {...(l.href === "/search" ? { "data-search": true } : {})}>{l.label}</Link></li>)}
+            </ul>
+          </div>
+        ))}
+        <div className="base"><span>{site.url.replace(/^https?:\/\//, "").toUpperCase()}</span>{nav.footerTagline && <span>{nav.footerTagline}</span>}</div>
       </div>
     </footer>
   );

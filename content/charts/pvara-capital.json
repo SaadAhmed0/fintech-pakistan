@@ -1,0 +1,63 @@
+{
+  "title": "What each PVARA licence costs to hold",
+  "subtitle": "Minimum paid-up capital, PKR million",
+  "type": "bars",
+  "rows": [
+    {
+      "label": "Exchange",
+      "value": 500,
+      "display": "500"
+    },
+    {
+      "label": "Lending and borrowing",
+      "value": 500,
+      "display": "500"
+    },
+    {
+      "label": "Derivatives",
+      "value": 500,
+      "display": "500"
+    },
+    {
+      "label": "Mining-related",
+      "value": 500,
+      "display": "500"
+    },
+    {
+      "label": "Fiat-referenced tokens",
+      "value": 300,
+      "display": "300"
+    },
+    {
+      "label": "Asset-referenced tokens",
+      "value": 300,
+      "display": "300"
+    },
+    {
+      "label": "Custody",
+      "value": 200,
+      "display": "200"
+    },
+    {
+      "label": "Asset management",
+      "value": 200,
+      "display": "200"
+    },
+    {
+      "label": "Transfer and settlement",
+      "value": 200,
+      "display": "200"
+    },
+    {
+      "label": "Broker-dealer",
+      "value": 75,
+      "display": "75"
+    },
+    {
+      "label": "Advisory",
+      "value": 15,
+      "display": "15"
+    }
+  ],
+  "source": "PVARA, Frequently asked questions"
+}

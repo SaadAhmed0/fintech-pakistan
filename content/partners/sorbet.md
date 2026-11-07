@@ -2,18 +2,24 @@
 name: Sorbet
 type: Partner
 focus: Multi-currency business banking
-description: "Sorbet is a Riyadh-based cross-border payments company for freelancers and small businesses, with USD and EUR accounts and payouts in PKR, SAR and AED."
+description: Sorbet is a Riyadh-based cross-border payments company for freelancers and small businesses, with USD and EUR accounts and payouts in PKR, SAR and AED.
 website: https://mysorbet.io
-logo: { src: /partners/sorbet.png, width: 480, height: 84 }
+logo: /partners/sorbet/logo.png
+logoWidth: 480
+logoHeight: 84
+showName: false
 order: 1
 sameAs:
   - https://x.com/mysorbetxyz
-related: [pakistan-remittances-fy26-record, pakistan-digital-payments-92-percent]
+relatedNews:
+  - pakistan-remittances-fy26-record
+  - pakistan-digital-payments-92-percent
+relatedGuides: []
 sources:
-  - title: "Circle, Partner directory: Sorbet"
-    url: "https://partners.circle.com/partner/sorbet"
-  - title: "Fintech News Pakistan, Riyadh-based Sorbet launches SAR, PKR and AED payouts (July 2026)"
-    url: "https://fintechnews.pk/2026/07/riyadh-based-sorbet-launches-sar-pkr-and-aed-payouts-bringing-instant-cross-border-payments-to-pakistan-saudi-arabia-and-the-uae/"
+  - title: 'Circle, Partner directory: Sorbet'
+    url: https://partners.circle.com/partner/sorbet
+  - title: Fintech News Pakistan, Riyadh-based Sorbet launches SAR, PKR and AED payouts (July 2026)
+    url: https://fintechnews.pk/2026/07/riyadh-based-sorbet-launches-sar-pkr-and-aed-payouts-bringing-instant-cross-border-payments-to-pakistan-saudi-arabia-and-the-uae/
 ---
 
 ## About Sorbet

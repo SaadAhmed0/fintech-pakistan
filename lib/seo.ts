@@ -73,7 +73,7 @@ export const organizationLd = () => ({
   name: site.name,
   alternateName: site.alternateNames,
   url: site.url,
-  logo: absoluteUrl("/icon.svg"),
+  logo: absoluteUrl("/brand/fp-icon_green_1024.png"),
   description: site.description,
   areaServed: "PK",
   founder: site.team.map((m) => ({ "@type": "Person", name: m.name, jobTitle: m.role, ...(m.linkedin ? { sameAs: m.linkedin } : {}) })),
@@ -108,7 +108,7 @@ export const breadcrumbLd = (items: { name: string; path: string }[]) => ({
   })),
 });
 
-export const faqLd = (faqs: { q: string; a: string }[]) => ({
+export const faqLd = (faqs: readonly { q: string; a: string }[]) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqs.map((f) => ({

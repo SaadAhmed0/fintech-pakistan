@@ -1,0 +1,29 @@
+{
+  "seo": {
+    "title": "Contact Fintech Pakistan",
+    "description": "Get in touch about partnerships, press, speaking at FP Live or the Fintech Pakistan community. The quickest way to reach us is on LinkedIn."
+  },
+  "hero": {
+    "title": "Contact",
+    "lede": "For partnerships, press, speaking or anything else, the quickest way to reach us is on LinkedIn."
+  },
+  "buttonLabel": "Connect on LinkedIn",
+  "otherHeading": "Already know",
+  "otherHeadingAccent": "what you need?",
+  "other": [
+    {
+      "label": "Community",
+      "title": "Join on WhatsApp",
+      "text": "Questions about the industry are best asked in Ask & Help.",
+      "href": "/community",
+      "linkText": "Join free"
+    },
+    {
+      "label": "Partners",
+      "title": "See how we work",
+      "text": "Formats, audiences and how a partnership runs from first call to launch.",
+      "href": "/partners",
+      "linkText": "Partners"
+    }
+  ]
+}

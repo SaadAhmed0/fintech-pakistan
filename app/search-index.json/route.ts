@@ -1,21 +1,27 @@
 import { getAllPosts, getAuthors, getCompanies, getComparisons, getPartners, getTopics } from "@/lib/content";
 import { site } from "@/lib/site";
+import { page, pageWithBody } from "@/lib/cms";
 
 export const dynamic = "force-static";
 
 const plain = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 
-// Every page on the site, with its full text, so anything a reader remembers can be found.
-const PAGES = [
-  { title: "Community", path: "/community", text: "A free WhatsApp community for people building fintech in Pakistan.", body: "join whatsapp channels general news regulation ask help jobs opportunities meetups house rules" },
-  { title: "Events", path: "/events", text: "FP Live meetups, closed-door roundtables and the Rails Summit.", body: "fp live meetups roundtables rails summit lahore speak sponsor" },
-  { title: "Partners", path: "/partners", text: "Work with Fintech Pakistan on events, community and launches.", body: "partner sponsor launch pr agency market entry" },
-  { title: "About", path: "/about", text: "What Fintech Pakistan is and what we do.", body: "about missing block mission" },
-  { title: "Our Story", path: "/our-story", text: "How two colleagues at Sorbet became Pakistan's launch partner.", body: "story founders sorbet launch partner agency" },
-  { title: "Team", path: "/team", text: "The team behind Fintech Pakistan.", body: site.team.map((m) => `${m.name} ${m.role}`).join(" ") },
-  { title: "Contact", path: "/contact", text: "Reach us on LinkedIn for partnerships, press or speaking.", body: "contact linkedin press speaking partnership" },
-  { title: "Editorial Policy", path: "/editorial-policy", text: "How we source facts, label partners and correct mistakes.", body: "editorial policy sources corrections sponsored partner disclosure verification" },
-];
+// Every string in a page's content file, so anything a reader remembers can be found.
+const strings = (v: unknown): string[] => (typeof v === "string" ? [v] : Array.isArray(v) ? v.flatMap(strings) : v && typeof v === "object" ? Object.values(v).flatMap(strings) : []);
+const entry = (path: string, data: { hero: { title: string }; seo: { description: string } }, extra = "") => ({ title: data.hero.title, path, text: data.seo.description, body: `${strings(data).join(" ")} ${extra}` });
+
+function pages() {
+  return [
+    entry("/community", page("community")),
+    entry("/events", page("events")),
+    entry("/partners", page("partnersPage")),
+    entry("/about", pageWithBody("about"), plain(pageWithBody("about").html)),
+    entry("/our-story", pageWithBody("ourStory"), plain(pageWithBody("ourStory").html)),
+    entry("/team", page("team"), site.team.map((m) => `${m.name} ${m.role}`).join(" ")),
+    entry("/contact", page("contact")),
+    entry("/editorial-policy", pageWithBody("editorialPolicy"), plain(pageWithBody("editorialPolicy").html)),
+  ];
+}
 
 export function GET() {
   const items = [
@@ -31,7 +37,7 @@ export function GET() {
     ...getTopics().map((t) => ({ title: t.name, path: `/topics/${t.slug}`, type: "Topic", text: t.description, body: plain(t.html) })),
     ...getPartners().map((p) => ({ title: p.name, path: `/partners/${p.slug}`, type: "Partner", text: p.description, body: `${p.focus} ${plain(p.html)}` })),
     ...getAuthors().map((a) => ({ title: a.name, path: `/authors/${a.slug}`, type: "Author", text: a.bio, body: plain(a.html) })),
-    ...PAGES.map((p) => ({ ...p, type: "Page" })),
+    ...pages().map((p) => ({ ...p, type: "Page" })),
   ];
   return Response.json(items);
 }

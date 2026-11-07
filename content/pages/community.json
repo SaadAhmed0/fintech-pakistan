@@ -1,0 +1,113 @@
+{
+  "seo": {
+    "title": "Join Pakistan's Free Fintech Community on WhatsApp",
+    "description": "A free WhatsApp community for founders, operators, regulators and banks building fintech in Pakistan. Four focused channels and monthly meetups."
+  },
+  "hero": {
+    "title": "The Fintech Pakistan community",
+    "lede": "A free WhatsApp community for everyone building money in Pakistan. Focused channels, monthly meetups, and people working on the same problems you are."
+  },
+  "channels": {
+    "heading": "Four channels",
+    "intro": "Join the community once, then follow the channels that matter to you.",
+    "cards": [
+      {
+        "label": "Channel",
+        "title": "General",
+        "text": "Introductions, conversation and what everyone is working on.",
+        "href": "",
+        "linkText": ""
+      },
+      {
+        "label": "Channel",
+        "title": "News & Regulation",
+        "text": "Industry news and regulatory updates that affect how you build and operate.",
+        "href": "",
+        "linkText": ""
+      },
+      {
+        "label": "Channel",
+        "title": "Ask & Help",
+        "text": "Bring a problem. Someone here may already have solved it.",
+        "href": "",
+        "linkText": ""
+      },
+      {
+        "label": "Channel",
+        "title": "Jobs & Opportunities",
+        "text": "Roles, partnerships and openings across the ecosystem.",
+        "href": "",
+        "linkText": ""
+      }
+    ]
+  },
+  "who": {
+    "heading": "If you build, run or regulate money in Pakistan,",
+    "headingAccent": "you belong here.",
+    "chips": [
+      "Founders",
+      "Operators",
+      "Product & engineering",
+      "Compliance & risk",
+      "Regulators",
+      "Banks & partners",
+      "Investors",
+      "Fintechs entering Pakistan"
+    ],
+    "steps": [
+      {
+        "title": "Join",
+        "text": "Tap the WhatsApp link and join the community."
+      },
+      {
+        "title": "Introduce yourself",
+        "text": "Say who you are and what you're building in General."
+      },
+      {
+        "title": "Pick your channels",
+        "text": "Follow the channels you care about and mute the rest."
+      }
+    ]
+  },
+  "rules": {
+    "heading": "House rules",
+    "intro": "A few rules so the community stays useful as it grows.",
+    "items": [
+      {
+        "title": "No cold pitches",
+        "text": "Share launches and news in the right channel. Don't send unsolicited sales DMs."
+      },
+      {
+        "title": "Share your source",
+        "text": "Post news with a link, so others can read it for themselves."
+      },
+      {
+        "title": "Post in the right channel",
+        "text": "Jobs go in Jobs, questions go in Ask & Help."
+      },
+      {
+        "title": "What's said here stays here",
+        "text": "Don't screenshot or forward members' messages without asking."
+      }
+    ]
+  },
+  "faqHeading": "Before you join",
+  "faqs": [
+    {
+      "q": "Is it free?",
+      "a": "Yes. The community is free to join and free to stay in."
+    },
+    {
+      "q": "Who can join?",
+      "a": "Anyone working in or around fintech in Pakistan, including teams building for the Pakistani market from abroad."
+    },
+    {
+      "q": "Can I post about my company?",
+      "a": "Yes, in the right channel. Launches, hiring and news are welcome. Unsolicited sales messages are not."
+    },
+    {
+      "q": "Is there an in-person side?",
+      "a": "Yes. We run monthly meetups and larger events through FP Live. Members hear about them first."
+    }
+  ]
+}

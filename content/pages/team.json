@@ -1,0 +1,38 @@
+{
+  "seo": {
+    "title": "Team",
+    "description": "Meet the team behind Fintech Pakistan. The community was co-founded by Nauman Ali Murad and Saad Ahmed Siddiqui."
+  },
+  "hero": {
+    "title": "Our team",
+    "lede": "Fintech Pakistan was co-founded by Nauman Ali Murad and Saad Ahmed Siddiqui."
+  },
+  "teamHeading": "Co-founders",
+  "involved": {
+    "heading": "Get involved",
+    "intro": "Three ways to take part.",
+    "cards": [
+      {
+        "label": "FP Community",
+        "title": "Join the community",
+        "text": "A free WhatsApp community for anyone working in or around fintech in Pakistan.",
+        "href": "/community",
+        "linkText": "Community"
+      },
+      {
+        "label": "FP Live",
+        "title": "Show up",
+        "text": "Meetups, closed-door roundtables and the Rails Summit in Lahore.",
+        "href": "/events",
+        "linkText": "Events"
+      },
+      {
+        "label": "Partners",
+        "title": "Work with us",
+        "text": "For companies that want to build Pakistan's fintech ecosystem, not just sell into it.",
+        "href": "/partners",
+        "linkText": "Partners"
+      }
+    ]
+  }
+}

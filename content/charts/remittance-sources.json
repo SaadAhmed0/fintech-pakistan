@@ -1,0 +1,33 @@
+{
+  "title": "Where September's money came from",
+  "subtitle": "Workers' remittances, US$ million, September 2026",
+  "type": "bars",
+  "rows": [
+    {
+      "label": "Saudi Arabia",
+      "value": 899.13,
+      "display": "$899M"
+    },
+    {
+      "label": "UAE",
+      "value": 748.53,
+      "display": "$749M"
+    },
+    {
+      "label": "United Kingdom",
+      "value": 515.15,
+      "display": "$515M"
+    },
+    {
+      "label": "European Union",
+      "value": 447.71,
+      "display": "$448M"
+    },
+    {
+      "label": "United States",
+      "value": 305.87,
+      "display": "$306M"
+    }
+  ],
+  "source": "State Bank of Pakistan data via Business Recorder"
+}

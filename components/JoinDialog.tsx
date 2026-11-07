@@ -4,16 +4,20 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import WhatsAppButton from "./WhatsAppButton";
 
-const INSIDE = [
-  { title: "Talk fintech", channel: "General", text: "Introductions, conversation and what everyone is working on." },
-  { title: "Follow the news", channel: "News & Regulation", text: "Industry news and regulatory updates that affect how you build and operate." },
-  { title: "Get unstuck", channel: "Ask & Help", text: "Bring a problem. Someone here may already have solved it." },
-  { title: "Share jobs", channel: "Jobs & Opportunities", text: "Roles, partnerships and openings across the ecosystem." },
-];
+type Content = {
+  label: string;
+  title: string;
+  intro: string;
+  items: readonly { title: string; channel: string; text: string }[];
+  note: string;
+  buttonLabel: string;
+  secondaryLabel: string;
+};
 
 // Any link marked data-join opens this instead of navigating. The links still
 // point at /community, so they work before hydration and when opened in a new tab.
-export default function JoinDialog() {
+// The text is edited in the admin under Site settings, Join popup.
+export default function JoinDialog({ content: c, whatsappInvite }: { content: Content; whatsappInvite: string }) {
   const ref = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
@@ -33,11 +37,11 @@ export default function JoinDialog() {
     <dialog ref={ref} className="join-dialog" aria-labelledby="join-title" onClick={(e) => { if (e.target === ref.current) close(); }}>
       <div className="join-dialog-body">
         <button className="join-close" type="button" aria-label="Close" onClick={close}><span aria-hidden="true">×</span></button>
-        <span className="label">FP Community · Free</span>
-        <h2 id="join-title">What happens in the community</h2>
-        <p className="join-intro">A free WhatsApp community where founders, operators, regulators and banks talk fintech, share jobs and help each other out.</p>
+        {c.label && <span className="label">{c.label}</span>}
+        <h2 id="join-title">{c.title}</h2>
+        {c.intro && <p className="join-intro">{c.intro}</p>}
         <ul className="join-list">
-          {INSIDE.map((i) => (
+          {c.items.map((i) => (
             <li key={i.title}>
               <b>{i.title}</b>
               <span className="join-channel">{i.channel}</span>
@@ -45,10 +49,10 @@ export default function JoinDialog() {
             </li>
           ))}
         </ul>
-        <p className="join-note">Plus monthly meetups, and members hear about FP Live events first.</p>
+        {c.note && <p className="join-note">{c.note}</p>}
         <div className="ctas" onClick={close}>
-          <WhatsAppButton />
-          <Link className="btn btn-ghost" href="/community">See the house rules</Link>
+          <WhatsAppButton invite={whatsappInvite} label={c.buttonLabel || undefined} />
+          {c.secondaryLabel && <Link className="btn btn-ghost" href="/community">{c.secondaryLabel}</Link>}
         </div>
       </div>
     </dialog>

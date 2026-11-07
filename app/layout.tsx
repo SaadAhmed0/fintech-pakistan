@@ -1,16 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Instrument_Sans, Newsreader } from "next/font/google";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import DataStrip from "@/components/DataStrip";
-import Closing from "@/components/Closing";
-import JoinDialog from "@/components/JoinDialog";
-import SearchDialog from "@/components/SearchDialog";
-import JsonLd from "@/components/JsonLd";
-import { MarkDefs } from "@/components/Mark";
-import { organizationLd, websiteLd } from "@/lib/seo";
 import { site } from "@/lib/site";
-import "./globals.css";
 
 const serif = Newsreader({ subsets: ["latin"], variable: "--font-serif", display: "optional" });
 const body = Instrument_Sans({ subsets: ["latin"], variable: "--font-body", display: "optional" });
@@ -30,6 +20,9 @@ export const metadata: Metadata = {
   openGraph: { type: "website", siteName: site.name, locale: site.locale, url: site.url },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
   formatDetection: { telephone: false },
 };
 
@@ -40,23 +33,12 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
+// Root of every route. The public site adds its frame in app/(site)/layout.tsx,
+// and the admin in app/keystatic/layout.tsx.
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-PK" className={`${serif.variable} ${body.variable}`}>
-      <body>
-        <a className="skip" href="#main">Skip to content</a>
-        <MarkDefs />
-        <JsonLd data={[organizationLd(), websiteLd()]} />
-        <DataStrip />
-        <Header />
-        <main id="main">
-          {children}
-          <Closing />
-        </main>
-        <Footer />
-        <JoinDialog />
-        <SearchDialog />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

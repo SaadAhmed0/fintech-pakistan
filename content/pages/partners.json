@@ -1,0 +1,106 @@
+{
+  "seo": {
+    "title": "Partner With Fintech Pakistan: Events and Community",
+    "description": "Fintech Pakistan partners include Sorbet, Karsa and Crypto Awaz. Reach Pakistan's fintech founders, operators, banks and investors through events and community."
+  },
+  "hero": {
+    "title": "Work with Fintech Pakistan",
+    "lede": "Already operating in Pakistan, or planning to enter? We put your company in front of the right audience through the channels this community already trusts."
+  },
+  "button": {
+    "label": "Talk to us",
+    "href": "/contact?topic=Partnership"
+  },
+  "currentHeading": "Our partners",
+  "currentIntro": "The companies we work with.",
+  "who": {
+    "heading": "Who we work with",
+    "intro": "Different partners need different things from Pakistan's fintech scene. Start with the one that sounds like you.",
+    "cards": [
+      {
+        "label": "Already here",
+        "title": "Fintechs in Pakistan",
+        "text": "Get seen by the people you want to hire, partner with and raise from.",
+        "href": "",
+        "linkText": ""
+      },
+      {
+        "label": "Coming in",
+        "title": "Fintechs entering Pakistan",
+        "text": "Meet the ecosystem before you launch, and launch to an audience that's already paying attention.",
+        "href": "",
+        "linkText": ""
+      },
+      {
+        "label": "Institutions",
+        "title": "Banks & financial institutions",
+        "text": "Meet the fintechs you'll partner with, in a room built for it.",
+        "href": "",
+        "linkText": ""
+      },
+      {
+        "label": "Capital",
+        "title": "Investors",
+        "text": "See who is building in Pakistan, and hear from them directly.",
+        "href": "",
+        "linkText": ""
+      },
+      {
+        "label": "Vendors",
+        "title": "Service providers",
+        "text": "Reach the teams that buy legal, compliance, infrastructure and other services.",
+        "href": "",
+        "linkText": ""
+      },
+      {
+        "label": "Ecosystem",
+        "title": "Associations & communities",
+        "text": "Co-host events and share what matters across our audiences.",
+        "href": "",
+        "linkText": ""
+      }
+    ]
+  },
+  "formats": {
+    "heading": "Ways to partner",
+    "intro": "Every partnership is built around a goal, not a package. These are the formats we work with.",
+    "cards": [
+      {
+        "label": "FP Live",
+        "title": "Events",
+        "text": "Host a meetup, sponsor a roundtable or partner on the Rails Summit.",
+        "href": "/events",
+        "linkText": "See events"
+      },
+      {
+        "label": "FP Community",
+        "title": "Community",
+        "text": "Support the community and get in front of the people in it.",
+        "href": "/community",
+        "linkText": "See community"
+      },
+      {
+        "label": "FP Agency",
+        "title": "Launch & PR",
+        "text": "Go-to-market, founder stories and announcements told in a voice the ecosystem reads.",
+        "href": "/contact?topic=Partnership",
+        "linkText": "Talk to us"
+      }
+    ]
+  },
+  "howHeading": "How it works",
+  "how": [
+    {
+      "title": "Tell us your goal",
+      "text": "Who you want to reach and what you want them to do."
+    },
+    {
+      "title": "We suggest a format",
+      "text": "An event, a community launch, or a mix."
+    },
+    {
+      "title": "We launch it together",
+      "text": "We run it with you and share what came out of it."
+    }
+  ]
+}

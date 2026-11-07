@@ -1,57 +1,103 @@
 ---
-title: "PVARA licensing: what Pakistan's virtual asset rulebook says"
-description: "Eleven licence categories, capital from PKR 15 million to PKR 500 million, and a passed deadline. Here is what Pakistan's virtual asset rulebook requires."
+title: 'PVARA licensing: what Pakistan''s virtual asset rulebook says'
+description: >-
+  Eleven licence categories, capital from PKR 15 million to PKR 500 million, and
+  a passed deadline. Here is what Pakistan's virtual asset rulebook requires.
 date: 2026-10-22
 updated: 2026-11-05
-author: FP Admin
-tags: [Regulation, Stablecoins]
-coverImage: ""
-coverAlt: ""
+author: fp-admin
+mainTopic: regulation
+otherTopics:
+  - stablecoins
+fromUs: false
 draft: false
-chart: pvara-capital
-label: ""
+label: none
+lead: false
+chart: pvara-capital-short
 keyPoints:
-  - "PVARA lists 11 licence categories, including two for stablecoin-style tokens."
-  - "Minimum capital runs from PKR 15 million to PKR 500 million."
-  - "Any company targeting people in Pakistan may be in scope, even from abroad."
-  - "An NOC is not a licence, and the deadline for existing operators passed on 5 September 2026."
+  - >-
+    PVARA lists 11 licence categories, including two for stablecoin-style
+    tokens.
+  - Minimum capital runs from PKR 15 million to PKR 500 million.
+  - Any company targeting people in Pakistan may be in scope, even from abroad.
+  - >-
+    An NOC is not a licence, and the deadline for existing operators passed on 5
+    September 2026.
 faqs:
-  - q: "Is an NOC the same as a PVARA licence?"
-    a: "No. PVARA says an NOC does not allow a company to carry on any virtual asset service. It is a step towards applying for a licence."
-  - q: "Can a foreign company get a PVARA licence?"
-    a: "Yes, through a company incorporated in Pakistan. PVARA says there is no requirement for Pakistani shareholding and no cap on foreign ownership, but the company needs at least three directors."
-  - q: "Does PVARA regulate stablecoins?"
-    a: "Yes. It has licence categories for fiat-referenced and asset-referenced tokens, and an April 2026 advisory names stablecoins as within its remit."
+  - q: Is an NOC the same as a PVARA licence?
+    a: >-
+      No. PVARA says an NOC does not allow a company to carry on any virtual
+      asset service. It is a step towards applying for a licence.
+  - q: Can a foreign company get a PVARA licence?
+    a: >-
+      Yes, through a company incorporated in Pakistan. PVARA says there is no
+      requirement for Pakistani shareholding and no cap on foreign ownership,
+      but the company needs at least three directors.
+  - q: Does PVARA regulate stablecoins?
+    a: >-
+      Yes. It has licence categories for fiat-referenced and asset-referenced
+      tokens, and an April 2026 advisory names stablecoins as within its remit.
 sources:
-  - title: "PVARA, Frequently asked questions"
-    url: "https://www.pvara.gov.pk/faq"
-  - title: "PVARA, Licensing"
-    url: "https://www.pvara.gov.pk/licensing"
-  - title: "PVARA, Advisory PVARA/ADV/001/2026 on virtual asset announcements and activities (26 April 2026)"
-    url: "https://www.pvara.gov.pk/advisories/virtual-asset-announcements-and-activities"
-  - title: "Nukta, Pakistan opens licensing process for virtual asset service providers (21 August 2026)"
-    url: "https://nukta.com/pakistan-opens-licensing-process-for-virtual-asset-service-providers"
-  - title: "The Block, Pakistan parliament passes Virtual Assets Act formalizing crypto regulatory authority (6 March 2026)"
-    url: "https://www.theblock.co/amp/post/392665/pakistan-parliament-passes-virtual-assets-act-formalizing-crypto-regulatory-authority"
-  - title: "Express Tribune, SBP replaces 2018 crypto ban with new VASP rules (April 2026)"
-    url: "https://tribune.com.pk/story/2603003/sbp-replaces-2018-crypto-ban-with-new-vasp-rules"
+  - title: PVARA, Frequently asked questions
+    url: https://www.pvara.gov.pk/faq
+  - title: PVARA, Licensing
+    url: https://www.pvara.gov.pk/licensing
+  - title: >-
+      PVARA, Advisory PVARA/ADV/001/2026 on virtual asset announcements and
+      activities (26 April 2026)
+    url: >-
+      https://www.pvara.gov.pk/advisories/virtual-asset-announcements-and-activities
+  - title: >-
+      Nukta, Pakistan opens licensing process for virtual asset service
+      providers (21 August 2026)
+    url: >-
+      https://nukta.com/pakistan-opens-licensing-process-for-virtual-asset-service-providers
+  - title: >-
+      The Block, Pakistan parliament passes Virtual Assets Act formalizing
+      crypto regulatory authority (6 March 2026)
+    url: >-
+      https://www.theblock.co/amp/post/392665/pakistan-parliament-passes-virtual-assets-act-formalizing-crypto-regulatory-authority
+  - title: >-
+      Express Tribune, SBP replaces 2018 crypto ban with new VASP rules (April
+      2026)
+    url: >-
+      https://tribune.com.pk/story/2603003/sbp-replaces-2018-crypto-ban-with-new-vasp-rules
 ---
-
 Pakistan went from banning banks from touching crypto to running a full licensing system in less than a year. The result is a rulebook that reaches further than many companies assume, including those with no office in the country.
 
 This guide sets out what the Pakistan Virtual Assets Regulatory Authority (PVARA) requires, based on its own published pages and on reporting where those pages are silent. It is general information, not legal advice. PVARA itself notes that the Act and Regulations prevail over anything in its FAQ.
 
 ## How the rules came together
 
-<ul class="timeline">
-<li><span class="when">December 2025</span><span>Binance and HTX receive preliminary No-Objection Certificates, according to The Block and a report linked on PVARA's site.</span></li>
-<li><span class="when">March 2026</span><span>Parliament passes the Virtual Assets Act, 2026, making PVARA a permanent statutory body.</span></li>
-<li><span class="when">14 April 2026</span><span>The State Bank replaces its 2018 restriction. Banks may now serve licensed providers.</span></li>
-<li><span class="when">26 April 2026</span><span>PVARA warns that pilots enabling virtual asset services need its prior authorisation.</span></li>
-<li><span class="when">11 June to 2 July 2026</span><span>Public consultation on draft regulations.</span></li>
-<li><span class="when">21 August 2026</span><span>The Pakistan Virtual Asset Services Regulations, 2026 are notified.</span></li>
-<li><span class="when">5 September 2026</span><span>Deadline for existing operators to apply for an NOC or stop operating.</span></li>
-</ul>
+{% timeline %}
+{% timeline-item when="December 2025" %}
+Binance and HTX receive preliminary No-Objection Certificates, according to The Block and a report linked on PVARA's site.
+{% /timeline-item %}
+
+{% timeline-item when="March 2026" %}
+Parliament passes the Virtual Assets Act, 2026, making PVARA a permanent statutory body.
+{% /timeline-item %}
+
+{% timeline-item when="14 April 2026" %}
+The State Bank replaces its 2018 restriction. Banks may now serve licensed providers.
+{% /timeline-item %}
+
+{% timeline-item when="26 April 2026" %}
+PVARA warns that pilots enabling virtual asset services need its prior authorisation.
+{% /timeline-item %}
+
+{% timeline-item when="11 June to 2 July 2026" %}
+Public consultation on draft regulations.
+{% /timeline-item %}
+
+{% timeline-item when="21 August 2026" %}
+The Pakistan Virtual Asset Services Regulations, 2026 are notified.
+{% /timeline-item %}
+
+{% timeline-item when="5 September 2026" %}
+Deadline for existing operators to apply for an NOC or stop operating.
+{% /timeline-item %}
+{% /timeline %}
 
 ## Who needs a licence
 
@@ -65,7 +111,7 @@ Anyone carrying on a virtual asset service in or from Pakistan must be a company
 
 PVARA's FAQ and licensing page both list 11 categories, each with a minimum paid-up capital requirement.
 
-<div data-chart="pvara-capital"></div>
+{% chart name="pvara-capital" /%}
 
 Some early coverage counted ten categories. We use PVARA's own list, which separates fiat-referenced and asset-referenced tokens.
 
@@ -91,7 +137,9 @@ The timelines PVARA publishes are short:
 
 The tight NOC window matters. A company has to incorporate and prepare a full licence application within months.
 
-<p class="pull">An NOC does not allow a company to offer any service. <em>It only opens the door to applying.</em></p>
+{% pull %}
+An NOC does not allow a company to offer any service. *It only opens the door to applying.*
+{% /pull %}
 
 ## What happened on 5 September
 

@@ -13,6 +13,9 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ["192.168.*.*"],
   async redirects() {
     return [
+      // The admin lives at /keystatic. /admin is the easy address to remember.
+      { source: "/admin", destination: "/keystatic", permanent: false },
+      { source: "/admin/:path*", destination: "/keystatic/:path*", permanent: false },
       { source: "/insights/feed.xml", destination: "/rss.xml", permanent: true },
       ...NEWS.map((s) => ({ source: `/insights/${s}`, destination: `/news/${s}`, permanent: true })),
       ...GUIDES.map((s) => ({ source: `/insights/${s}`, destination: `/guides/${s}`, permanent: true })),
