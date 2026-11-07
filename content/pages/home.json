@@ -1,0 +1,41 @@
+{
+  "seo": {
+    "title": "Fintech Pakistan: Fintech News and Company Directory",
+    "description": "News and a company directory covering fintechs and stablecoin neobanks entering or serving Pakistan, from launches and funding to SBP, PVARA and SECP rules."
+  },
+  "title": "Pakistan's fintech, tracked.",
+  "subtitle": "News, guides and a company directory, with every number sourced.",
+  "latestHeading": "Latest",
+  "community": {
+    "title": "Join the community",
+    "text": "A free WhatsApp group for people working in fintech in Pakistan.",
+    "buttonLabel": "How to join"
+  },
+  "numbersHeading": "The numbers",
+  "numbers": [
+    {
+      "value": "92%",
+      "text": "of retail payments were digital, January to March 2026",
+      "href": "/news/pakistan-digital-payments-92-percent"
+    },
+    {
+      "value": "2.76B",
+      "text": "Raast payments in FY26, on provisional figures",
+      "href": "/guides/raast-instant-payments-explained"
+    },
+    {
+      "value": "$41.6B",
+      "text": "in workers' remittances in FY26, a record",
+      "href": "/news/pakistan-remittances-fy26-record"
+    },
+    {
+      "value": "11",
+      "text": "licence categories under PVARA's regime",
+      "href": "/guides/pvara-virtual-asset-licensing"
+    }
+  ],
+  "numbersChart": "remittance-growth",
+  "topicsHeading": "Browse by topic",
+  "eventsHeading": "Events",
+  "eventsText": "Our flagship event on the infrastructure under Pakistan's money."
+}

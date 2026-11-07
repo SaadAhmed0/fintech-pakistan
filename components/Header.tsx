@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { nav } from "@/lib/site";
+import type { NavItem } from "@/lib/site";
 import { LogoIcon } from "./Mark";
 
-export default function Header() {
+// The menu comes from Menu and footer in the admin, passed in by the server.
+export default function Header({ nav, joinLabel }: { nav: NavItem[]; joinLabel: string }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [sub, setSub] = useState<string | null>(null);
@@ -54,14 +55,14 @@ export default function Header() {
                 </li>
               );
             })}
-            <li className="menu-cta"><Link className="btn btn-signal" href="/community" data-join>Join free</Link></li>
+            <li className="menu-cta"><Link className="btn btn-signal" href="/community" data-join>{joinLabel}</Link></li>
           </ul>
         </nav>
         <div className="nav-right">
           <Link className="nav-search" href="/search" aria-label="Search" data-search>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" /></svg>
           </Link>
-          <Link className="btn btn-signal btn-small" href="/community" data-join>Join free</Link>
+          <Link className="btn btn-signal btn-small" href="/community" data-join>{joinLabel}</Link>
           <button className="menu-toggle" type="button" aria-expanded={open} aria-controls="menu" onClick={() => setOpen(!open)}>
             {open ? "CLOSE" : "MENU"}
           </button>

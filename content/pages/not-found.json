@@ -1,0 +1,16 @@
+{
+  "eyebrow": "404",
+  "title": "This block",
+  "titleAccent": "is missing.",
+  "lede": "The page you were looking for has moved or never existed.",
+  "links": [
+    {
+      "label": "Go home",
+      "href": "/"
+    },
+    {
+      "label": "Read the news",
+      "href": "/news"
+    }
+  ]
+}

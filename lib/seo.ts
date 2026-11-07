@@ -108,7 +108,7 @@ export const breadcrumbLd = (items: { name: string; path: string }[]) => ({
   })),
 });
 
-export const faqLd = (faqs: { q: string; a: string }[]) => ({
+export const faqLd = (faqs: readonly { q: string; a: string }[]) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   mainEntity: faqs.map((f) => ({

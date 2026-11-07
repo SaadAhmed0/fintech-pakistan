@@ -2,7 +2,7 @@
 name: FP Admin
 type: Organization
 role: Editorial desk, Fintech Pakistan
-bio: "FP Admin is the newsroom byline for Fintech Pakistan. Posts under this name are published by the Fintech Pakistan team and follow our editorial policy."
+bio: FP Admin is the newsroom byline for Fintech Pakistan. Posts under this name are published by the Fintech Pakistan team and follow our editorial policy.
 sameAs: []
 ---
 

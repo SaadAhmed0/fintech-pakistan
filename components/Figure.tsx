@@ -1,10 +1,9 @@
-import { CHARTS } from "@/lib/charts";
+import { getChart } from "@/lib/cms";
 
 // A sourced chart built from real text, so it stays sharp, readable and searchable.
 // Every bar carries its value, so there is nothing hidden behind a hover.
 export default function Figure({ chart, compact = false }: { chart: string; compact?: boolean }) {
-  const c = CHARTS[chart];
-  if (!c) throw new Error(`Unknown chart: ${chart}`);
+  const c = getChart(chart);
   const max = Math.max(...c.rows.map((r) => r.value));
   return (
     <figure className={compact ? "fig fig-compact" : "fig"}>

@@ -1,0 +1,69 @@
+{
+  "seo": {
+    "title": "FP Live: Fintech Events and Meetups in Pakistan",
+    "description": "Monthly fintech meetups, closed-door roundtables and the Rails Summit in Lahore, the flagship stage for the people behind Pakistan's financial rails."
+  },
+  "hero": {
+    "title": "Events and meetups",
+    "lede": "The community meets in person. Small, regular meetups keep people connected, and one flagship stage brings the whole ecosystem together."
+  },
+  "flagshipHeading": "Flagship event",
+  "summit": {
+    "name": "The Rails Summit",
+    "city": "Lahore",
+    "date": null,
+    "venue": "",
+    "text": "Our flagship event on the infrastructure under Pakistan's money: payments, remittances and the systems that connect them. Sponsorship and speaking slots are open.",
+    "primary": {
+      "label": "Sponsor or speak",
+      "href": "/contact?topic=Speaking%20at%20FP%20Live"
+    },
+    "secondary": {
+      "label": "Get notified in the community",
+      "href": "/community"
+    }
+  },
+  "formats": {
+    "heading": "Formats",
+    "intro": "Each format has a different job, from keeping people in touch to putting the whole ecosystem on one stage.",
+    "cards": [
+      {
+        "label": "Monthly",
+        "title": "Meetups",
+        "text": "Informal evenings for founders and operators to meet the people they've been messaging. Open to community members.",
+        "href": "",
+        "linkText": ""
+      },
+      {
+        "label": "Closed door",
+        "title": "Roundtables",
+        "text": "Small, focused sessions on a single problem, with the people who own it. By invitation.",
+        "href": "",
+        "linkText": ""
+      },
+      {
+        "label": "Flagship",
+        "title": "The Rails Summit",
+        "text": "One day, one stage, the whole ecosystem. Talks, panels and the people behind Pakistan's financial rails.",
+        "href": "",
+        "linkText": ""
+      }
+    ]
+  },
+  "host": {
+    "heading": "Host an event",
+    "text": "Host a meetup at your office, sponsor a roundtable on the problem you solve, or partner on the Rails Summit.",
+    "cardLabel": "Running your own fintech event in Pakistan?",
+    "cardText": "Tell us about it and we'll share it with the community.",
+    "links": [
+      {
+        "label": "Partner on an event",
+        "href": "/contact?topic=Partnership"
+      },
+      {
+        "label": "Share your event",
+        "href": "/contact?topic=Share%20an%20event"
+      }
+    ]
+  }
+}

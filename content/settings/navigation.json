@@ -1,0 +1,42 @@
+{
+  "menu": [
+    { "label": "News", "href": "/news", "children": [] },
+    { "label": "Guides", "href": "/guides", "children": [] },
+    { "label": "Companies", "href": "/companies", "children": [] },
+    { "label": "Community", "href": "", "children": [
+      { "label": "Join the community", "href": "/community" },
+      { "label": "Events", "href": "/events" }
+    ] },
+    { "label": "About us", "href": "", "children": [
+      { "label": "About", "href": "/about" },
+      { "label": "Our Story", "href": "/our-story" },
+      { "label": "Team", "href": "/team" },
+      { "label": "Partners", "href": "/partners" },
+      { "label": "Contact", "href": "/contact" }
+    ] }
+  ],
+  "joinButtonLabel": "Join free",
+  "footerColumns": [
+    { "heading": "Read", "kind": "links", "links": [
+      { "label": "News", "href": "/news" },
+      { "label": "Companies", "href": "/companies" },
+      { "label": "Guides", "href": "/guides" },
+      { "label": "Topics", "href": "/topics" },
+      { "label": "Search", "href": "/search" }
+    ] },
+    { "heading": "Community", "kind": "links", "links": [
+      { "label": "Community", "href": "/community" },
+      { "label": "Events", "href": "/events" }
+    ] },
+    { "heading": "Partners", "kind": "partners", "links": [] },
+    { "heading": "About", "kind": "links", "links": [
+      { "label": "About", "href": "/about" },
+      { "label": "Our Story", "href": "/our-story" },
+      { "label": "Team", "href": "/team" },
+      { "label": "Editorial policy", "href": "/editorial-policy" },
+      { "label": "Partners", "href": "/partners" },
+      { "label": "Contact", "href": "/contact" }
+    ] }
+  ],
+  "footerTagline": "NEWS · COMPANIES · GUIDES"
+}

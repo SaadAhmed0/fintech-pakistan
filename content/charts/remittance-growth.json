@@ -1,0 +1,28 @@
+{
+  "title": "Growth slowed, then picked up",
+  "subtitle": "Workers' remittances, % change on the year before",
+  "type": "columns",
+  "rows": [
+    {
+      "label": "FY24",
+      "value": 10.7,
+      "display": "10.7%"
+    },
+    {
+      "label": "FY25",
+      "value": 26.6,
+      "display": "26.6%"
+    },
+    {
+      "label": "FY26",
+      "value": 8.6,
+      "display": "8.6%"
+    },
+    {
+      "label": "Q1 FY27",
+      "value": 14.74,
+      "display": "14.7%"
+    }
+  ],
+  "source": "State Bank of Pakistan data via Outlook Business and Business Recorder"
+}

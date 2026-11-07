@@ -1,0 +1,44 @@
+{
+  "name": "Fintech Pakistan",
+  "shortName": "FP",
+  "alternateNames": ["FintechPakistan", "Fintech PK", "FP"],
+  "tagline": "Where Pakistan's fintech connects.",
+  "description": "News and a company directory covering fintechs and stablecoin neobanks entering or serving Pakistan, from launches and funding to SBP, PVARA and SECP rules.",
+  "contactEmail": "",
+  "contactLinkedin": "https://www.linkedin.com/in/naumanmurad/",
+  "whatsappInvite": "https://chat.whatsapp.com/HK87C1F5LOJ1njo4MHvZPg",
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/fintechpakistan/",
+    "x": null,
+    "youtube": null
+  },
+  "team": [
+    { "name": "Nauman Ali Murad", "role": "Co-founder", "bio": "", "linkedin": "https://www.linkedin.com/in/naumanmurad/" },
+    { "name": "Saad Ahmed Siddiqui", "role": "Co-founder", "bio": "", "linkedin": "https://www.linkedin.com/in/saad-ahmed-siddiqui-9ab86819b/" }
+  ],
+  "topBar": [
+    { "label": "Remittances FY26", "value": "$41.6B", "href": "/news/pakistan-remittances-fy26-record" },
+    { "label": "Raast FY26", "value": "2.76B payments", "href": "/guides/raast-instant-payments-explained" },
+    { "label": "Digital retail payments", "value": "92%", "href": "/news/pakistan-digital-payments-92-percent" },
+    { "label": "PVARA licence categories", "value": "11", "href": "/guides/pvara-virtual-asset-licensing" }
+  ],
+  "closing": {
+    "title": "Join the Fintech Pakistan community",
+    "text": "A free WhatsApp group for people working in fintech in Pakistan.",
+    "buttonLabel": "How to join"
+  },
+  "joinDialog": {
+    "label": "FP Community · Free",
+    "title": "What happens in the community",
+    "intro": "A free WhatsApp community where founders, operators, regulators and banks talk fintech, share jobs and help each other out.",
+    "items": [
+      { "title": "Talk fintech", "channel": "General", "text": "Introductions, conversation and what everyone is working on." },
+      { "title": "Follow the news", "channel": "News & Regulation", "text": "Industry news and regulatory updates that affect how you build and operate." },
+      { "title": "Get unstuck", "channel": "Ask & Help", "text": "Bring a problem. Someone here may already have solved it." },
+      { "title": "Share jobs", "channel": "Jobs & Opportunities", "text": "Roles, partnerships and openings across the ecosystem." }
+    ],
+    "note": "Plus monthly meetups, and members hear about FP Live events first.",
+    "buttonLabel": "Join on WhatsApp",
+    "secondaryLabel": "See the house rules"
+  }
+}

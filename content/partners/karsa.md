@@ -2,20 +2,28 @@
 name: Karsa
 type: Partner
 focus: Neobank
-description: "Karsa is a Y Combinator-backed fintech offering multi-currency business banking: accounts to receive, hold and send USD, EUR, GBP, AED and stablecoins."
+description: >-
+  Karsa is a Y Combinator-backed fintech offering multi-currency business
+  banking: accounts to receive, hold and send USD, EUR, GBP, AED and
+  stablecoins.
 website: https://gokarsa.com
-logo: { src: /partners/karsa.png, width: 480, height: 166 }
+logo: /partners/karsa/logo.png
+logoWidth: 480
+logoHeight: 166
+showName: false
 order: 2
 sameAs:
   - https://x.com/Go_Karsa
-related: [pakistan-digital-banks-status, raast-instant-payments-explained]
+relatedNews: []
+relatedGuides:
+  - pakistan-digital-banks-status
+  - raast-instant-payments-explained
 sources:
-  - title: "Karsa, gokarsa.com"
-    url: "https://gokarsa.com/"
-  - title: "Hacker News, Launch HN: Karsa (YC W25)"
-    url: "https://news.ycombinator.com/item?id=42879661"
+  - title: Karsa, gokarsa.com
+    url: https://gokarsa.com/
+  - title: 'Hacker News, Launch HN: Karsa (YC W25)'
+    url: https://news.ycombinator.com/item?id=42879661
 ---
-
 ## About Karsa
 
 Karsa offers multi-currency business banking. It was part of Y Combinator's Winter 2025 batch.

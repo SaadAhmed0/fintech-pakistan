@@ -1,14 +1,15 @@
 ---
-title: "Fintech Pakistan × Crypto Awaz: a strategic partnership"
-description: "Fintech Pakistan and Crypto Awaz, a Pakistani crypto community, are partnering to help international fintechs build visibility and connections in Pakistan."
-date: 2026-10-28
-updated: ""
-author: FP Admin
-tags: [From us]
-coverImage: ""
-coverAlt: ""
+title: 'Fintech Pakistan × Crypto Awaz: a strategic partnership'
+description: Fintech Pakistan and Crypto Awaz, a Pakistani crypto community, are partnering to help international fintechs build visibility and connections in Pakistan.
+date: 2026-10-28T09:00
+author: fp-admin
+otherTopics: []
+fromUs: true
+coverAlt: ''
 draft: false
-label: "Partner"
+label: Partner
+lead: false
+keyPoints: []
 faqs: []
 sources: []
 ---
@@ -33,7 +34,9 @@ Crypto Awaz describes itself as the biggest crypto community in Pakistan, with m
 
 Pakistan's rules for digital finance are moving quickly. In 2026 the country set up a permanent virtual asset regulator and opened licensing for virtual asset service providers. [Read what PVARA's licensing regime sets out](/guides/pvara-virtual-asset-licensing). Companies entering the market need visibility and credibility as much as a licence.
 
-<p class="pull">Our shared goal: help fintechs entering Pakistan <em>connect with the people who matter.</em></p>
+{% pull %}
+Our shared goal: help fintechs entering Pakistan _connect with the people who matter._
+{% /pull %}
 
 ## Work with us
 

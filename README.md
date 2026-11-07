@@ -21,10 +21,16 @@ Fill these in `lib/site.ts` (empty values are hidden on the site, never shown as
 - `summit.date` and `summit.venue`
 
 Set `NEXT_PUBLIC_SITE_URL` in your host (see `.env.example`) if the domain is not `https://fintechpakistan.com`.
+Set `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` to the token from Google Search Console if
+you choose HTML-tag verification. The token is added to every page's `<head>`.
 
 ## Deploy
 
-Works on Vercel with zero config: import the repo and deploy. After the domain is live, submit `https://<domain>/sitemap.xml` in Google Search Console.
+Works on Vercel with zero config: import the repo and deploy. In Google Search
+Console, add the `https://fintechpakistan.com/` URL-prefix property, verify it,
+submit `https://fintechpakistan.com/sitemap.xml`, and request indexing for the
+homepage and important new pages. Search Console is required to see indexing
+status and crawl errors; submitting a sitemap does not guarantee rankings.
 
 ## Managing content with Claude
 

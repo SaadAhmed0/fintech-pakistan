@@ -12,7 +12,7 @@ export default function LabelNotice({ label, subject = "This content" }: { label
   return (
     <p className="label-notice">
       <b>{label}</b>
-      <span>{text} <Link href="/editorial-policy#partners">How we label this</Link>.</span>
+      <span>{text} <Link href="/editorial-policy#partner-and-sponsored-content">How we label this</Link>.</span>
     </p>
   );
 }

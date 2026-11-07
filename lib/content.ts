@@ -2,7 +2,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import { Marked, type Tokens } from "marked";
+import { renderBody, slugify, type Heading } from "./markdoc";
+import { chartExists } from "./cms";
+
+export { slugify };
+export type { Heading };
 
 const CONTENT = path.join(process.cwd(), "content");
 const PUBLIC_DIR = path.join(process.cwd(), "public");
@@ -10,7 +14,6 @@ const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const production = process.env.NODE_ENV === "production";
 
 export type Source = { title: string; url: string };
-export type Heading = { id: string; text: string };
 export type Faq = { q: string; a: string };
 export type PostKind = "news" | "guides";
 export type Label = "" | "Sponsored" | "Partner";
@@ -97,47 +100,7 @@ export type Partner = {
   headings: Heading[];
 };
 
-export function slugify(s: string) {
-  return s
-    .toLowerCase()
-    .replace(/&amp;|&/g, "and")
-    .replace(/<[^>]+>/g, "")
-    .replace(/[^a-z0-9\s-]/g, "")
-    .trim()
-    .replace(/\s+/g, "-");
-}
-
-function renderMarkdown(md: string, file: string) {
-  const headings: Heading[] = [];
-  const marked = new Marked({ gfm: true });
-  marked.use({
-    renderer: {
-      heading(this: { parser: { parseInline(t: Tokens.Generic[]): string } }, { tokens, depth, text }: Tokens.Heading) {
-        const inner = this.parser.parseInline(tokens);
-        const id = slugify(text);
-        // The page title is the only H1, so a stray "#" in a body becomes an H2.
-        const level = Math.max(depth, 2);
-        if (level === 2) headings.push({ id, text: inner.replace(/<[^>]+>/g, "") });
-        return `<h${level} id="${id}">${inner}</h${level}>\n`;
-      },
-      link({ href, title, tokens }: Tokens.Link) {
-        const inner = (this as unknown as { parser: { parseInline(t: Tokens.Generic[]): string } }).parser.parseInline(tokens);
-        const external = /^https?:\/\//.test(href);
-        const t = title ? ` title="${title}"` : "";
-        return external
-          ? `<a href="${href}"${t} target="_blank" rel="noopener">${inner}</a>`
-          : `<a href="${href}"${t}>${inner}</a>`;
-      },
-      image({ href, title, text }: Tokens.Image) {
-        if (!text.trim()) throw new Error(`${file}: image ${href} needs alt text`);
-        const t = title ? ` title="${title}"` : "";
-        return `<img src="${href}" alt="${text}"${t} loading="lazy" decoding="async">`;
-      },
-    },
-  });
-  const html = marked.parse(md, { async: false }) as string;
-  return { html, headings };
-}
+const renderMarkdown = (md: string, file: string) => renderBody(md, file);
 
 const mdFiles = (dir: string) => {
   const full = path.join(CONTENT, dir);
@@ -146,14 +109,29 @@ const mdFiles = (dir: string) => {
 };
 const read = (dir: string, file: string) => matter(fs.readFileSync(path.join(CONTENT, dir, file), "utf8"));
 const slugOf = (file: string) => file.replace(/\.mdx?$/, "");
-const countWords = (md: string) => md.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+// Counts words a reader sees: HTML tags and Markdoc tag syntax are dropped,
+// attribute values (such as a timeline date) are kept.
+const countWords = (md: string) =>
+  md
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\{%\s*\/?[\w-]+/g, " ")
+    .replace(/\/?%\}/g, " ")
+    .replace(/[\w-]+="([^"]*)"/g, " $1 ")
+    .split(/\s+/)
+    .filter(Boolean).length;
 const asDate = (v: unknown) => (v instanceof Date ? v.toISOString().slice(0, 10) : String(v).slice(0, 10));
-// A date written with a time keeps it, which Google News prefers. A plain date stays a plain date.
-const asTimestamp = (v: unknown) => {
-  if (v instanceof Date) return v.toISOString().endsWith("T00:00:00.000Z") ? v.toISOString().slice(0, 10) : v.toISOString();
-  return String(v);
-};
-const triState = (v: unknown) => (v === true || v === false ? v : null);
+const triState = (v: unknown) => (v === true || v === "yes" ? true : v === false || v === "no" ? false : null);
+const labelOf = (v: unknown): Label => (v === "Partner" || v === "Sponsored" ? v : "");
+// News times are stored without a zone by the admin and mean Pakistan time.
+function pkTimestamp(v: unknown) {
+  if (v instanceof Date) {
+    const iso = v.toISOString();
+    return iso.endsWith("T00:00:00.000Z") ? iso.slice(0, 10) : `${iso.slice(0, 16)}:00+05:00`;
+  }
+  const str = String(v);
+  if (/^d{4}-d{2}-d{2}Td{2}:d{2}(:d{2})?$/.test(str)) return `${str.slice(0, 16)}:00+05:00`;
+  return str;
+}
 
 function checkDescription(where: string, value: unknown, draft: boolean) {
   const length = String(value).length;
@@ -209,10 +187,10 @@ function loadAuthor(file: string): Author {
 export const getAuthors = () => mdFiles("authors").map(loadAuthor);
 export const getAuthor = (slug: string) => getAuthors().find((a) => a.slug === slug);
 
-function authorSlugFor(name: unknown, where: string) {
-  const a = getAuthors().find((x) => x.name === name);
-  if (!a) throw new Error(`${where}: author "${name}" has no file in content/authors`);
-  return a.slug;
+function authorFor(ref: unknown, where: string) {
+  const a = getAuthors().find((x) => x.slug === ref || x.name === ref);
+  if (!a) throw new Error(`${where}: author "${ref}" has no file in content/authors`);
+  return a;
 }
 
 /* ---------- Companies ---------- */
@@ -226,7 +204,7 @@ function loadCompany(file: string): Company {
   if (typeof data.draft !== "boolean") throw new Error(`${where}: "draft" must be true or false`);
   checkDescription(where, data.description, data.draft);
   const sources: Source[] = data.sources || [];
-  const availability: Availability = data.pakistanAvailability || "";
+  const availability: Availability = ["yes", "reported", "no"].includes(data.pakistanAvailability) ? data.pakistanAvailability : "";
   const lastVerified = data.lastVerified ? asDate(data.lastVerified) : "";
   const wordCount = countWords(content);
   return {
@@ -249,7 +227,7 @@ function loadCompany(file: string): Company {
     fees: data.fees || "",
     kyc: data.kyc || "",
     topics: data.topics || [],
-    label: data.label || "",
+    label: labelOf(data.label),
     pick: data.pick || "",
     lastVerified,
     draft: data.draft,
@@ -285,9 +263,11 @@ function loadPost(kind: PostKind, file: string): Post {
 
   if (!SLUG.test(slug)) fail("filename must be a clean slug: lowercase letters, numbers and hyphens");
   for (const k of ["title", "description", "date", "author"]) if (!data[k]) fail(`missing "${k}" in frontmatter`);
-  if (!Array.isArray(data.tags) || data.tags.length === 0) fail('"tags" must list at least one tag');
   if (typeof data.draft !== "boolean") fail('"draft" must be true or false');
-  if (data.label && !["Sponsored", "Partner"].includes(data.label)) fail('"label" must be empty, Sponsored or Partner');
+  if (data.label && !["Sponsored", "Partner", "none"].includes(data.label)) fail('"label" must be none, Sponsored or Partner');
+  const tags = postTags(data, fail);
+  const author = authorFor(data.author, where);
+  if (data.chart && !chartExists(data.chart)) fail(`chart "${data.chart}" has no file in content/charts`);
   checkDescription(where, data.description, data.draft);
 
   const coverImage: string | undefined = data.coverImage || undefined;
@@ -304,16 +284,16 @@ function loadPost(kind: PostKind, file: string): Post {
     path: `/${kind}/${slug}`,
     title: data.title,
     description: data.description,
-    date: asDate(data.date),
-    published: asTimestamp(data.date),
+    date: asDate(kind === "news" ? pkTimestamp(data.date) : data.date),
+    published: kind === "news" ? pkTimestamp(data.date) : asDate(data.date),
     updated: data.updated ? asDate(data.updated) : undefined,
-    author: data.author,
-    authorSlug: authorSlugFor(data.author, where),
-    tags: data.tags,
+    author: author.name,
+    authorSlug: author.slug,
+    tags,
     coverImage,
     coverAlt,
     draft: data.draft,
-    label: data.label || "",
+    label: labelOf(data.label),
     lead: Boolean(data.lead),
     chart: data.chart || "",
     keyPoints: data.keyPoints || [],
@@ -325,6 +305,18 @@ function loadPost(kind: PostKind, file: string): Post {
     wordCount,
     readingTime: Math.max(1, Math.round(wordCount / 220)),
   };
+}
+
+// Tags shown on cards come from the post's topics. The first is the main one.
+// "From us" marks posts about Fintech Pakistan itself.
+function postTags(data: Record<string, unknown>, fail: (m: string) => never): string[] {
+  if (Array.isArray(data.tags)) return data.tags as string[];
+  const topics = getTopics();
+  const slugs = [data.mainTopic, ...((data.otherTopics as string[]) || [])].filter((t): t is string => typeof t === "string" && t !== "");
+  const names = [...new Set(slugs)].map((slug) => topics.find((t) => t.slug === slug)?.name ?? fail(`topic "${slug}" has no file in content/topics`));
+  const tags = data.fromUs ? ["From us", ...names] : names;
+  if (tags.length === 0) fail("pick a main topic, or tick About Fintech Pakistan itself");
+  return tags;
 }
 
 const newest = (a: Post, b: Post) => (a.published < b.published ? 1 : a.published > b.published ? -1 : a.title.localeCompare(b.title));
@@ -409,8 +401,8 @@ function loadComparison(file: string): Comparison | null {
     description: data.description,
     date: asDate(data.date),
     updated: data.updated ? asDate(data.updated) : undefined,
-    author: data.author,
-    authorSlug: authorSlugFor(data.author, where),
+    author: authorFor(data.author, where).name,
+    authorSlug: authorFor(data.author, where).slug,
     sources: data.sources || [],
     html: linkCompanies(renderMarkdown(content, where).html, [a, b]).html,
   };
@@ -436,11 +428,11 @@ function loadPartner(file: string): Partner {
     focus: data.focus,
     description: data.description,
     website: data.website,
-    logo: data.logo,
+    logo: typeof data.logo === "string" ? { src: data.logo, width: Number(data.logoWidth) || 480, height: Number(data.logoHeight) || 160 } : data.logo,
     showName: Boolean(data.showName),
     order: data.order ?? 99,
     sameAs: data.sameAs || [],
-    related: data.related || [],
+    related: [...(data.relatedNews || []), ...(data.relatedGuides || []), ...(data.related || [])],
     sources: data.sources || [],
     html,
     headings,
