@@ -10,7 +10,8 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   // Lets phones and other devices on the local network load the dev server.
   // Next.js blocks this by default, and the page then never becomes interactive.
-  allowedDevOrigins: ["192.168.*.*"],
+  // 127.0.0.1 is where the Keystatic admin sends you in development (GitHub sign-in needs it).
+  allowedDevOrigins: ["192.168.*.*", "127.0.0.1", "localhost"],
   async redirects() {
     return [
       // The admin lives at /keystatic. /admin is the easy address to remember.

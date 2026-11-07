@@ -6,6 +6,8 @@ import config from "../../../../keystatic.config";
 // admin explains what is missing instead of crashing the deploy.
 const ready =
   config.storage.kind === "local" ||
+  // Development runs the one-time GitHub App setup, which works before the secrets exist.
+  process.env.NODE_ENV === "development" ||
   Boolean(process.env.KEYSTATIC_GITHUB_CLIENT_ID && process.env.KEYSTATIC_GITHUB_CLIENT_SECRET && process.env.KEYSTATIC_SECRET);
 
 const handler = ready ? makeRouteHandler({ config }) : null;
