@@ -32,6 +32,8 @@ Posts start as drafts. Untick **Draft** and save to publish.
 
 ### Connecting the live admin to GitHub (one time)
 
+Step-by-step guide with screens to expect and fixes: `docs/admin-setup.md`.
+
 1. Run `npm run dev` with `NEXT_PUBLIC_KEYSTATIC_STORAGE=github` in `.env.local`, then open `http://localhost:3000/keystatic`.
 2. Follow the prompt to create the Keystatic GitHub App. A repo admin (Saad) needs to approve installing it on `SaadAhmed0/fintech-pakistan`.
 3. Keystatic writes `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET` and `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` to `.env` (git ignores it, never commit it). Add all four to Vercel (Project, Settings, Environment Variables) and redeploy.
