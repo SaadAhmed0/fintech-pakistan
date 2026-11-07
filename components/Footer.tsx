@@ -2,7 +2,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { getPartners } from "@/lib/content";
 import { navigation } from "@/lib/cms";
-import { LogoIcon } from "./Mark";
+import Logo from "./Logo";
 
 // Columns come from Menu and footer in the admin.
 export default function Footer() {
@@ -14,8 +14,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="brand">
           <Link className="lockup" href="/" aria-label="Fintech Pakistan home">
-            <LogoIcon />
-            <span className="word"><b>fintech</b><span>pakistan</span></span>
+            <Logo on="dark" />
           </Link>
           <p>{site.description}</p>
           {social.length > 0 && (

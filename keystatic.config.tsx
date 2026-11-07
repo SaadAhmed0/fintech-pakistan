@@ -219,7 +219,11 @@ const post = (kind: "news" | "guides") =>
 export default config({
   storage: useGithub ? { kind: "github", repo: REPO } : { kind: "local" },
   ui: {
-    brand: { name: "Fintech Pakistan" },
+    brand: {
+      name: "Fintech Pakistan",
+      // eslint-disable-next-line @next/next/no-img-element
+      mark: () => <img src="/brand/fp-app-tile_green.svg" alt="" width={24} height={24} />,
+    },
     navigation: {
       Publishing: ["news", "guides", "compare"],
       Directory: ["companies", "partners"],

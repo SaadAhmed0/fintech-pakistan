@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { NavItem } from "@/lib/site";
-import { LogoIcon } from "./Mark";
+import Logo from "./Logo";
 
 // The menu comes from Menu and footer in the admin, passed in by the server.
 export default function Header({ nav, joinLabel }: { nav: NavItem[]; joinLabel: string }) {
@@ -32,8 +32,7 @@ export default function Header({ nav, joinLabel }: { nav: NavItem[]; joinLabel: 
     <header className="site band">
       <div className="wrap nav">
         <Link className="lockup" href="/" aria-label="Fintech Pakistan home">
-          <LogoIcon />
-          <span className="word"><b>fintech</b><span>pakistan</span></span>
+          <Logo />
         </Link>
         <nav aria-label="Main" ref={navRef}>
           <ul className={`menu${open ? " open" : ""}`} id="menu">
