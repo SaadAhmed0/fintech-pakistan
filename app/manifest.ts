@@ -10,6 +10,10 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     background_color: "#F3F4EE",
     theme_color: "#0B1510",
-    icons: [{ src: "/icon.svg", sizes: "any", type: "image/svg+xml" }],
+    icons: [
+      { src: "/icon.svg", sizes: "any", type: "image/svg+xml" },
+      { src: "/brand/fp-app-tile_green_256.png", sizes: "256x256", type: "image/png" },
+      { src: "/brand/fp-app-tile_green_1024.png", sizes: "1024x1024", type: "image/png" },
+    ],
   };
 }

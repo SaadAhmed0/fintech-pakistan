@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { nav } from "@/lib/site";
-import { LogoIcon } from "./Mark";
+import Logo from "./Logo";
 
 export default function Header() {
   const pathname = usePathname();
@@ -31,8 +31,7 @@ export default function Header() {
     <header className="site band">
       <div className="wrap nav">
         <Link className="lockup" href="/" aria-label="Fintech Pakistan home">
-          <LogoIcon />
-          <span className="word"><b>fintech</b><span>pakistan</span></span>
+          <Logo />
         </Link>
         <nav aria-label="Main" ref={navRef}>
           <ul className={`menu${open ? " open" : ""}`} id="menu">

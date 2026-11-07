@@ -1,13 +1,13 @@
 /* Fintech Pakistan. A publication first: serif for reading, sans for navigation,
    one quiet green, and lines instead of boxes. */
 :root {
-  --ink: #17201B;
+  --ink: #0B1510;
   --ink-soft: #3A4640;
-  --slate: #5C6862;
-  --mist-2: #5C6862;
+  --slate: #5B6660;
+  --mist-2: #5B6660;
   --line: #DEDDD4;
-  --line-strong: #17201B;
-  --paper: #FBFAF6;
+  --line-strong: #0B1510;
+  --paper: #F3F4EE;
   --white: #FFFFFF;
   --tint: #F1F0E9;
   --green: #0B6B43;
@@ -16,7 +16,7 @@
   --forest-2: #145A40;
   --forest-text: #D6E4DB;
   --signal: #C6F24E;
-  --night: #101813;
+  --night: #0B1510;
   --night-line: #2A352E;
   --night-text: #C4CCC6;
   --serif: var(--font-serif), Georgia, 'Times New Roman', serif;
@@ -69,10 +69,7 @@ h3 { font-size: 21px; line-height: 1.22; }
 header.site { position: sticky; top: 0; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--line-strong); }
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; position: relative; }
 .lockup { display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: var(--ink); }
-.lockup svg { flex: none; width: 34px; height: 34px; }
-.word { font-family: var(--body); font-size: 21px; letter-spacing: -0.03em; line-height: 1; }
-.word b { font-weight: 700; }
-.word span { font-weight: 500; color: var(--green); }
+.lockup .logo { display: block; flex: none; width: auto; height: 32px; }
 .menu { display: flex; align-items: center; gap: 24px; list-style: none; margin: 0; padding: 0; }
 .menu a, .sub-btn { display: inline-flex; align-items: center; min-height: 44px; font: 500 15px var(--body); color: var(--ink); text-decoration: none; }
 .menu a:hover, .sub-btn:hover { color: var(--green); }
@@ -110,7 +107,7 @@ header.site { position: sticky; top: 0; z-index: 20; background: var(--paper); b
   .menu { max-height: calc(100vh - 61px); max-height: calc(100dvh - 61px); }
   .menu-cta { display: block; padding-top: 16px; }
   .menu-cta a.btn { display: flex; width: 100%; min-height: 48px; color: var(--white); font: 600 15px var(--body); border: 0; }
-  .word { font-size: 20px; }
+  .lockup .logo { height: 28px; }
 }
 
 /* Page headers */
@@ -390,7 +387,6 @@ select.filter { font-size: 16px; appearance: auto; }
 footer { background: var(--night); color: var(--night-text); }
 footer .wrap { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(4, minmax(0, .6fr)); gap: 32px; padding-block: 44px 28px; }
 footer .lockup { color: var(--white); }
-footer .word span { color: var(--signal); }
 footer p { max-width: 26em; margin-top: 12px; font-size: 14.5px; }
 footer h2 { margin-bottom: 8px; font-family: var(--body); font-size: 13px; font-weight: 700; letter-spacing: 0; color: var(--white); }
 footer ul { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
@@ -449,7 +445,7 @@ dialog::backdrop { background: rgba(16,24,19,.55); }
 .feature .meta { padding-top: 6px; font-size: 13px; color: var(--slate); }
 .feature:hover h3 { color: var(--green); }
 @media (max-width: 680px) { .features { grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 22px; } }
-@media (max-width: 350px) { .lockup { gap: 6px; } .lockup svg { width: 28px; height: 28px; } .word { font-size: 17px; } .nav-search { width: 40px; } .menu-toggle { padding: 0 8px; font-size: 12px; } }
+@media (max-width: 350px) { .lockup .logo { height: 24px; } .nav-search { width: 40px; } .menu-toggle { padding: 0 8px; font-size: 12px; } }
 
 /* Colour and character */
 .label { display: inline-flex; align-items: center; gap: 7px; }

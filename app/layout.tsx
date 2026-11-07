@@ -7,7 +7,6 @@ import Closing from "@/components/Closing";
 import JoinDialog from "@/components/JoinDialog";
 import SearchDialog from "@/components/SearchDialog";
 import JsonLd from "@/components/JsonLd";
-import { MarkDefs } from "@/components/Mark";
 import { organizationLd, websiteLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -45,7 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-PK" className={`${serif.variable} ${body.variable}`}>
       <body>
         <a className="skip" href="#main">Skip to content</a>
-        <MarkDefs />
         <JsonLd data={[organizationLd(), websiteLd()]} />
         <DataStrip />
         <Header />

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { getPartners } from "@/lib/content";
-import { LogoIcon } from "./Mark";
+import Logo from "./Logo";
 
 export default function Footer() {
   const social = Object.entries(site.social).filter(([, u]) => u);
@@ -11,8 +11,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="brand">
           <Link className="lockup" href="/" aria-label="Fintech Pakistan home">
-            <LogoIcon />
-            <span className="word"><b>fintech</b><span>pakistan</span></span>
+            <Logo on="dark" />
           </Link>
           <p>{site.description}</p>
           {social.length > 0 && (

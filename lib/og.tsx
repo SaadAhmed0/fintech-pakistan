@@ -14,8 +14,8 @@ export function ogImage({ eyebrow, title, footer }: { eyebrow: string; title: st
         </svg>
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
           <svg width="64" height="64" viewBox="0 0 100 100">
-            <rect width="100" height="100" rx="24" fill="#0B6B43" />
-            <rect x="23" y="16" width="12" height="68" rx="1.5" fill="#F3F4EE" /><rect x="23" y="16" width="54" height="12" rx="1.5" fill="#F3F4EE" /><rect x="23" y="44" width="54" height="12" rx="1.5" fill="#F3F4EE" />
+            <rect width="100" height="100" rx="22" fill="#0B6B43" />
+            {px.map(([x, y], i) => <rect key={i} x={x} y={y} width="12" height="12" rx="1.5" fill="#F3F4EE" />)}
             <rect x="65" y="30" width="12" height="12" rx="1.5" fill="#C6F24E" />
           </svg>
           <div style={{ display: "flex", fontSize: 40, letterSpacing: -1.5 }}>
