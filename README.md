@@ -34,7 +34,7 @@ Posts start as drafts. Untick **Draft** and save to publish.
 
 1. Run `npm run dev` with `NEXT_PUBLIC_KEYSTATIC_STORAGE=github` in `.env.local`, then open `http://localhost:3000/keystatic`.
 2. Follow the prompt to create the Keystatic GitHub App. A repo admin (Saad) needs to approve installing it on `SaadAhmed0/fintech-pakistan`.
-3. Keystatic writes `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET` and `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` to `.env.local`. Add all four to Vercel (Project, Settings, Environment Variables) and redeploy.
+3. Keystatic writes `KEYSTATIC_GITHUB_CLIENT_ID`, `KEYSTATIC_GITHUB_CLIENT_SECRET`, `KEYSTATIC_SECRET` and `NEXT_PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` to `.env` (git ignores it, never commit it). Add all four to Vercel (Project, Settings, Environment Variables) and redeploy.
 4. In the GitHub App settings, add `https://fintechpakistan.com/api/keystatic/github/oauth/callback` as a callback URL.
 
 Until step 3 is done the site builds and works normally, and the live admin explains that it is not connected yet.
